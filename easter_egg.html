@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easter Egg - Mesa 21</title>
+    <link rel="stylesheet" href="easter_egg_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="computer">
+            <div class="screen">
+                <pre id="typingArea"></pre>
+            </div>
+        </div>
+        <div class="options">
+            <div class="option" onmouseover="revealText(this)" onmouseout="hideText(this)" onclick="navigate('option1.html')">
+                <div class="cards"></div>
+                <span class="hidden-text">Opción 1</span>
+            </div>
+            <div class="option" onmouseover="revealText(this)" onmouseout="hideText(this)" onclick="navigate('option2.html')">
+                <div class="cards"></div>
+                <span class="hidden-text">Opción 2</span>
+            </div>
+        </div>
+    </div>
+    <script src="easter_egg_java.js"></script>
+</body>
+</html>
