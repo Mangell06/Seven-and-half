@@ -9,7 +9,7 @@ El objetivo es alcanzar o acercarse lo más posible a la puntuación de siete y 
 
 - **Jugadores**: De 2 a 6, pueden ser humanos o bots.
 
-- **Puntuación**: Las figuras valen medio punto; las demás cartas, su valor nominal.
+- **Puntuación**: Las  cartas por encima del 7 valen medio punto y las demás cartas, su valor nominal.
 
 - **Rondas**: Máximo de 30 rondas por partida.
 
