@@ -29,7 +29,7 @@ El objetivo es alcanzar o acercarse lo más posible a la puntuación de siete y 
 
 3. Descomprime los archivos
 
-4. Ejecuta el archivo Seven-and-half.py
+4. Ejecuta el archivo Seven and Half.py
 
 5. ¡¡¡Ya puedes jugar!!!
 
