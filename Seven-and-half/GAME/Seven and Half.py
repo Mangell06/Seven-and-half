@@ -1,4 +1,5 @@
-cartas_ = {
+#Diccionario Cartas
+cartas = {
 
     #BARAJA ESPAÑOLA:
 
@@ -119,3 +120,34 @@ cartas_ = {
     "T213": {"literal": "Rey de Tréboles", "value": 0.5, "priority": 4, "realValue": 13}
 }
 
+
+#Diccionario para jugadores.
+players = {}
+
+#Lista para las keys de jugadores.
+game=[]
+
+#Añadir Keys de los jugadores a la lista.
+if len(players) != 0:
+    for key in players:
+        game.append(key)
+
+#Seleccionar tipos de cartas.
+select_cartas = "Español"
+
+#Variable booleana para saber si ya estamos a la mitad de las cartas.
+poder = False
+
+#Diccionario para las keys de las cartas.
+mazo = []
+
+#Añadir las keys de las cartas a la lista.
+for key in cartas:
+    if select_cartas == "Español":
+        if len(mazo) != 52:
+            mazo.append(key)
+    else:
+        if key == "D201":
+            poder = True
+        if poder:
+            mazo.append(key)
