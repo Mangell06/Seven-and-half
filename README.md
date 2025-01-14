@@ -11,7 +11,7 @@ El objetivo es alcanzar o acercarse lo más posible a la puntuación de siete y 
 
 - **Puntuación**: Las  cartas por encima del 7 valen medio punto y las demás cartas, su valor nominal.
 
-- **Rondas**: Máximo de 30 rondas por partida.
+- **Rondas**: Son 30 rondas por partida.
 
 ## **Requisitos del Sistema**
 
@@ -29,7 +29,7 @@ El objetivo es alcanzar o acercarse lo más posible a la puntuación de siete y 
 
 3. Descomprime los archivos
 
-4. Ejecuta el archivo Seven-and-half.py
+4. Ejecuta el archivo Seven and Half.py
 
 5. ¡¡¡Ya puedes jugar!!!
 
