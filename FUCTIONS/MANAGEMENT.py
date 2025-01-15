@@ -21,8 +21,6 @@ def management_menu(title="",options=[]):
         print()
         input("Press enter to continue")
 
-
-""" FUNCIÓN DE DNI - LAIA """
 def newrandomdni():
     letras_dni = ["T", "R", "W", "A", "G", "M", "Y",
                   "F", "P", "D", "X", "B", "N", "J",
