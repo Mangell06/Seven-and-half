@@ -1,3 +1,7 @@
+#Importaciones:
+import FUCTIONS.MANAGEMENT as manage
+from FUCTIONS.MANAGEMENT import loginfo
+
 #Diccionario Cartas
 cartas = {
 
@@ -132,6 +136,29 @@ if len(players) != 0:
     for key in players:
         game.append(key)
 
+#Menus
+menu_principal = ("Siete y medio","Esteve Terradas","Add/Remove/Show Players",
+                  "Settings","Play Game","Ranking","Reports","Exit")
+
+menu_bbdd_players = ("BBDD Players","New Human Player","New Boot","Show/Remove Players",
+                     "Go back")
+
+menu_settings = ("Settings","Set Game Players","Set Card's Deck",
+                 "Set Max Rounds (Default 5 Rounds)","Go back")
+
+menu_ranking = ("Ranking","Players With More Earnings","Players With More Games Played",
+                "Players With More Minutes Played","Go back")
+
+menu_reports = ("Reports","1","2","3","4","5","6","7","Go back")
+
+#Flags
+flg_salir = False
+flg_00 = True
+flg_01 = False
+flg_02 = False
+flg_04 = False
+flg_05 = False
+
 #Seleccionar tipos de cartas.
 select_cartas = "Español"
 
@@ -151,3 +178,80 @@ for key in cartas:
             poder = True
         if poder:
             mazo.append(key)
+
+#Inicio
+loginfo("\n[Juego Iniciado]")
+
+while not flg_salir:
+    while flg_00:
+        opc = manage.management_menu(title=2,menu=menu_principal)
+        if opc == 1:
+            flg_01 = True
+            flg_00 = False
+        elif opc == 2:
+            flg_02 = True
+            flg_00 = False
+        elif opc == 3:
+            print(3)
+        elif opc == 4:
+            flg_04 = True
+            flg_00 = False
+        elif opc == 5:
+            flg_05 = True
+            flg_00 = False
+        else:
+            flg_salir = True
+            flg_00 = False
+    while flg_02:
+        opc = manage.management_menu(title=1,menu=menu_settings)
+        if opc == 1:
+            print(1)
+        elif opc == 2:
+            print(2)
+        elif opc == 3:
+            print(3)
+        else:
+            flg_00 = True
+            flg_02 = False
+    while flg_01:
+        opc = manage.management_menu(title=1,menu=menu_bbdd_players)
+        if opc == 1:
+            print(1)
+        elif opc == 2:
+            print(2)
+        elif opc == 3:
+            print(3)
+        else:
+            flg_00 = True
+            flg_01 = False
+    while flg_04:
+        opc = manage.management_menu(title=1,menu=menu_ranking)
+        if opc == 1:
+            print(1)
+        elif opc == 2:
+            print(2)
+        elif opc == 3:
+            print(3)
+        else:
+            flg_00 = True
+            flg_04 = False
+    while flg_05:
+        opc = manage.management_menu(title=1,menu=menu_reports)
+        if opc == 1:
+            print(1)
+        elif opc == 2:
+            print(2)
+        elif opc == 3:
+            print(3)
+        elif opc == 4:
+            print(4)
+        elif opc == 5:
+            print(5)
+        elif opc == 6:
+            print(6)
+        elif opc == 7:
+            print(7)
+        else:
+            flg_00 = True
+            flg_05 = False
+
