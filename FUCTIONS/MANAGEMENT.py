@@ -3,20 +3,24 @@ def loginfo(texto):
     f.write(texto)
     f.close()
 
-def management_menu(title="",options=[]):
+def management_menu(title=1,menu=()):
     while True:
-        if title == "":
-            print(title.center(50,"="))
-        for i in range(len(options)):
-            aux = str(i+1) + ") " + options[i]
+        if title >= 1:
+            print("".center(50,"="))
+            for i in range(title):
+                print(menu[i].center(50))
+            print("".center(50,"="))
+        for i in range(title,len(menu)):
+            aux = str(i-title//2) + ") " + menu[i]
             print(aux.center(50))
         option = input("Option: ".rjust(29))
         print()
         if not option.isdigit():
             print("Invalid Option".center(50,"="))
-        elif int(option) not in range(1,len(options)+1):
+        elif int(option) not in range(1,len(menu)-title//2):
             print("Invalid Option".center(50,"="))
         else:
+            loginfo("\nEl jugador a elegido una opcion")
             return int(option)
         print()
         input("Press enter to continue")
@@ -33,6 +37,7 @@ def newrandomdni():
         elif dni[8].upper() != letras_dni[int(dni[0:8]) % 23]:
             print("The letter is incorrect.".center(50))
         else:
+            loginfo("\nSe a creado un nuevo ID")
             return dni.upper()
         print()
         input("Press enter to continue".center(50))
