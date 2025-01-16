@@ -1,3 +1,5 @@
+import FUCTIONS.MANAGEMENT as manage
+
 def setPlayersGame(players_dict):
     players_game = []
     while True:
@@ -67,3 +69,20 @@ def printStats(players={}):
             player['Cards'],
             player['Roundpoints']
         ))
+
+def newrandomdni():
+    letras_dni = ["T", "R", "W", "A", "G", "M", "Y",
+                  "F", "P", "D", "X", "B", "N", "J",
+                  "Z", "S", "Q", "V", "H", "L", "C",
+                  "K", "E"]
+    while True :
+        dni = input("Introduce your ID: ")
+        if not dni[0:8].isdigit():
+            print("The DNI only can contain eight numbers and one letter.".center(50))
+        elif dni[8].upper() != letras_dni[int(dni[0:8]) % 23]:
+            print("The letter is incorrect.".center(50))
+        else:
+            manage.loginfo("\nSe a creado un nuevo ID")
+            return dni.upper()
+        print()
+        input("Press enter to continue".center(50))

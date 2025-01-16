@@ -25,19 +25,13 @@ def management_menu(title=1,menu=()):
         print()
         input("Press enter to continue")
 
-def newrandomdni():
-    letras_dni = ["T", "R", "W", "A", "G", "M", "Y",
-                  "F", "P", "D", "X", "B", "N", "J",
-                  "Z", "S", "Q", "V", "H", "L", "C",
-                  "K", "E"]
-    while True :
-        dni = input("Introduce your ID: ")
-        if not dni[0:8].isdigit():
-            print("The DNI only can contain eight numbers and one letter.".center(50))
-        elif dni[8].upper() != letras_dni[int(dni[0:8]) % 23]:
-            print("The letter is incorrect.".center(50))
-        else:
-            loginfo("\nSe a creado un nuevo ID")
-            return dni.upper()
-        print()
-        input("Press enter to continue".center(50))
+def rondamaxima():
+    ronda = input("Introduce el maximo de rondas (del 1 al 30):".rjust(29))
+    if not ronda.isdigit():
+        print("Debe ser un numero".center(50))
+    elif int(ronda) not in range(1,31):
+        print("Debe ser un numero del 1 al 30".center(50))
+    else:
+        return ronda
+    print()
+    input("Press enter to continue")

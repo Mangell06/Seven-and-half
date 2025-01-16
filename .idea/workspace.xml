@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d519bad5-5732-47c1-a629-083abf65eca4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEVEN-AND-HALF/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FUCTIONS/MANAGEMENT.py" beforeDir="false" afterPath="$PROJECT_DIR$/FUCTIONS/MANAGEMENT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FUCTIONS/PLAYERS.py" beforeDir="false" afterPath="$PROJECT_DIR$/FUCTIONS/PLAYERS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Seven and Half.py" beforeDir="false" afterPath="$PROJECT_DIR$/Seven and Half.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +60,7 @@
       <updated>1736852463274</updated>
       <workItem from="1736852464158" duration="43000" />
       <workItem from="1737023949370" duration="270000" />
-      <workItem from="1737025166743" duration="951000" />
+      <workItem from="1737025166743" duration="1692000" />
     </task>
     <servers />
   </component>
@@ -67,6 +68,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Seven_and_half$Seven_and_Half.coverage" NAME="Seven and Half Coverage Results" MODIFIED="1737025358717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Seven_and_half$Seven_and_Half.coverage" NAME="Seven and Half Coverage Results" MODIFIED="1737026229034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
