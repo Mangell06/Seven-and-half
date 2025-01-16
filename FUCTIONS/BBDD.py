@@ -144,7 +144,17 @@ def get_personajes():
         results = execute_query(connection, query)
         close_connection(connection)  # Asegúrate de cerrar la conexión después de la consulta
         if results:
-            # Crear un diccionario usando 'id' como clave
-            personajes_dict = {row['ID']: {"Name": row['Name'], "Risk": row['Risk'], "Type": row["Type"], "Puntos": row["Puntos"], "Minutos_Jugados": row["Minutos_Jugados"], "In_Game": row["In_Game"]} for row in results}
+            # Crear un diccionario usando 'ID' como clave
+            personajes_dict = {
+                row['ID']: {
+                    "Name": row['Name'],
+                    "Risk": row['Risk'],
+                    "Type": row["Type"],
+                    "Puntos": row["Puntos"],
+                    "Minutos_Jugados": row["Minutos_Jugados"],
+                    "In_Game": None if row["In_Game"] is None else bool(row["In_Game"])  # Convertir a True, False o None
+                }
+                for row in results
+            }
             return personajes_dict  # Devuelve el diccionario
     return {}  # Devuelve un diccionario vacío si no hay resultados o hay un error
