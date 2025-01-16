@@ -90,3 +90,21 @@ def newrandomdni():
             return dni.upper()
         print()
         input("Press enter to continue".center(50))
+
+def newPlayer(dni):
+    player_info = {
+        'name': "Hola",
+        'human': False,
+        'bank': 0,
+        'initialCard': "",
+        'priority': 0,
+        'type': '',
+        'bet': 0,
+        'points': 0,
+        'cards': [],
+        'roundPoints': 0
+    }
+    return dni, player_info
+dni = '12345678A'
+new_player = newPlayer(dni)
+print(new_player)
