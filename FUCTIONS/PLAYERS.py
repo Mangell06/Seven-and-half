@@ -1,5 +1,9 @@
 import FUCTIONS.MANAGEMENT as manage
 
+#  personajes_dict = {row['ID']: {"Name": row['Name'], "Risk": row['Risk'],
+#  "Type": row["Type"], "Puntos": row["Puntos"], "Minutos_Jugados": row["Minutos_Jugados"],
+#  "In_Game": row["In_Game"]}
+
 def setPlayersGame(players_dict):
     players_game = []
     while True:

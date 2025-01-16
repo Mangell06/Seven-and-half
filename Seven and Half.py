@@ -1,6 +1,7 @@
 #Importaciones:
 import FUCTIONS.MANAGEMENT as manage
 import FUCTIONS.BBDD as BBDD
+import FUCTIONS.PLAYERS as jugadores
 
 #Inicio
 manage.loginfo("\n[Juego Iniciado]")
@@ -138,7 +139,6 @@ cartas_game = {
     "T213": {"literal": "Rey de Tréboles", "value": 0.5, "priority": 4, "realValue": 13}
 }
 
-
 #Flags de los menus
 
 #Flag base
@@ -221,7 +221,10 @@ while not flg_salir:
     while flg_02:
         opc = manage.management_menu(title=1,menu=menu_settings)
         if opc == 1:
-            print(1)
+            juegan = jugadores.setPlayersGame(players)
+            for key in juegan:
+                players[key]["In_Game"] = True
+            print(players)
         elif opc == 2:
             print(2)
         elif opc == 3:
