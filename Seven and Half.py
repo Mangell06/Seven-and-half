@@ -1,9 +1,20 @@
 #Importaciones:
 import FUCTIONS.MANAGEMENT as manage
-from FUCTIONS.MANAGEMENT import loginfo
+import FUCTIONS.BBDD as BBDD
+
+#Sacar Diccionario jugadores
+players = BBDD.get_personajes()
+
+#Sacar Diccionario Cartas
+cartas = BBDD.get_cartas()
+
+#Sacar Diccionario historial
+historial = BBDD.get_historial()
+
+party = BBDD.get_partidas()
 
 #Diccionario Cartas
-cartas = {
+cartas_game = {
 
     #BARAJA ESPAÑOLA:
 
@@ -125,64 +136,55 @@ cartas = {
 }
 
 
-#Diccionario para jugadores.
-players = {}
+#Flags de los menus
 
-#Lista para las keys de jugadores.
-game=[]
+#Flag base
+flg_salir = False
 
-#Añadir Keys de los jugadores a la lista.
-if len(players) != 0:
-    for key in players:
-        game.append(key)
+#Flag del menu principal
+flg_00 = True
+
+#Flag del menu BBDD
+flg_01 = False
+
+#Flag del menu settings
+flg_02 = False
+
+#Flag del menu ranking
+flg_04 = False
+
+#Flag del menu reports
+flg_05 = False
 
 #Menus
+
+#Tupla del menu principal
 menu_principal = ("Siete y medio","Esteve Terradas","Add/Remove/Show Players",
                   "Settings","Play Game","Ranking","Reports","Exit")
 
+#Tupla del menu bbdd
 menu_bbdd_players = ("BBDD Players","New Human Player","New Boot","Show/Remove Players",
                      "Go back")
 
+#Tupla del menu settings
 menu_settings = ("Settings","Set Game Players","Set Card's Deck",
                  "Set Max Rounds (Default 5 Rounds)","Go back")
 
+#Tupla del menu ranking
 menu_ranking = ("Ranking","Players With More Earnings","Players With More Games Played",
                 "Players With More Minutes Played","Go back")
 
+#Tupla del menu reports
 menu_reports = ("Reports","1","2","3","4","5","6","7","Go back")
 
-#Flags
-flg_salir = False
-flg_00 = True
-flg_01 = False
-flg_02 = False
-flg_04 = False
-flg_05 = False
-
-#Seleccionar tipos de cartas.
-select_cartas = "Español"
-
-#Variable booleana para saber si ya estamos a la mitad de las cartas.
-poder = False
-
-#Diccionario para las keys de las cartas.
-mazo = []
-
-#Añadir las keys de las cartas a la lista.
-for key in cartas:
-    if select_cartas == "Español":
-        if len(mazo) != 52:
-            mazo.append(key)
-    else:
-        if key == "D201":
-            poder = True
-        if poder:
-            mazo.append(key)
 
 #Inicio
-loginfo("\n[Juego Iniciado]")
+manage.loginfo("\n[Juego Iniciado]")
 
+#Base de flags
 while not flg_salir:
+
+    #Menu Principal
     while flg_00:
         opc = manage.management_menu(title=2,menu=menu_principal)
         if opc == 1:
@@ -202,17 +204,8 @@ while not flg_salir:
         else:
             flg_salir = True
             flg_00 = False
-    while flg_02:
-        opc = manage.management_menu(title=1,menu=menu_settings)
-        if opc == 1:
-            print(1)
-        elif opc == 2:
-            print(2)
-        elif opc == 3:
-            print(3)
-        else:
-            flg_00 = True
-            flg_02 = False
+
+    #Menu BBDD
     while flg_01:
         opc = manage.management_menu(title=1,menu=menu_bbdd_players)
         if opc == 1:
@@ -224,6 +217,21 @@ while not flg_salir:
         else:
             flg_00 = True
             flg_01 = False
+
+    #Menu Settings
+    while flg_02:
+        opc = manage.management_menu(title=1,menu=menu_settings)
+        if opc == 1:
+            print(1)
+        elif opc == 2:
+            print(2)
+        elif opc == 3:
+            print(3)
+        else:
+            flg_00 = True
+            flg_02 = False
+
+    #Menu Ranking
     while flg_04:
         opc = manage.management_menu(title=1,menu=menu_ranking)
         if opc == 1:
@@ -235,6 +243,8 @@ while not flg_salir:
         else:
             flg_00 = True
             flg_04 = False
+
+    #Menu Reports
     while flg_05:
         opc = manage.management_menu(title=1,menu=menu_reports)
         if opc == 1:
