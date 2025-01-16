@@ -19,26 +19,19 @@ def setPlayersGame(players_dict):
 
     available_players = list(players_dict.keys())
     print("Lista de jugadores disponibles:")
-    idx = 1
-    for player_id in available_players:
+    for idx, player_id in enumerate(available_players, start=1):
         player = players_dict[player_id]
         print("{}: {} (ID: {})".format(idx, player['Name'], player_id))
-        idx += 1
 
     for i in range(num_players):
         while True:
             idx_selected = int(input("Seleccione el número del jugador {} para la partida: ".format(i + 1))) - 1
             if 0 <= idx_selected < len(available_players):
                 player_id = available_players[idx_selected]
-                player_already_selected = False
-                for p in players_game:
-                    if p['ID'] == player_id:
-                        player_already_selected = True
-                        break
-                if not player_already_selected:
-                    players_game.append(players_dict[player_id])
-                    print("Jugador {} añadido. Jugadores actuales en la partida:".format(players_dict[player_id]['Name']))
-                    print(10*"*"+"Actual Player in Game"+10*"*")
+                if player_id not in [p['ID'] for p in players_game]:
+                    player = players_dict[player_id]
+                    players_game.append({'ID': player_id, 'Name': player['Name']})
+                    print("Jugador '{}' añadido. Jugadores actuales en la partida:".format(player['Name']))
                     for p in players_game:
                         print("{} (ID: {})".format(p['Name'], p['ID']))
                     break
