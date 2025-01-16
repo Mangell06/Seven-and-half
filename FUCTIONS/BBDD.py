@@ -22,10 +22,10 @@ def connect_to_database():
             database=db_config['database'],
             port=db_config['port']
         )
-        print("Conexión exitosa a la base de datos.")
+        loginfo("Conexión exitosa a la base de datos.")
         return connection
     except pymysql.MySQLError as e:
-        print(f"Error al conectar a la base de datos: {e}")
+        loginfo(f"Error al conectar a la base de datos: {e}")
         return None
 
 def close_connection(connection):
@@ -61,7 +61,7 @@ def execute_query(connection, query):
             results = cursor.fetchall()
             return results
     except pymysql.MySQLError as e:
-        print(f"Error al ejecutar la consulta: {e}")
+        loginfo(f"Error al ejecutar la consulta: {e}")
         return None
 
 def get_cartas():
@@ -142,12 +142,3 @@ def get_personajes():
             personajes_dict = {row['ID']: {"Name": row['Name'], "Risk": row['Risk'], "Type": row["Type"], "Puntos": row["Puntos"], "Minutos_Jugados": row["Minutos_Jugados"], "In_Game": row["In_Game"]} for row in results}
             return personajes_dict  # Devuelve el diccionario
     return {}  # Devuelve un diccionario vacío si no hay resultados o hay un error
-
-
-# Guardar los resultados en un diccionario
-personajes_dict = get_personajes()
-
-historial_dict = get_historial()
-
-# Usar la variable 'personajes_dict' para lo que necesites
-print(personajes_dict)  # Muestra el diccionario

@@ -2,6 +2,9 @@
 import FUCTIONS.MANAGEMENT as manage
 import FUCTIONS.BBDD as BBDD
 
+#Inicio
+manage.loginfo("\n[Juego Iniciado]")
+
 #Sacar Diccionario jugadores
 players = BBDD.get_personajes()
 
@@ -178,10 +181,6 @@ menu_ranking = ("Ranking","Players With More Earnings","Players With More Games 
 
 #Tupla del menu reports
 menu_reports = ("Reports","1","2","3","4","5","6","7","Go back")
-
-
-#Inicio
-manage.loginfo("\n[Juego Iniciado]")
 
 #Base de flags
 while not flg_salir:
