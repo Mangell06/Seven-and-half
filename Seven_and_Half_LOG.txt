@@ -1,0 +1,10 @@
+[2025-01-16 16:00:55] 
+[Juego Iniciado]
+[2025-01-16 16:00:55] Conexión exitosa a la base de datos.
+[2025-01-16 16:00:55] Conexión cerrada.
+[2025-01-16 16:00:56] Conexión exitosa a la base de datos.
+[2025-01-16 16:00:56] Conexión cerrada.
+[2025-01-16 16:00:56] Conexión exitosa a la base de datos.
+[2025-01-16 16:00:56] Conexión cerrada.
+[2025-01-16 16:00:56] Conexión exitosa a la base de datos.
+[2025-01-16 16:00:56] Conexión cerrada.
