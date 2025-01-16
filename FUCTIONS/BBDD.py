@@ -1,4 +1,3 @@
-import sqlite3
 from FUCTIONS.MANAGEMENT import loginfo
 import pymysql
 
@@ -35,23 +34,30 @@ def close_connection(connection):
         loginfo("Conexión cerrada.")
 
 def delBBDDPlayer(nif):
+    """
+    Elimina un jugador de la base de datos con el NIF proporcionado.
+    """
+    query = "DELETE FROM personajes WHERE ID = %s;"  # Consulta para eliminar al jugador
+    connection = connect_to_database()  # Conecta a la base de datos
+
+    if not connection:
+        loginfo("Error: No se pudo conectar a la base de datos.")
+        return
+
     try:
-        conexion = sqlite3.connect('mi_base_de_datos.db')
-        cursor = conexion.cursor()
-        consulta = "DELETE FROM jugadores WHERE nif = ?"
-        cursor.execute(consulta, (nif,))
-        conexion.commit()
-        if cursor.rowcount > 0:
-            loginfo("\nEl jugador con NIF {} ha sido eliminado.".format(nif))
-            print("El jugador a sido eliminado.")
-        else:
-            print("\nNo se encontró ningún jugador con el NIF {}.".format(nif))
-    except sqlite3.Error as e:
-        loginfo("\nError 101001: Error al eliminar el jugador: {}".format(e))
-        print(f"Error 101001 revisa el archivo Seven_and_Half_LOG.txt para más información.")
+        with connection.cursor() as cursor:  # Crear un cursor para ejecutar la consulta
+            cursor.execute(query, (nif,))  # Ejecutar la consulta con el NIF como parámetro
+            connection.commit()  # Confirmar los cambios
+
+            # Verificar si se eliminó alguna fila
+            if cursor.rowcount > 0:
+                loginfo(f"El jugador con NIF {nif} ha sido eliminado.")
+            else:
+                loginfo(f"No se encontró ningún jugador con el NIF {nif}.")
+    except pymysql.MySQLError as e:
+        loginfo(f"Error al eliminar el jugador: {e}")
     finally:
-        if conexion:
-            conexion.close()
+        close_connection(connection)  # Cerrar la conexión
 
 def execute_query(connection, query):
     """Ejecuta una consulta SQL y devuelve los resultados."""

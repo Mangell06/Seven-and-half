@@ -2,6 +2,7 @@
 import FUCTIONS.MANAGEMENT as manage
 import FUCTIONS.BBDD as BBDD
 import FUCTIONS.PLAYERS as jugadores
+import datetime
 
 #Inicio
 manage.loginfo("\n[Juego Iniciado]")
@@ -159,6 +160,17 @@ flg_04 = False
 #Flag del menu reports
 flg_05 = False
 
+#Diccionarios auxiliares
+new_party = {"1234": {
+                    "Fecha": "",
+                    "ID_Ganador": "",
+                    "Total_Rondas": 15,
+                    "Mazo": "Española"}}
+
+key_party = list(new_party.keys())
+
+print(new_party)
+
 #Menus
 
 #Tupla del menu principal
@@ -172,6 +184,8 @@ menu_bbdd_players = ("BBDD Players","New Human Player","New Boot","Show/Remove P
 #Tupla del menu settings
 menu_settings = ("Settings","Set Game Players","Set Card's Deck",
                  "Set Max Rounds (Default 5 Rounds)","Go back")
+
+set_cartas = ("Elige una carta","Española","Poker")
 
 #Tupla del menu ranking
 menu_ranking = ("Ranking","Players With More Earnings","Players With More Games Played",
@@ -226,7 +240,11 @@ while not flg_salir:
                 players[key]["In_Game"] = True
             print(players)
         elif opc == 2:
-            print(2)
+            opc = manage.management_menu(title=1,menu=set_cartas)
+            if opc == 1:
+                new_party[key_party[0]]["Mazo"] = "Española"
+            else:
+                new_party[key_party[0]]["Mazo"] = "Poker"
         elif opc == 3:
             print(3)
         else:
