@@ -1,7 +1,9 @@
+import datetime
+
 def loginfo(texto):
-    f = open("Seven_and_Half_LOG.txt", "a")
-    f.write(texto)
-    f.close()
+    with open("Seven_and_Half_LOG.txt", "a") as f:
+        fecha_y_hora = datetime.datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
+        f.write(f"{fecha_y_hora} {texto}\n")
 
 def management_menu(title=1,menu=()):
     while True:
@@ -20,7 +22,7 @@ def management_menu(title=1,menu=()):
         elif int(option) not in range(1,len(menu)-title//2):
             print("Invalid Option".center(50,"="))
         else:
-            loginfo("\nEl jugador a elegido una opcion")
+            loginfo("El jugador a elegido una opcion")
             return int(option)
         print()
         input("Press enter to continue")

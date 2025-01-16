@@ -82,7 +82,7 @@ def newrandomdni():
         elif dni[8].upper() != letras_dni[int(dni[0:8]) % 23]:
             print("The letter is incorrect.".center(50))
         else:
-            manage.loginfo("\nSe a creado un nuevo ID")
+            manage.loginfo("Se a creado un nuevo ID")
             return dni.upper()
         print()
         input("Press enter to continue".center(50))

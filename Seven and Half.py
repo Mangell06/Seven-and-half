@@ -16,8 +16,6 @@ historial = BBDD.get_historial()
 
 party = BBDD.get_partidas()
 
-print(players)
-
 #Diccionario Cartas
 cartas_game = {
 

@@ -32,7 +32,7 @@ def close_connection(connection):
     """Cierra la conexión con la base de datos."""
     if connection:
         connection.close()
-        print("Conexión cerrada.")
+        loginfo("Conexión cerrada.")
 
 def delBBDDPlayer(nif):
     try:
