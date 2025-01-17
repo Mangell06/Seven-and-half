@@ -1,22 +1,3 @@
-#Importaciones:
-import FUCTIONS.MANAGEMENT as manage
-import FUCTIONS.BBDD as BBDD
-import FUCTIONS.PLAYERS as jugadores
-
-#Inicio
-manage.loginfo("\n[Juego Iniciado]")
-
-#Sacar Diccionario jugadores
-players = BBDD.get_personajes()
-
-#Sacar Diccionario Cartas
-cartas = BBDD.get_cartas()
-
-#Sacar Diccionario historial
-historial = BBDD.get_historial()
-
-party = BBDD.get_partidas()
-
 #Diccionario Cartas
 cartas_game = {
 
@@ -139,103 +120,116 @@ cartas_game = {
     "T213": {"literal": "Rey de Tréboles", "value": 0.5, "priority": 4, "realValue": 13}
 }
 
-#Flags de los menus
+#Importaciones:
+import Funciones.gestionar_interfaz as interface
+import Funciones.gestionar_juego as juego
+import Funciones.gestionar_diccionarios as diccionarios
+import Funciones.gestionar_base_de_datos as bbdd
 
-#Flag base
+#Mensaje del log cuando inicia el juego
+juego.loginfo("[Juego Iniciado]")
+
+#Sacar diccionarios de la base de datos
+players_dicti = bbdd.get_personajes()
+cartas_dicti = bbdd.get_cartas()
+historial_dicti = bbdd.get_historial()
+partidas_dicti = bbdd.get_partidas()
+
+#Sacar listas de keys de los diccionarios
+players_list = []
+for key in players_dicti:
+    players_list.append(key)
+
+#Flags
 flg_salir = False
-
-#Flag del menu principal
 flg_00 = True
-
-#Flag del menu BBDD
 flg_01 = False
-
-#Flag del menu settings
 flg_02 = False
-
-#Flag del menu ranking
 flg_04 = False
-
-#Flag del menu reports
 flg_05 = False
 
 #Menus
+menu00 = ("Siete y medio","Esteve Terradas","Add/Remove/Show Players",
+          "Settings","Play Game","Ranking","Reports","Exit")
+menu01 = ("BBDD Players","New Human Player","New Boot","Show/Remove Players",
+          "Go back")
+menu02 = ("Settings","Set Game Players","Set Card's Deck",
+          "Set Max Rounds (Default 5 Rounds)","Go back")
+menu04 = ("Ranking","Players With More Earnings","Players With More Games Played",
+          "Players With More Minutes Played","Go back")
+menu05 = ("Reports","1","2","3","4","5","6","7","Go back")
 
-#Tupla del menu principal
-menu_principal = ("Siete y medio","Esteve Terradas","Add/Remove/Show Players",
-                  "Settings","Play Game","Ranking","Reports","Exit")
+set_cartas = ("Elige una carta","Española","Poker")
 
-#Tupla del menu bbdd
-menu_bbdd_players = ("BBDD Players","New Human Player","New Boot","Show/Remove Players",
-                     "Go back")
+new_party = {len(partidas_dicti) + 1: {
+    "Fecha": "",
+    "ID_Ganador": "",
+    "Total_Rondas": 5,
+    "Mazo": ""}}
 
-#Tupla del menu settings
-menu_settings = ("Settings","Set Game Players","Set Card's Deck",
-                 "Set Max Rounds (Default 5 Rounds)","Go back")
-
-#Tupla del menu ranking
-menu_ranking = ("Ranking","Players With More Earnings","Players With More Games Played",
-                "Players With More Minutes Played","Go back")
-
-#Tupla del menu reports
-menu_reports = ("Reports","1","2","3","4","5","6","7","Go back")
-
-#Base de flags
 while not flg_salir:
-
-    #Menu Principal
     while flg_00:
-        opc = manage.management_menu(title=2,menu=menu_principal)
+        players_dicti = bbdd.get_personajes()
+        opc = interface.management_menu(title=2,menu=menu00)
         if opc == 1:
+            flg_00 = False
             flg_01 = True
-            flg_00 = False
         elif opc == 2:
-            flg_02 = True
             flg_00 = False
+            flg_02 = True
         elif opc == 3:
             print(3)
         elif opc == 4:
+            flg_00 = False
             flg_04 = True
-            flg_00 = False
         elif opc == 5:
+            flg_00 = False
             flg_05 = True
-            flg_00 = False
         else:
+            juego.loginfo("[Saliendo del Juego]")
+            flg_00 = False
             flg_salir = True
-            flg_00 = False
 
-    #Menu BBDD
     while flg_01:
-        opc = manage.management_menu(title=1,menu=menu_bbdd_players)
+        players_dicti = bbdd.get_personajes()
+        opc = interface.management_menu(title=1,menu=menu01)
         if opc == 1:
-            print(1)
+            diccionarios.nuevohumano(players_dicti)
         elif opc == 2:
-            print(2)
+            diccionarios.nuevobot(players_dicti)
         elif opc == 3:
-            print(3)
+            diccionarios.showplayer(players_dicti)
         else:
-            flg_00 = True
             flg_01 = False
-
-    #Menu Settings
-    while flg_02:
-        opc = manage.management_menu(title=1,menu=menu_settings)
-        if opc == 1:
-            juegan = jugadores.setPlayersGame(players)
-            for player in juegan:
-                players[player['ID']]["In_Game"] = True
-            print(players)
-        elif opc == 2:
-            print(2)
-        elif opc == 3:
-            print(3)
-        else:
             flg_00 = True
-            flg_02 = False
 
-    #Menu Ranking
+    while flg_02:
+        players_dicti = bbdd.get_personajes()
+        opc = interface.management_menu(title=1,menu=menu02)
+        if opc == 1:
+            aux = juego.elegirpersonajejugar(players_dicti)
+            for key in players_dicti:
+                if key in aux:
+                    players_dicti[key]["In_Game"] = True
+                else:
+                    players_dicti[key]["In_Game"] = False
+        elif opc == 2:
+            players_dicti = bbdd.get_personajes()
+            aux = interface.management_menu(title=1,menu=set_cartas)
+            if opc == 1:
+                new_party[len(partidas_dicti)+1]["Mazo"] = "Española"
+            else:
+                new_party[len(partidas_dicti)+1]["Mazo"] = "Poker"
+        elif opc == 3:
+            aux = juego.rondamaxima()
+            new_party[len(partidas_dicti)+1]["ID_Ganador"] = aux
+        else:
+            flg_02 = False
+            flg_00 = True
+
     while flg_04:
-        opc = manage.management_menu(title=1,menu=menu_ranking)
+        players_dicti = bbdd.get_personajes()
+        opc = interface.management_menu(title=1,menu=menu04)
         if opc == 1:
             print(1)
         elif opc == 2:
@@ -243,12 +237,11 @@ while not flg_salir:
         elif opc == 3:
             print(3)
         else:
-            flg_00 = True
             flg_04 = False
+            flg_00 = True
 
-    #Menu Reports
     while flg_05:
-        opc = manage.management_menu(title=1,menu=menu_reports)
+        opc = interface.management_menu(title=1,menu=menu05)
         if opc == 1:
             print(1)
         elif opc == 2:
@@ -264,7 +257,5 @@ while not flg_salir:
         elif opc == 7:
             print(7)
         else:
-            flg_00 = True
             flg_05 = False
-
-
+            flg_00 = True
