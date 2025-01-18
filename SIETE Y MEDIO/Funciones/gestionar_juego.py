@@ -32,9 +32,15 @@ def elegirpersonajejugar(players_dict):
         if elegir == "+":
             if (pag + 1) * 10 < len(disponibles) or (pag + 1) * 10 < len(jugando):
                 pag += 1
+                print("Cambio de pagina".center(50))
+            else:
+                print("No hay mas paginas hacia delante".center(50))
         elif elegir == "-":
             if pag > 0:
                 pag -= 1
+                print("Cambio de pagina".center(50))
+            else:
+                print("No hay mas paginas hacia atras".center(50))
         elif elegir.startswith("-") and elegir[1:].isdigit():
             if int(elegir[1:]) - 1 in range(len(jugando)):
                 disponibles.append(jugando[int(elegir[1:]) - 1])
@@ -55,7 +61,7 @@ def elegirpersonajejugar(players_dict):
         else:
             print("No existe el jugador".center(50))
         print()
-        input("Press enter to continue".rjust(30))
+        input("Press enter to continue".center(50))
 
 #Imprimir stats de bots y jugadores por separado.
 def printStats(players):
