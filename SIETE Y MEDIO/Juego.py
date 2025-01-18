@@ -197,9 +197,7 @@ while not flg_salir:
             diccionarios.nuevohumano(players_dicti)
         elif opc == 2:
             diccionarios.nuevobot(players_dicti)
-            print(players_dicti)
         elif opc == 3:
-            print(players_dicti)
             diccionarios.showplayer(players_dicti)
         else:
             flg_01 = False

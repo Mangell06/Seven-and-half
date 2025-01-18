@@ -28,9 +28,9 @@ def showplayer(player_dicto):
         print("Ver/Eliminar jugadores".center(50, "="))
         print()
         print("".center(50,"="))
-        print( "".ljust(6) + "NIF".ljust(15) + "NAME".ljust(14) + "TYPE".rjust(15))
+        print( "".ljust(5) + "NIF".ljust(15) + "NAME".ljust(15) + "TYPE".rjust(15))
         for i in range(pag * 10, min((pag + 1) * 10, len(lista_users))):
-            print(str(i+1) + ") ".ljust(3) + lista_users[i].ljust(16) + player_dicto[lista_users[i]]["Name"].ljust(15) + player_dicto[lista_users[i]]["Type"].rjust(14))
+            print("{})".format(str(i+1)).ljust(5) + lista_users[i].ljust(15) + player_dicto[lista_users[i]]["Name"].ljust(15) + player_dicto[lista_users[i]]["Type"].rjust(15))
         print()
         elegir = input("Elimina jugadores (-num), avanza (+) o retrocede (-), y 0 para salir: ".rjust(30))
         print()
