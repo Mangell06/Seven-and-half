@@ -101,3 +101,14 @@ def rondamaxima():
             return int(ronda)
         print()
         input("Press enter to continue".center(50))
+
+def crearmazo(party_dicto,newparty_dicto,cartas):
+    mazo = []
+    for key in cartas:
+        if newparty_dicto[len(party_dicto) + 1]["Mazo"] == "Española":
+            if key[0] == "E":
+                mazo.append(key)
+        else:
+            if key[0] == "P":
+                mazo.append(key)
+    return mazo
