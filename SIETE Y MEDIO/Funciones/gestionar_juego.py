@@ -1,4 +1,5 @@
 import datetime
+import random
 
 #Escribir texto en el LOGS.txt como debugger
 def loginfo(texto):
@@ -215,3 +216,25 @@ def raking_puntos(personajes_dict):
         else:
             print("Opción inválida. Intente de nuevo.".center(50))
         input("Presiona enter para continuar".center(50))
+
+def crearcontext(jugadores,contexto,partidas,players):
+    contador = 0
+    for key in jugadores:
+        contador += 1
+        contexto[len(partidas) + 1][key] = {
+            "Puntos_iniciales": players[key]["Puntos"],
+            "Prioridad": contador,
+            "Puntos_finales": 0,
+            "Carta_inicial": "",
+            "Cartas": []
+        }
+
+def priority(jugadores,contexto,partidas,carts):
+    asignadas = []
+    contador = 0
+    while contador <= len(jugadores)-1:
+        carta = random.randint(0, len(carts))
+        if carts[carta] not in asignadas:
+            asignadas.append(carts[carta])
+            contexto[len(partidas) + 1][jugadores[contador]]["Cartas"].append(carts[carta])
+            contador += 1
