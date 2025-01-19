@@ -176,9 +176,12 @@ new_party = {len(partidas_dicti) + 1: {
     "Mazo": "",
     "Players":[]}}
 
-#Estructura {0:{"DNI":{"Puntos_iniciales":20,"Puntos_finales":55,"Carta_inicial":"EE1"},
-#               "DNI":{"Puntos_iniciales":29,"Puntos_finales":4,"Carta_inicial":"EO2"}}}
+#Estructura {0:{"DNI":{"Puntos_iniciales":20,"Puntos_finales":55,"Carta_inicial":""},
+#               "DNI":{"Puntos_iniciales":29,"Puntos_finales":4,"Carta_inicial":""}}}
 player_party = {}
+
+#Estrucuta {"DNI":{Cartas_iniciales_esp:[[EO1,2],[EC3,1]],Cartas_iniciales_pk:[[PD1,5],[PC5,10]]}
+card_initial = {}
 
 #Estructura {0:{"DNI":{"Es_banca":True,"Apuesta":14,"Puntos_inciales":30,Valor_total_cartas:7.5,"Puntos_finales":44},
 #               "DNI"{"Es_banca":False,"Apuesta":14,"Puntos_inciales":20,Valor_total_cartas:7,"Puntos_finales":6}}}

@@ -719,3 +719,5 @@
 [2025-01-18 21:39:20] El jugador a elegido una opcion
 [2025-01-18 21:39:26] Conexión exitosa a la base de datos.
 [2025-01-18 21:39:26] Conexión cerrada.
+[2025-01-19 03:08:52] El jugador a elegido una opcion
+[2025-01-19 03:08:52] [Saliendo del Juego]
