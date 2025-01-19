@@ -61,29 +61,7 @@ def elegirpersonajejugar(players_dict):
         else:
             print("No existe el jugador".center(50))
         print()
-        input("Press enter to continue".center(50))
-
-#Imprimir stats de bots y jugadores por separado.
-def printStats(players):
-    jugador_prio_mas_alta = None
-    for player in players:
-        if jugador_prio_mas_alta is None or player['Priority'] > jugador_prio_mas_alta['Priority']:
-            jugador_prio_mas_alta = player
-    print(15*"*"+ "Round 0 , Turn of {}" +15*"*".format(jugador_prio_mas_alta['Name']))
-    print("{:<10} {:<9} {:<9} {:<4} {:<4} {:<5} {:<6} {:<11} {:<12}".format(
-        "Name", "Human", "Priority", "Type", "Bank", "Bet", "Points", "Cards", "Roundpoints"))
-    for player in players:
-        print("{:<10} {:<9} {:<9} {:<4} {:<4} {:<5} {:<6} {:<11} {:.1f}".format(
-            player['Name'],
-            player['Human'],
-            player['Priority'],
-            player['Type'],
-            player['Bank'],
-            player['Bet'],
-            player['Points'],
-            player['Cards'],
-            player['Roundpoints']
-        ))
+        input("Presiona enter para continuar".center(50))
 
 def rondamaxima():
     while True:
@@ -100,7 +78,7 @@ def rondamaxima():
         else:
             return int(ronda)
         print()
-        input("Press enter to continue".center(50))
+        input("Presiona enter para continuar".center(50))
 
 def crearmazo(party_dicto,newparty_dicto,cartas):
     mazo = []
@@ -138,13 +116,20 @@ def raking_minuts_played(personajes_dict):
         if elegir == "+":
             if (pag + 1) * 10 < len(lista_ordenar):
                 pag += 1
+                print("Cambio de pagina".center(50))
+            else:
+                print("No hay mas paginas hacia delante".center(50))
         elif elegir == "-":
             if pag > 0:
                 pag -= 1
+                print("Cambio de pagina".center(50))
+            else:
+                print("No hay mas paginas hacia atras".center(50))
         elif elegir == "0":
             break
         else:
-            print("Opción inválida. Intente de nuevo.")
+            print("Opción inválida. Intente de nuevo.".center(50))
+        input("Presiona enter para continuar".center(50))
 
 def raking_id(personajes_dict):
 
@@ -174,13 +159,20 @@ def raking_id(personajes_dict):
         if elegir == "+":
             if (pag + 1) * 10 < len(lista_ordenar):
                 pag += 1
+                print("Cambio de pagina".center(50))
+            else:
+                print("No hay mas paginas hacia delante".center(50))
         elif elegir == "-":
             if pag > 0:
                 pag -= 1
+                print("Cambio de pagina".center(50))
+            else:
+                print("No hay mas paginas hacia atras".center(50))
         elif elegir == "0":
             break
         else:
-            print("Opción inválida. Intente de nuevo.")
+            print("Opción inválida. Intente de nuevo.".center(50))
+        input("Presiona enter para continuar".center(50))
 
 def raking_puntos(personajes_dict):
     lista_ordenar = list(personajes_dict.keys())
@@ -209,10 +201,17 @@ def raking_puntos(personajes_dict):
         if elegir == "+":
             if (pag + 1) * 10 < len(lista_ordenar):
                 pag += 1
+                print("Cambio de pagina".center(50))
+            else:
+                print("No hay mas paginas hacia delante".center(50))
         elif elegir == "-":
             if pag > 0:
                 pag -= 1
+                print("Cambio de pagina".center(50))
+            else:
+                print("No hay mas paginas hacia atras".center(50))
         elif elegir == "0":
             break
         else:
-            print("Opción inválida. Intente de nuevo.")
+            print("Opción inválida. Intente de nuevo.".center(50))
+        input("Presiona enter para continuar".center(50))
