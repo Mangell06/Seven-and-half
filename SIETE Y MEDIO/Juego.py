@@ -1,4 +1,6 @@
 #Diccionario Cartas
+from datetime import datetime
+
 cartas_game = {
 
     #BARAJA ESPAÑOLA:
@@ -140,6 +142,11 @@ players_list = []
 for key in players_dicti:
     players_list.append(key)
 
+jugando = []
+for key in players_dicti:
+    if players_dicti[key]["In_Game"]:
+        jugando.append(key)
+
 #Flags
 flg_salir = False
 flg_00 = True
@@ -167,7 +174,7 @@ new_party = {len(partidas_dicti) + 1: {
     "ID_Ganador": "",
     "Total_Rondas": 5,
     "Mazo": "",
-    "Players":{}}}
+    "Players":[]}}
 
 #Estructura {0:{"DNI":{"Puntos_iniciales":20,"Puntos_finales":55,"Carta_inicial":"EE1"},
 #               "DNI":{"Puntos_iniciales":29,"Puntos_finales":4,"Carta_inicial":"EO2"}}}
@@ -179,6 +186,7 @@ player_round = {}
 
 while not flg_salir:
     while flg_00:
+        print(new_party)
         players_dicti = bbdd.get_personajes()
         opc = interface.management_menu(title=2,menu=menu00)
         if opc == 1:
@@ -192,7 +200,11 @@ while not flg_salir:
                 print("Elige un mazo con el que jugar en settings".center(50))
                 input("Presiona enter para continuar".center(50))
             else:
+                new_party[len(partidas_dicti) + 1]["start_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                new_party[len(partidas_dicti) + 1]["Players"] = jugando
                 mazo = juego.crearmazo(partidas_dicti,new_party,cartas_game)
+            for i in range(len(jugando)):
+                player_party[players_dicti[jugando[i]]] = {"Es banca":False,"Apuesta":0,"Puntos_iniciales":partidas_dicti[jugando[i]]["Puntos"],"Valor_total_cartas":0,"puntos_finales":0}
         elif opc == 4:
             flg_00 = False
             flg_04 = True
@@ -221,9 +233,9 @@ while not flg_salir:
         players_dicti = bbdd.get_personajes()
         opc = interface.management_menu(title=1,menu=menu02)
         if opc == 1:
-            aux = juego.elegirpersonajejugar(players_dicti)
+            jugando = juego.elegirpersonajejugar(players_dicti)
             for key in players_dicti:
-                if key in aux:
+                if key in jugando:
                     players_dicti[key]["In_Game"] = True
                 else:
                     players_dicti[key]["In_Game"] = False
@@ -248,11 +260,11 @@ while not flg_salir:
         players_dicti = bbdd.get_personajes()
         opc = interface.management_menu(title=1,menu=menu04)
         if opc == 1:
-            print(1)
+            juego.raking_id(players_dicti)
         elif opc == 2:
-            print(2)
+            juego.raking_puntos(players_dicti)
         elif opc == 3:
-            print(3)
+            juego.raking_minuts_played(players_dicti)
         else:
             flg_04 = False
             flg_00 = True
