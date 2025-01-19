@@ -1,5 +1,6 @@
 import Funciones.gestionar_interfaz as interface
 import Funciones.gestionar_base_de_datos as bbdd
+import random
 
 #Elegir la ronda maxima.
 def rondamaxima():
@@ -25,9 +26,11 @@ def showplayer(player_dicto):
             lista_users.append(key)
         print()
         print("Ver/Eliminar jugadores".center(50, "="))
+        print()
+        print("".center(50,"="))
+        print( "".ljust(5) + "NIF".ljust(15) + "NAME".ljust(15) + "TYPE".rjust(15))
         for i in range(pag * 10, min((pag + 1) * 10, len(lista_users))):
-            aux = str(i+1) + ") " + lista_users[i]
-            print(aux.center(50))
+            print("{})".format(str(i+1)).ljust(5) + lista_users[i].ljust(15) + player_dicto[lista_users[i]]["Name"].ljust(15) + player_dicto[lista_users[i]]["Type"].rjust(15))
         print()
         elegir = input("Elimina jugadores (-num), avanza (+) o retrocede (-), y 0 para salir: ".rjust(30))
         print()
@@ -58,7 +61,7 @@ def showplayer(player_dicto):
         else:
             print("Opcion incorrecta".center(50))
         print()
-        input("Press enter to continue".rjust(30))
+        input("Press enter to continue".center(50))
 
 def nuevohumano(player_dicto):
     letras_dni = ("T", "R", "W", "A", "G", "M", "Y",
@@ -74,15 +77,17 @@ def nuevohumano(player_dicto):
         aux = name.replace(" ","")
         if not aux.isalpha():
             print("Solo puede contener letras y espacios".center(50))
+        elif len(name) > 10 or len(name) < 1:
+            print("El nombre debe medir entre 1 a 10 caracteres maximo.".center(50))
         else:
             while True:
                 nif = input("Nif: ".rjust(30))
                 print()
                 if nif in player_dicto:
                     print("El NIF ya existe")
-                elif not nif[0:7].isdigit():
+                elif not nif[0:8].isdigit():
                     print("Los primeros 8 caracteres deben ser numeros".center(50))
-                elif letras_dni[int(nif[0:7])%23] != nif[8]:
+                elif letras_dni[int(nif[0:8])%23] != nif[8]:
                     print("La letra no es la correcta".center(50))
                 else:
                     profiles = ("Select your Profile:","Cauteloso","Moderado","Arriesgado")
@@ -106,30 +111,29 @@ def nuevobot(player_dicto):
                   "K", "E")
     while True:
         print("".center(50,"="))
-        print("New Human Player".center(50))
+        print("New Bot Player".center(50))
         print("".center(50,"="))
         print()
         name = input("Name: ".rjust(30))
-        while True:
-            nif = input("Nif: ".rjust(30))
-            print()
-            if nif in player_dicto:
-                print("El NIF ya existe")
-            elif not nif[0:7].isdigit():
-                print("Los primeros 8 caracteres deben ser numeros".center(50))
-            elif not letras_dni[int(nif[0:7])%23] != nif[8]:
-                print("La letra no es la correcta".center(50))
-            else:
-                profiles = ("Select your Profile:","Cauteloso","Moderado","Arriesgado")
-                profile = interface.management_menu(title=1,menu=profiles)
-                aux = input("Estas seguro? S/N: ".rjust(30))
-                if aux.upper() == "S":
-                    player_dicto[nif]= {
-                            "Name": name,
-                            "Risk": profile,
-                            "Type": "Bot",
-                            "Puntos": 20,
-                            "Minutos_Jugados": 0,
-                            "In_Game": False
-                        }
-                return
+        if len(name) > 10 or len(name) < 1:
+            print("El nombre debe medir entre 1 a 10 caracteres maximo.".center(50))
+        else:
+            while True:
+                num = random.randint(11111111,99999999)
+                letra = letras_dni[num%23]
+                nif = str(num) + letra
+                print()
+                if nif not in player_dicto:
+                    profiles = ("Select your Profile:","Cauteloso","Moderado","Arriesgado")
+                    profile = interface.management_menu(title=1,menu=profiles)
+                    aux = input("Estas seguro? S/N: ".rjust(30))
+                    if aux.upper() == "S":
+                        player_dicto[nif]= {
+                                "Name": name,
+                                "Risk": profile,
+                                "Type": "Bot",
+                                "Puntos": 20,
+                                "Minutos_Jugados": 0,
+                                "In_Game": False
+                            }
+                    return
