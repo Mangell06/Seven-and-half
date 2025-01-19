@@ -224,6 +224,7 @@ def crearcontext(jugadores,contexto,partidas,players):
         contexto[len(partidas) + 1][key] = {
             "Puntos_iniciales": players[key]["Puntos"],
             "Prioridad": contador,
+            "Puntos_ganados":0,
             "Puntos_finales": 0,
             "Carta_inicial": "",
             "Cartas": []
@@ -239,24 +240,23 @@ def priority(jugadores, contexto, partidas, carts):
             contexto[len(partidas) + 1][jugadores[contador]]["Cartas"].append(carts[carta])
             contador += 1
 
-
 def selectpriority(contexto, jugadores, carts, partidas):
     partida_actual = len(partidas) + 1
-
-    # Extraer los jugadores y sus cartas en un formato adecuado
     jugadores_cartas = []
     for jugador in jugadores:
         carta = contexto[partida_actual][jugador]["Cartas"][0]
         real_value = carts[carta]["realValue"]
         priority = carts[carta]["priority"]
         jugadores_cartas.append((jugador, carta, real_value, priority))
-
-    # Ordenar los jugadores por realValue y luego por priority
     jugadores_cartas.sort(key=lambda x: (x[2], x[3]))
-
-    # Asignar las nuevas prioridades
     for idx, (jugador, carta, _, _) in enumerate(jugadores_cartas):
         contexto[partida_actual][jugador]["Prioridad"] = idx + 1
+    for pasadas in range(len(jugadores)):
+        for i in range(len(jugadores)-1-pasadas):
+            if contexto[partida_actual][jugadores[i]]["Prioridad"] > contexto[partida_actual][jugadores[i+1]]["Prioridad"]:
+                aux = jugadores[i]
+                jugadores[i] = jugadores[i+1]
+                jugadores[i+1] = aux
 
 def limpiarcartas(contexto,partidas):
     for key in contexto[len(partidas) + 1]:
