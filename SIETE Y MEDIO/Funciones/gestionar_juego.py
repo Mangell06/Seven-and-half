@@ -229,12 +229,35 @@ def crearcontext(jugadores,contexto,partidas,players):
             "Cartas": []
         }
 
-def priority(jugadores,contexto,partidas,carts):
+def priority(jugadores, contexto, partidas, carts):
     asignadas = []
     contador = 0
-    while contador <= len(jugadores)-1:
-        carta = random.randint(0, len(carts))
+    while contador < len(jugadores):
+        carta = random.randint(0, len(carts) - 1)
         if carts[carta] not in asignadas:
             asignadas.append(carts[carta])
             contexto[len(partidas) + 1][jugadores[contador]]["Cartas"].append(carts[carta])
             contador += 1
+
+
+def selectpriority(contexto, jugadores, carts, partidas):
+    partida_actual = len(partidas) + 1
+
+    # Extraer los jugadores y sus cartas en un formato adecuado
+    jugadores_cartas = []
+    for jugador in jugadores:
+        carta = contexto[partida_actual][jugador]["Cartas"][0]
+        real_value = carts[carta]["realValue"]
+        priority = carts[carta]["priority"]
+        jugadores_cartas.append((jugador, carta, real_value, priority))
+
+    # Ordenar los jugadores por realValue y luego por priority
+    jugadores_cartas.sort(key=lambda x: (x[2], x[3]))
+
+    # Asignar las nuevas prioridades
+    for idx, (jugador, carta, _, _) in enumerate(jugadores_cartas):
+        contexto[partida_actual][jugador]["Prioridad"] = idx + 1
+
+def limpiarcartas(contexto,partidas):
+    for key in contexto[len(partidas) + 1]:
+        contexto[len(partidas) + 1][key]["Cartas"] = []

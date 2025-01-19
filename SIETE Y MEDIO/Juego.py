@@ -209,6 +209,8 @@ while not flg_salir:
                 aux_priority = []
                 juego.crearcontext(jugando,player_party,partidas_dicti,players_dicti)
                 juego.priority(jugando,player_party,partidas_dicti,mazo)
+                juego.selectpriority(player_party,jugando,cartas_game,partidas_dicti)
+                juego.limpiarcartas(player_party,partidas_dicti)
                 print(player_party)
         elif opc == 4:
             flg_00 = False
