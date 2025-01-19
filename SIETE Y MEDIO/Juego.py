@@ -190,7 +190,6 @@ player_round = {}
 
 while not flg_salir:
     while flg_00:
-        players_dicti = bbdd.get_personajes()
         opc = interface.management_menu(title=2,menu=menu00)
         if opc == 1:
             flg_00 = False
@@ -200,7 +199,10 @@ while not flg_salir:
             flg_02 = True
         elif opc == 3:
             if new_party[len(partidas_dicti) + 1]["Mazo"] == "":
-                print("Elige un mazo con el que jugar en settings".center(50))
+                print("Elige un mazo con el que jugar en ajustes".center(50))
+                input("Presiona enter para continuar".center(50))
+            elif len(jugando) <= 1:
+                print("Elige minimo dos jugadores para jugar en ajustes")
                 input("Presiona enter para continuar".center(50))
             else:
                 new_party[len(partidas_dicti) + 1]["start_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -224,7 +226,6 @@ while not flg_salir:
             flg_salir = True
 
     while flg_01:
-        players_dicti = bbdd.get_personajes()
         opc = interface.management_menu(title=1,menu=menu01)
         if opc == 1:
             diccionarios.nuevohumano(players_dicti)
@@ -264,7 +265,6 @@ while not flg_salir:
             flg_00 = True
 
     while flg_04:
-        players_dicti = bbdd.get_personajes()
         opc = interface.management_menu(title=1,menu=menu04)
         if opc == 1:
             juego.raking_id(players_dicti)
