@@ -1,4 +1,5 @@
 import datetime
+import random
 
 #Escribir texto en el LOGS.txt como debugger
 def loginfo(texto):
@@ -227,3 +228,13 @@ def crearcontext(jugadores,contexto,partidas,players):
             "Carta_inicial": "",
             "Cartas": []
         }
+
+def priority(jugadores,contexto,partidas,carts):
+    asignadas = []
+    contador = 0
+    while contador <= len(jugadores)-1:
+        carta = random.randint(0, len(carts))
+        if carts[carta] not in asignadas:
+            asignadas.append(carts[carta])
+            contexto[len(partidas) + 1][jugadores[contador]]["Cartas"].append(carts[carta])
+            contador += 1

@@ -1,5 +1,6 @@
 #Diccionario Cartas
 from datetime import datetime
+import random
 
 cartas_game = {
 
@@ -207,8 +208,7 @@ while not flg_salir:
                 mazo = juego.crearmazo(partidas_dicti,new_party,cartas_game)
                 aux_priority = []
                 juego.crearcontext(jugando,player_party,partidas_dicti,players_dicti)
-                for i in range(0,len(jugando)):
-                    aux_priority.append(mazo[i])
+                juego.priority(jugando,player_party,partidas_dicti,mazo)
                 print(player_party)
         elif opc == 4:
             flg_00 = False
