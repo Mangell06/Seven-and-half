@@ -186,6 +186,7 @@ player_round = {}
 
 while not flg_salir:
     while flg_00:
+        print(new_party)
         players_dicti = bbdd.get_personajes()
         opc = interface.management_menu(title=2,menu=menu00)
         if opc == 1:
@@ -259,11 +260,11 @@ while not flg_salir:
         players_dicti = bbdd.get_personajes()
         opc = interface.management_menu(title=1,menu=menu04)
         if opc == 1:
-            print(1)
+            juego.raking_id(players_dicti)
         elif opc == 2:
-            print(2)
+            juego.raking_puntos(players_dicti)
         elif opc == 3:
-            print(3)
+            juego.raking_minuts_played(players_dicti)
         else:
             flg_04 = False
             flg_00 = True
