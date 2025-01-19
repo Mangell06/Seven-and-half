@@ -162,9 +162,9 @@ menu01 = ("BBDD Jugadores","Nuevo Humano","Nuevo Bot","Ver/Eliminar Jugadores",
           "Volver atras")
 menu02 = ("Ajustes","Elegir jugadores jugando","Elegir Mazo",
           "Elegir ronda maxima (Por defecto 5 Rondas)","Volver atras")
-menu04 = ("Ranking","Players With More Earnings","Players With More Games Played",
-          "Players With More Minutes Played","Go back")
-menu05 = ("Reports","1","2","3","4","5","6","7","Go back")
+menu04 = ("Ranking","Jugadores por ID","Jugadores por puntos",
+          "Jugadores por minutos jugados","Volver atras")
+menu05 = ("Reports","1","2","3","4","5","6","7","Volver atras")
 
 set_cartas = ("Elige una carta","Española","Poker")
 
@@ -176,9 +176,12 @@ new_party = {len(partidas_dicti) + 1: {
     "Mazo": "",
     "Players":[]}}
 
-#Estructura {0:{"DNI":{"Puntos_iniciales":20,"Puntos_finales":55,"Carta_inicial":"EE1"},
-#               "DNI":{"Puntos_iniciales":29,"Puntos_finales":4,"Carta_inicial":"EO2"}}}
-player_party = {}
+#Estructura {0:{"DNI":{"Puntos_iniciales":20,"Prioridad":1,"Puntos_finales":55,"Carta_inicial":""},
+#               "DNI":{"Puntos_iniciales":29,"Proridad":2,"Puntos_finales":4,"Carta_inicial":""}}}
+player_party = {len(partidas_dicti) + 1:{}}
+
+#Estrucuta {"DNI":{Cartas_iniciales_esp:[[EO1,2],[EC3,1]],Cartas_iniciales_pk:[[PD1,5],[PC5,10]]}
+card_initial = {}
 
 #Estructura {0:{"DNI":{"Es_banca":True,"Apuesta":14,"Puntos_inciales":30,Valor_total_cartas:7.5,"Puntos_finales":44},
 #               "DNI"{"Es_banca":False,"Apuesta":14,"Puntos_inciales":20,Valor_total_cartas:7,"Puntos_finales":6}}}
@@ -186,7 +189,6 @@ player_round = {}
 
 while not flg_salir:
     while flg_00:
-        print(new_party)
         players_dicti = bbdd.get_personajes()
         opc = interface.management_menu(title=2,menu=menu00)
         if opc == 1:
@@ -203,8 +205,31 @@ while not flg_salir:
                 new_party[len(partidas_dicti) + 1]["start_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 new_party[len(partidas_dicti) + 1]["Players"] = jugando
                 mazo = juego.crearmazo(partidas_dicti,new_party,cartas_game)
-            for i in range(len(jugando)):
-                player_party[players_dicti[jugando[i]]] = {"Es banca":False,"Apuesta":0,"Puntos_iniciales":partidas_dicti[jugando[i]]["Puntos"],"Valor_total_cartas":0,"puntos_finales":0}
+                aux_priority = []
+                print(jugando)
+                contador = 0
+                for key in jugando:
+                    contador += 1
+                    player_party[len(partidas_dicti) + 1][key] = {
+                        "Puntos_iniciales": players_dicti[key]["Puntos"],
+                        "Prioridad": contador,
+                        "Puntos_finales": 0,
+                        "Carta_inicial": ""
+                    }
+                for i in range(0,len(jugando)):
+                    aux_priority.append(mazo[i])
+                for pasadas in range(len(aux_priority)):
+                    for i in range(0,len(aux_priority)-1-pasadas):
+                        if cartas_game[aux_priority[i]]["realValue"] > cartas_game[aux_priority[i+1]]["realValue"]:
+                            aux = player_party[len(partidas_dicti)+1][jugando[i+1]]["Prioridad"]
+                            player_party[len(partidas_dicti) + 1][jugando[i+1]]["Prioridad"] = player_party[len(partidas_dicti)+1][jugando[i]]["Prioridad"]
+                            player_party[len(partidas_dicti) + 1][jugando[i]]["Prioridad"] = aux
+                        elif cartas_game[aux_priority[i]]["realValue"] == cartas_game[aux_priority[i+1]]["realValue"]:
+                            if cartas_game[aux_priority[i]]["Priority"] > cartas_game[aux_priority[i+1]]["Priority"]:
+                                aux = player_party[len(partidas_dicti) + 1][jugando[i + 1]]["Prioridad"]
+                                player_party[len(partidas_dicti) + 1][jugando[i + 1]]["Prioridad"] = player_party[len(partidas_dicti) + 1][jugando[i]]["Prioridad"]
+                                player_party[len(partidas_dicti) + 1][jugando[i]]["Prioridad"] = aux
+                print(player_party)
         elif opc == 4:
             flg_00 = False
             flg_04 = True
