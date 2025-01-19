@@ -1,0 +1,178 @@
+[2025-01-19 16:38:07] [Juego Iniciado]
+[2025-01-19 16:38:07] Conexión exitosa a la base de datos.
+[2025-01-19 16:38:07] Conexión cerrada.
+[2025-01-19 16:38:07] Conexión exitosa a la base de datos.
+[2025-01-19 16:38:07] Conexión cerrada.
+[2025-01-19 16:38:07] Conexión exitosa a la base de datos.
+[2025-01-19 16:38:07] Conexión cerrada.
+[2025-01-19 16:38:07] Conexión exitosa a la base de datos.
+[2025-01-19 16:38:07] Conexión cerrada.
+[2025-01-19 16:38:07] Conexión exitosa a la base de datos.
+[2025-01-19 16:38:08] Conexión cerrada.
+[2025-01-19 16:38:10] El jugador a elegido una opcion
+[2025-01-19 16:38:10] Conexión exitosa a la base de datos.
+[2025-01-19 16:38:10] Conexión cerrada.
+[2025-01-19 16:38:11] El jugador a elegido una opcion
+[2025-01-19 16:38:11] Conexión exitosa a la base de datos.
+[2025-01-19 16:38:11] Conexión cerrada.
+[2025-01-19 16:38:12] El jugador a elegido una opcion
+[2025-01-19 16:38:13] Conexión exitosa a la base de datos.
+[2025-01-19 16:38:13] Conexión cerrada.
+[2025-01-19 16:38:14] El jugador a elegido una opcion
+[2025-01-19 16:38:14] Conexión exitosa a la base de datos.
+[2025-01-19 16:38:14] Conexión cerrada.
+[2025-01-19 16:38:16] El jugador a elegido una opcion
+[2025-01-19 16:38:16] Conexión exitosa a la base de datos.
+[2025-01-19 16:38:16] Conexión cerrada.
+[2025-01-19 16:41:13] [Juego Iniciado]
+[2025-01-19 16:41:13] Conexión exitosa a la base de datos.
+[2025-01-19 16:41:13] Conexión cerrada.
+[2025-01-19 16:41:13] Conexión exitosa a la base de datos.
+[2025-01-19 16:41:13] Conexión cerrada.
+[2025-01-19 16:41:14] Conexión exitosa a la base de datos.
+[2025-01-19 16:41:14] Conexión cerrada.
+[2025-01-19 16:41:14] Conexión exitosa a la base de datos.
+[2025-01-19 16:41:14] Conexión cerrada.
+[2025-01-19 16:41:14] Conexión exitosa a la base de datos.
+[2025-01-19 16:41:14] Conexión cerrada.
+[2025-01-19 16:41:15] El jugador a elegido una opcion
+[2025-01-19 16:41:15] Conexión exitosa a la base de datos.
+[2025-01-19 16:41:15] Conexión cerrada.
+[2025-01-19 16:41:16] El jugador a elegido una opcion
+[2025-01-19 16:41:16] Conexión exitosa a la base de datos.
+[2025-01-19 16:41:16] Conexión cerrada.
+[2025-01-19 16:41:17] El jugador a elegido una opcion
+[2025-01-19 16:41:17] Conexión exitosa a la base de datos.
+[2025-01-19 16:41:17] Conexión cerrada.
+[2025-01-19 16:41:18] El jugador a elegido una opcion
+[2025-01-19 16:41:18] Conexión exitosa a la base de datos.
+[2025-01-19 16:41:18] Conexión cerrada.
+[2025-01-19 16:41:19] El jugador a elegido una opcion
+[2025-01-19 16:43:37] [Juego Iniciado]
+[2025-01-19 16:43:37] Conexión exitosa a la base de datos.
+[2025-01-19 16:43:37] Conexión cerrada.
+[2025-01-19 16:43:37] Conexión exitosa a la base de datos.
+[2025-01-19 16:43:37] Conexión cerrada.
+[2025-01-19 16:43:37] Conexión exitosa a la base de datos.
+[2025-01-19 16:43:37] Conexión cerrada.
+[2025-01-19 16:43:37] Conexión exitosa a la base de datos.
+[2025-01-19 16:43:37] Conexión cerrada.
+[2025-01-19 16:43:37] Conexión exitosa a la base de datos.
+[2025-01-19 16:43:37] Conexión cerrada.
+[2025-01-19 16:43:42] El jugador a elegido una opcion
+[2025-01-19 16:43:42] Conexión exitosa a la base de datos.
+[2025-01-19 16:43:42] Conexión cerrada.
+[2025-01-19 16:43:42] El jugador a elegido una opcion
+[2025-01-19 16:43:43] Conexión exitosa a la base de datos.
+[2025-01-19 16:43:43] Conexión cerrada.
+[2025-01-19 16:43:43] El jugador a elegido una opcion
+[2025-01-19 16:43:44] Conexión exitosa a la base de datos.
+[2025-01-19 16:43:44] Conexión cerrada.
+[2025-01-19 16:43:45] El jugador a elegido una opcion
+[2025-01-19 16:43:45] Conexión exitosa a la base de datos.
+[2025-01-19 16:43:45] Conexión cerrada.
+[2025-01-19 16:43:46] El jugador a elegido una opcion
+[2025-01-19 16:43:46] Conexión exitosa a la base de datos.
+[2025-01-19 16:43:46] Conexión cerrada.
+[2025-01-19 16:44:03] [Juego Iniciado]
+[2025-01-19 16:44:03] Conexión exitosa a la base de datos.
+[2025-01-19 16:44:03] Conexión cerrada.
+[2025-01-19 16:44:03] Conexión exitosa a la base de datos.
+[2025-01-19 16:44:03] Conexión cerrada.
+[2025-01-19 16:44:03] Conexión exitosa a la base de datos.
+[2025-01-19 16:44:03] Conexión cerrada.
+[2025-01-19 16:44:03] Conexión exitosa a la base de datos.
+[2025-01-19 16:44:03] Conexión cerrada.
+[2025-01-19 16:44:03] Conexión exitosa a la base de datos.
+[2025-01-19 16:44:03] Conexión cerrada.
+[2025-01-19 16:44:05] El jugador a elegido una opcion
+[2025-01-19 16:44:05] Conexión exitosa a la base de datos.
+[2025-01-19 16:44:05] Conexión cerrada.
+[2025-01-19 16:44:06] El jugador a elegido una opcion
+[2025-01-19 16:44:06] Conexión exitosa a la base de datos.
+[2025-01-19 16:44:06] Conexión cerrada.
+[2025-01-19 16:44:07] El jugador a elegido una opcion
+[2025-01-19 16:44:07] Conexión exitosa a la base de datos.
+[2025-01-19 16:44:07] Conexión cerrada.
+[2025-01-19 16:44:08] El jugador a elegido una opcion
+[2025-01-19 16:44:08] Conexión exitosa a la base de datos.
+[2025-01-19 16:44:08] Conexión cerrada.
+[2025-01-19 16:44:10] El jugador a elegido una opcion
+[2025-01-19 16:44:10] Conexión exitosa a la base de datos.
+[2025-01-19 16:44:10] Conexión cerrada.
+[2025-01-19 16:47:34] [Juego Iniciado]
+[2025-01-19 16:47:34] Conexión exitosa a la base de datos.
+[2025-01-19 16:47:35] Conexión cerrada.
+[2025-01-19 16:47:35] Conexión exitosa a la base de datos.
+[2025-01-19 16:47:35] Conexión cerrada.
+[2025-01-19 16:47:35] Conexión exitosa a la base de datos.
+[2025-01-19 16:47:35] Conexión cerrada.
+[2025-01-19 16:47:35] Conexión exitosa a la base de datos.
+[2025-01-19 16:47:35] Conexión cerrada.
+[2025-01-19 16:47:35] Conexión exitosa a la base de datos.
+[2025-01-19 16:47:35] Conexión cerrada.
+[2025-01-19 16:47:37] El jugador a elegido una opcion
+[2025-01-19 16:47:37] Conexión exitosa a la base de datos.
+[2025-01-19 16:47:37] Conexión cerrada.
+[2025-01-19 16:47:38] El jugador a elegido una opcion
+[2025-01-19 16:47:38] Conexión exitosa a la base de datos.
+[2025-01-19 16:47:38] Conexión cerrada.
+[2025-01-19 16:47:39] El jugador a elegido una opcion
+[2025-01-19 16:47:39] Conexión exitosa a la base de datos.
+[2025-01-19 16:47:39] Conexión cerrada.
+[2025-01-19 16:47:40] El jugador a elegido una opcion
+[2025-01-19 16:47:40] Conexión exitosa a la base de datos.
+[2025-01-19 16:47:40] Conexión cerrada.
+[2025-01-19 16:47:42] El jugador a elegido una opcion
+[2025-01-19 16:49:31] [Juego Iniciado]
+[2025-01-19 16:49:31] Conexión exitosa a la base de datos.
+[2025-01-19 16:49:31] Conexión cerrada.
+[2025-01-19 16:49:31] Conexión exitosa a la base de datos.
+[2025-01-19 16:49:31] Conexión cerrada.
+[2025-01-19 16:49:31] Conexión exitosa a la base de datos.
+[2025-01-19 16:49:31] Conexión cerrada.
+[2025-01-19 16:49:31] Conexión exitosa a la base de datos.
+[2025-01-19 16:49:31] Conexión cerrada.
+[2025-01-19 16:49:31] Conexión exitosa a la base de datos.
+[2025-01-19 16:49:31] Conexión cerrada.
+[2025-01-19 16:49:34] El jugador a elegido una opcion
+[2025-01-19 16:49:34] Conexión exitosa a la base de datos.
+[2025-01-19 16:49:34] Conexión cerrada.
+[2025-01-19 16:49:34] El jugador a elegido una opcion
+[2025-01-19 16:49:34] Conexión exitosa a la base de datos.
+[2025-01-19 16:49:34] Conexión cerrada.
+[2025-01-19 16:49:35] El jugador a elegido una opcion
+[2025-01-19 16:49:36] Conexión exitosa a la base de datos.
+[2025-01-19 16:49:36] Conexión cerrada.
+[2025-01-19 16:49:36] El jugador a elegido una opcion
+[2025-01-19 16:49:36] Conexión exitosa a la base de datos.
+[2025-01-19 16:49:36] Conexión cerrada.
+[2025-01-19 16:49:38] El jugador a elegido una opcion
+[2025-01-19 16:49:38] Conexión exitosa a la base de datos.
+[2025-01-19 16:49:38] Conexión cerrada.
+[2025-01-19 16:53:50] [Juego Iniciado]
+[2025-01-19 16:53:50] Conexión exitosa a la base de datos.
+[2025-01-19 16:53:50] Conexión cerrada.
+[2025-01-19 16:53:51] Conexión exitosa a la base de datos.
+[2025-01-19 16:53:51] Conexión cerrada.
+[2025-01-19 16:53:51] Conexión exitosa a la base de datos.
+[2025-01-19 16:53:51] Conexión cerrada.
+[2025-01-19 16:53:51] Conexión exitosa a la base de datos.
+[2025-01-19 16:53:51] Conexión cerrada.
+[2025-01-19 16:53:51] Conexión exitosa a la base de datos.
+[2025-01-19 16:53:51] Conexión cerrada.
+[2025-01-19 16:53:53] El jugador a elegido una opcion
+[2025-01-19 16:53:53] Conexión exitosa a la base de datos.
+[2025-01-19 16:53:53] Conexión cerrada.
+[2025-01-19 16:53:53] El jugador a elegido una opcion
+[2025-01-19 16:53:53] Conexión exitosa a la base de datos.
+[2025-01-19 16:53:54] Conexión cerrada.
+[2025-01-19 16:53:55] El jugador a elegido una opcion
+[2025-01-19 16:53:56] Conexión exitosa a la base de datos.
+[2025-01-19 16:53:56] Conexión cerrada.
+[2025-01-19 16:53:56] El jugador a elegido una opcion
+[2025-01-19 16:53:56] Conexión exitosa a la base de datos.
+[2025-01-19 16:53:57] Conexión cerrada.
+[2025-01-19 16:53:58] El jugador a elegido una opcion
+[2025-01-19 16:53:58] Conexión exitosa a la base de datos.
+[2025-01-19 16:53:58] Conexión cerrada.

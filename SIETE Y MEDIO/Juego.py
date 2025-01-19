@@ -176,8 +176,8 @@ new_party = {len(partidas_dicti) + 1: {
     "Mazo": "",
     "Players":[]}}
 
-#Estructura {0:{"DNI":{"Puntos_iniciales":20,"Prioridad":1,"Puntos_finales":55,"Carta_inicial":""},
-#               "DNI":{"Puntos_iniciales":29,"Proridad":2,"Puntos_finales":4,"Carta_inicial":""}}}
+#Estructura {0:{"DNI":{"Puntos_iniciales":20,"Prioridad":1,"Puntos_finales":55,"Carta_inicial":"", Cartas=[]},
+#               "DNI":{"Puntos_iniciales":29,"Proridad":2,"Puntos_finales":4,"Carta_inicial":"", Cartas=[]}}}
 player_party = {len(partidas_dicti) + 1:{}}
 
 #Estrucuta {"DNI":{Cartas_iniciales_esp:[[EO1,2],[EC3,1]],Cartas_iniciales_pk:[[PD1,5],[PC5,10]]}
@@ -206,29 +206,9 @@ while not flg_salir:
                 new_party[len(partidas_dicti) + 1]["Players"] = jugando
                 mazo = juego.crearmazo(partidas_dicti,new_party,cartas_game)
                 aux_priority = []
-                print(jugando)
-                contador = 0
-                for key in jugando:
-                    contador += 1
-                    player_party[len(partidas_dicti) + 1][key] = {
-                        "Puntos_iniciales": players_dicti[key]["Puntos"],
-                        "Prioridad": contador,
-                        "Puntos_finales": 0,
-                        "Carta_inicial": ""
-                    }
+                juego.crearcontext(jugando,player_party,partidas_dicti,players_dicti)
                 for i in range(0,len(jugando)):
                     aux_priority.append(mazo[i])
-                for pasadas in range(len(aux_priority)):
-                    for i in range(0,len(aux_priority)-1-pasadas):
-                        if cartas_game[aux_priority[i]]["realValue"] > cartas_game[aux_priority[i+1]]["realValue"]:
-                            aux = player_party[len(partidas_dicti)+1][jugando[i+1]]["Prioridad"]
-                            player_party[len(partidas_dicti) + 1][jugando[i+1]]["Prioridad"] = player_party[len(partidas_dicti)+1][jugando[i]]["Prioridad"]
-                            player_party[len(partidas_dicti) + 1][jugando[i]]["Prioridad"] = aux
-                        elif cartas_game[aux_priority[i]]["realValue"] == cartas_game[aux_priority[i+1]]["realValue"]:
-                            if cartas_game[aux_priority[i]]["Priority"] > cartas_game[aux_priority[i+1]]["Priority"]:
-                                aux = player_party[len(partidas_dicti) + 1][jugando[i + 1]]["Prioridad"]
-                                player_party[len(partidas_dicti) + 1][jugando[i + 1]]["Prioridad"] = player_party[len(partidas_dicti) + 1][jugando[i]]["Prioridad"]
-                                player_party[len(partidas_dicti) + 1][jugando[i]]["Prioridad"] = aux
                 print(player_party)
         elif opc == 4:
             flg_00 = False

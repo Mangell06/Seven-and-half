@@ -215,3 +215,15 @@ def raking_puntos(personajes_dict):
         else:
             print("Opción inválida. Intente de nuevo.".center(50))
         input("Presiona enter para continuar".center(50))
+
+def crearcontext(jugadores,contexto,partidas,players):
+    contador = 0
+    for key in jugadores:
+        contador += 1
+        contexto[len(partidas) + 1][key] = {
+            "Puntos_iniciales": players[key]["Puntos"],
+            "Prioridad": contador,
+            "Puntos_finales": 0,
+            "Carta_inicial": "",
+            "Cartas": []
+        }
