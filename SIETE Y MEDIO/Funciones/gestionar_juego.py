@@ -112,3 +112,153 @@ def crearmazo(party_dicto,newparty_dicto,cartas):
             if key[0] == "P":
                 mazo.append(key)
     return mazo
+
+def raking_minuts_played():
+    personajes_dict = {
+        "1234": {"Name": "Juan", "Risk": "Moderado", "Type": "Bot", "Puntos": 50, "Minutos_Jugados": 100},
+        "5678": {"Name": "Ana", "Risk": "Miedoso", "Type": "Human", "Puntos": 75, "Minutos_Jugados": 200},
+        "2345": {"Name": "Luis", "Risk": "Audaz", "Type": "Bot", "Puntos": 65, "Minutos_Jugados": 150},
+        "6789": {"Name": "Isabel", "Risk": "Moderado", "Type": "Human", "Puntos": 80, "Minutos_Jugados": 180},
+        "3456": {"Name": "Carlos", "Risk": "Miedoso", "Type": "Bot", "Puntos": 55, "Minutos_Jugados": 120},
+        "7890": {"Name": "María", "Risk": "Audaz", "Type": "Human", "Puntos": 70, "Minutos_Jugados": 170},
+        "4567": {"Name": "Andrea", "Risk": "Moderado", "Type": "Human", "Puntos": 85, "Minutos_Jugados": 210},
+        "8901": {"Name": "Pedro", "Risk": "Miedoso", "Type": "Bot", "Puntos": 60, "Minutos_Jugados": 140},
+        "5679": {"Name": "Lucía", "Risk": "Audaz", "Type": "Human", "Puntos": 90, "Minutos_Jugados": 220},
+        "9012": {"Name": "Miguel", "Risk": "Moderado", "Type": "Bot", "Puntos": 75, "Minutos_Jugados": 130},
+        "6780": {"Name": "Clara", "Risk": "Miedoso", "Type": "Human", "Puntos": 95, "Minutos_Jugados": 230},
+        "1235": {"Name": "David", "Risk": "Audaz", "Type": "Bot", "Puntos": 50, "Minutos_Jugados": 110},
+    }
+
+    lista_ordenar = list(personajes_dict.keys())
+
+    for pasadas in range(len(lista_ordenar)):
+        cambios = False
+        for i in range(len(lista_ordenar) - 1 - pasadas):
+            if personajes_dict[lista_ordenar[i]]["Minutos_Jugados"] < personajes_dict[lista_ordenar[i + 1]]["Minutos_Jugados"]:
+                lista_ordenar[i], lista_ordenar[i + 1] = lista_ordenar[i + 1], lista_ordenar[i]
+                cambios = True
+        if not cambios:
+            break
+
+    pag = 0
+    while True:
+        print()
+        header_rank_ch = "ID".ljust(10) + "Name".ljust(15) + "Risk".ljust(10) + "Type".ljust(12) + "Puntos".rjust(10) + "Minutos Jugados".rjust(18)
+        print(header_rank_ch)
+
+        for i in range(pag * 10, min((pag + 1) * 10, len(lista_ordenar))):
+            ID = lista_ordenar[i]
+            personaje = personajes_dict[ID]
+            print(str(ID).ljust(10) + personaje["Name"].ljust(15) + personaje["Risk"].ljust(10) + personaje["Type"].ljust(12) + str(personaje["Puntos"]).rjust(10) + str(personaje["Minutos_Jugados"]).rjust(18))
+
+        elegir = input("Avanza (+) o retrocede (-), y 0 para salir: ".rjust(30))
+        if elegir == "+":
+            if (pag + 1) * 10 < len(lista_ordenar):
+                pag += 1
+        elif elegir == "-":
+            if pag > 0:
+                pag -= 1
+        elif elegir == "0":
+            break
+        else:
+            print("Opción inválida. Intente de nuevo.")
+
+def raking_id():
+    personajes_dict = {
+        "1234": {"Name": "Juan", "Risk": "Moderado", "Type": "Bot", "Puntos": 50, "Minutos_Jugados": 100},
+        "5678": {"Name": "Ana", "Risk": "Miedoso", "Type": "Human", "Puntos": 75, "Minutos_Jugados": 200},
+        "2345": {"Name": "Luis", "Risk": "Audaz", "Type": "Bot", "Puntos": 65, "Minutos_Jugados": 150},
+        "6789": {"Name": "Isabel", "Risk": "Moderado", "Type": "Human", "Puntos": 80, "Minutos_Jugados": 180},
+        "3456": {"Name": "Carlos", "Risk": "Miedoso", "Type": "Bot", "Puntos": 55, "Minutos_Jugados": 120},
+        "7890": {"Name": "María", "Risk": "Audaz", "Type": "Human", "Puntos": 70, "Minutos_Jugados": 170},
+        "4567": {"Name": "Andrea", "Risk": "Moderado", "Type": "Human", "Puntos": 85, "Minutos_Jugados": 210},
+        "8901": {"Name": "Pedro", "Risk": "Miedoso", "Type": "Bot", "Puntos": 60, "Minutos_Jugados": 140},
+        "5679": {"Name": "Lucía", "Risk": "Audaz", "Type": "Human", "Puntos": 90, "Minutos_Jugados": 220},
+        "9012": {"Name": "Miguel", "Risk": "Moderado", "Type": "Bot", "Puntos": 75, "Minutos_Jugados": 130},
+        "6780": {"Name": "Clara", "Risk": "Miedoso", "Type": "Human", "Puntos": 95, "Minutos_Jugados": 230},
+        "1235": {"Name": "David", "Risk": "Audaz", "Type": "Bot", "Puntos": 50, "Minutos_Jugados": 110},
+    }
+
+    lista_ordenar = list(personajes_dict.keys())
+
+    for pasadas in range(len(lista_ordenar)):
+        cambios = False
+        for i in range(len(lista_ordenar) - 1 - pasadas):
+            if int(lista_ordenar[i]) > int(lista_ordenar[i + 1]):
+                lista_ordenar[i], lista_ordenar[i + 1] = lista_ordenar[i + 1], lista_ordenar[i]
+                cambios = True
+        if not cambios:
+            break
+
+    pag = 0
+    while True:
+        print()
+        header_rank_ch = "ID".ljust(10) + "Name".ljust(15) + "Risk".ljust(10) + "Type".ljust(12) + "Puntos".rjust(10) + "Minutos Jugados".rjust(18)
+        print(header_rank_ch)
+
+        for i in range(pag * 10, min((pag + 1) * 10, len(lista_ordenar))):
+            ID = lista_ordenar[i]
+            personaje = personajes_dict[ID]
+            print(str(ID).ljust(10) + personaje["Name"].ljust(15) + personaje["Risk"].ljust(10) + personaje["Type"].ljust(12) + str(personaje["Puntos"]).rjust(10) + str(personaje["Minutos_Jugados"]).rjust(18))
+
+        elegir = input("Avanza (+) o retrocede (-), y 0 para salir: ".rjust(30))
+        if elegir == "+":
+            if (pag + 1) * 10 < len(lista_ordenar):
+                pag += 1
+        elif elegir == "-":
+            if pag > 0:
+                pag -= 1
+        elif elegir == "0":
+            break
+        else:
+            print("Opción inválida. Intente de nuevo.")
+
+def raking_puntos():
+    personajes_dict = {
+        "1234": {"Name": "Juan", "Risk": "Moderado", "Type": "Bot", "Puntos": 50, "Minutos_Jugados": 100},
+        "5678": {"Name": "Ana", "Risk": "Miedoso", "Type": "Human", "Puntos": 75, "Minutos_Jugados": 200},
+        "2345": {"Name": "Luis", "Risk": "Audaz", "Type": "Bot", "Puntos": 65, "Minutos_Jugados": 150},
+        "6789": {"Name": "Isabel", "Risk": "Moderado", "Type": "Human", "Puntos": 80, "Minutos_Jugados": 180},
+        "3456": {"Name": "Carlos", "Risk": "Miedoso", "Type": "Bot", "Puntos": 55, "Minutos_Jugados": 120},
+        "7890": {"Name": "María", "Risk": "Audaz", "Type": "Human", "Puntos": 70, "Minutos_Jugados": 170},
+        "4567": {"Name": "Andrea", "Risk": "Moderado", "Type": "Human", "Puntos": 85, "Minutos_Jugados": 210},
+        "8901": {"Name": "Pedro", "Risk": "Miedoso", "Type": "Bot", "Puntos": 60, "Minutos_Jugados": 140},
+        "5679": {"Name": "Lucía", "Risk": "Audaz", "Type": "Human", "Puntos": 90, "Minutos_Jugados": 220},
+        "9012": {"Name": "Miguel", "Risk": "Moderado", "Type": "Bot", "Puntos": 75, "Minutos_Jugados": 130},
+        "6780": {"Name": "Clara", "Risk": "Miedoso", "Type": "Human", "Puntos": 95, "Minutos_Jugados": 230},
+        "1235": {"Name": "David", "Risk": "Audaz", "Type": "Bot", "Puntos": 50, "Minutos_Jugados": 110},
+    }
+
+    lista_ordenar = list(personajes_dict.keys())
+
+    for pasadas in range(len(lista_ordenar)):
+        cambios = False
+        for i in range(len(lista_ordenar) - 1 - pasadas):
+            if personajes_dict[lista_ordenar[i]]["Puntos"] < personajes_dict[lista_ordenar[i + 1]]["Puntos"]:
+                lista_ordenar[i], lista_ordenar[i + 1] = lista_ordenar[i + 1], lista_ordenar[i]
+                cambios = True
+        if not cambios:
+            break
+
+    pag = 0
+    while True:
+        print()
+        header_rank_ch = "ID".ljust(10) + "Name".ljust(15) + "Risk".ljust(10) + "Type".ljust(12) + "Puntos".rjust(10) + "Minutos Jugados".rjust(18)
+        print(header_rank_ch)
+
+        for i in range(pag * 10, min((pag + 1) * 10, len(lista_ordenar))):
+            ID = lista_ordenar[i]
+            personaje = personajes_dict[ID]
+            print(str(ID).ljust(10) + personaje["Name"].ljust(15) + personaje["Risk"].ljust(10) + personaje["Type"].ljust(12) + str(personaje["Puntos"]).rjust(10) + str(personaje["Minutos_Jugados"]).rjust(18))
+
+        elegir = input("Avanza (+) o retrocede (-), y 0 para salir: ".rjust(30))
+        if elegir == "+":
+            if (pag + 1) * 10 < len(lista_ordenar):
+                pag += 1
+        elif elegir == "-":
+            if pag > 0:
+                pag -= 1
+        elif elegir == "0":
+            break
+        else:
+            print("Opción inválida. Intente de nuevo.")
