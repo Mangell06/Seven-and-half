@@ -203,6 +203,7 @@ player_round = {}
 
 while not flg_salir:
     while flg_00:
+        interface.clearscreen()
         opc = interface.management_menu(title=2, menu=menu00)
         if opc == 1:
             flg_00 = False
@@ -211,6 +212,7 @@ while not flg_salir:
             flg_00 = False
             flg_02 = True
         elif opc == 3:
+            interface.clearscreen()
             if new_party[len(partidas_dicti) + 1]["Mazo"] == "":
                 print("Elige un mazo con el que jugar en ajustes".center(50))
                 input("Presiona enter para continuar".center(50))
@@ -239,21 +241,27 @@ while not flg_salir:
             flg_salir = True
 
     while flg_01:
+        interface.clearscreen()
         opc = interface.management_menu(title=1, menu=menu01)
         if opc == 1:
+            interface.clearscreen()
             diccionarios.nuevohumano(players_dicti)
         elif opc == 2:
+            interface.clearscreen()
             diccionarios.nuevobot(players_dicti)
         elif opc == 3:
+            interface.clearscreen()
             diccionarios.showplayer(players_dicti)
         else:
             flg_01 = False
             flg_00 = True
 
     while flg_02:
+        interface.clearscreen()
         players_dicti = bbdd.get_personajes()
         opc = interface.management_menu(title=1, menu=menu02)
         if opc == 1:
+            interface.clearscreen()
             jugando = juego.elegirpersonajejugar(players_dicti)
             for key in players_dicti:
                 if key in jugando:
@@ -261,6 +269,7 @@ while not flg_salir:
                 else:
                     players_dicti[key]["In_Game"] = False
         elif opc == 2:
+            interface.clearscreen()
             players_dicti = bbdd.get_personajes()
             aux = interface.management_menu(title=1, menu=set_cartas)
             if aux == 1:
@@ -269,42 +278,51 @@ while not flg_salir:
                 new_party[len(partidas_dicti)+1]["Mazo"] = "Poker"
             aux = "Mazo establecido: {}".format(new_party[len(partidas_dicti)+1]["Mazo"])
             print(aux.center(50))
+            print()
             input("Presiona enter para continuar".center(50))
         elif opc == 3:
+            interface.clearscreen()
             aux = juego.rondamaxima()
+            mensaje = "El maximo de rondas de la partida ahora son {} rondas".format(aux)
             new_party[len(partidas_dicti)+1]["ID_Ganador"] = aux
+            print(mensaje.center(50))
+            print()
+            input("Presiona enter para continuar".center(50))
         else:
             flg_02 = False
             flg_00 = True
 
     while flg_04:
+        interface.clearscreen()
         opc = interface.management_menu(title=1, menu=menu04)
         if opc == 1:
+            interface.clearscreen()
             juego.raking_id(players_dicti)
         elif opc == 2:
+            interface.clearscreen()
             juego.raking_puntos(players_dicti)
         elif opc == 3:
+            interface.clearscreen()
             juego.raking_minuts_played(players_dicti)
         else:
             flg_04 = False
             flg_00 = True
 
     while flg_05:
+        interface.clearscreen()
         opc = interface.management_menu(title=1, menu=menu05)
         if opc == 1:
             interface.clearscreen()
             consulta.carta_inicial_mas_repetida_con_get_cartas()
-            input("\n\nPresiona enter para continuar")
-            interface.clearscreen()
+            input("\n\nPresiona enter para continuar".center(50))
         elif opc == 2:
             interface.clearscreen()
             consulta.jugador_apuesta_mas_alta_por_partida()
-            input("\n\nPresiona enter para continuar")
-            interface.clearscreen()
+            input("\n\nPresiona enter para continuar".center(50))
         elif opc == 3:
             interface.clearscreen()
             consulta.jugador_apuesta_mas_baja_por_partida()
-            input("\n\nPresiona enter para continuar")
+            input("\n\nPresiona enter para continuar".center(50))
             interface.clearscreen()
         elif opc == 4:
             print(4)
