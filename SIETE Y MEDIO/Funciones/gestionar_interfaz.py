@@ -1,5 +1,5 @@
 import gestionar_juego as funcion_juego
-
+import os
 #Crear automaticamente menus y pedir opciones.
 def management_menu(title=1,menu=()):
     while True:
@@ -23,3 +23,13 @@ def management_menu(title=1,menu=()):
             return int(option)
         print()
         input("Presiona enter para continuar".rjust(30))
+
+
+def clearscreen():
+    # Verificamos si el sistema operativo es Windows o no
+    if os.name == "nt":
+        # Para Windows
+        _ = os.system("cls")
+    else:
+        # Para otros sistemas operativos (Linux, macOS)
+        _ = os.system("clear")

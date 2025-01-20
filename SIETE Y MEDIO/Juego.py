@@ -15,6 +15,7 @@ import gestionar_interfaz as interface
 import gestionar_juego as juego
 import gestionar_diccionarios as diccionarios
 import gestionar_base_de_datos as bbdd
+import consultas_BBDD as consulta
 
 
 # Diccionario de Cartas
@@ -291,11 +292,20 @@ while not flg_salir:
     while flg_05:
         opc = interface.management_menu(title=1, menu=menu05)
         if opc == 1:
-            print(1)
+            interface.clearscreen()
+            consulta.carta_inicial_mas_repetida_con_get_cartas()
+            input("\n\nPresiona enter para continuar")
+            interface.clearscreen()
         elif opc == 2:
-            print(2)
+            interface.clearscreen()
+            consulta.jugador_apuesta_mas_alta_por_partida()
+            input("\n\nPresiona enter para continuar")
+            interface.clearscreen()
         elif opc == 3:
-            print(3)
+            interface.clearscreen()
+            consulta.jugador_apuesta_mas_baja_por_partida()
+            input("\n\nPresiona enter para continuar")
+            interface.clearscreen()
         elif opc == 4:
             print(4)
         elif opc == 5:
