@@ -1,18 +1,21 @@
 # Importaciones de los módulos
 from datetime import datetime
 import random
+import os
 import sys
+
+# Obtener la ruta absoluta de la carpeta donde se encuentra el archivo Juego.py
+base_path = os.path.dirname(os.path.abspath(__file__))
+
+# Añadir la carpeta Funciones a sys.path para que Python pueda encontrar los módulos
+funciones_path = os.path.join(base_path, 'Funciones')
+sys.path.append(funciones_path)
+
 import gestionar_interfaz as interface
 import gestionar_juego as juego
 import gestionar_diccionarios as diccionarios
 import gestionar_base_de_datos as bbdd
 
-
-# Agregar la ruta de la carpeta Funciones al sys.path
-ruta_funciones = r'C:\Users\Nazan\Documents\GitHub\Seven-and-middle\SIETE Y MEDIO\Funciones'
-
-# Asegurarse de que la ruta esté incluida en el sistema de búsqueda de módulos
-sys.path.append(ruta_funciones)
 
 # Diccionario de Cartas
 
