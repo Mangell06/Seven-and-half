@@ -6,8 +6,12 @@ import random
 def rondamaxima():
     while True:
         ronda = input("Introduce el maximo de rondas (del 1 al 30):".rjust(29))
+        print()
         if ronda.replace(" ","") == "":
             ronda = "5"
+            print("El maximo de rondas de la partida ahora son 5 rondas".center(50))
+            print()
+            input("Presiona enter para continuar".center(50))
             return int(ronda)
         if not ronda.isdigit():
             print("Debe ser un numero".center(50))
