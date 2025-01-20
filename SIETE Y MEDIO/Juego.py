@@ -11,6 +11,7 @@ ruta_funciones = r'C:\Users\Nazan\Documents\GitHub\Seven-and-middle\SIETE Y MEDI
 sys.path.append(ruta_funciones)
 
 # Importaciones de los módulos
+
 import gestionar_interfaz as interface
 import gestionar_juego as juego
 import gestionar_diccionarios as diccionarios
