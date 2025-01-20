@@ -1,12 +1,29 @@
-#Diccionario Cartas
+# Importaciones de los módulos
 from datetime import datetime
 import random
+import os
+import sys
+
+# Obtener la ruta absoluta de la carpeta donde se encuentra el archivo Juego.py
+base_path = os.path.dirname(os.path.abspath(__file__))
+
+# Añadir la carpeta Funciones a sys.path para que Python pueda encontrar los módulos
+funciones_path = os.path.join(base_path, 'Funciones')
+sys.path.append(funciones_path)
+
+import gestionar_interfaz as interface
+import gestionar_juego as juego
+import gestionar_diccionarios as diccionarios
+import gestionar_base_de_datos as bbdd
+
+
+# Diccionario de Cartas
 
 cartas_game = {
 
-    #BARAJA ESPAÑOLA:
+    # BARAJA ESPAÑOLA:
 
-    #OROS
+    # OROS
     "EO1": {"literal": "As de Oros", "value": 1, "priority": 1, "realValue": 1},
     "EO2": {"literal": "Dos de Oros", "value": 2, "priority": 1, "realValue": 2},
     "EO3": {"literal": "Tres de Oros", "value": 3, "priority": 1, "realValue": 3},
@@ -20,7 +37,7 @@ cartas_game = {
     "EO11": {"literal": "Sota de Oros", "value": 0.5, "priority": 1, "realValue": 11},
     "EO12": {"literal": "Caballo de Oros", "value": 0.5, "priority": 1, "realValue": 12},
     "EO13": {"literal": "Rey de Oros", "value": 0.5, "priority": 1, "realValue": 13},
-    #COPAS
+    # COPAS
     "EC1": {"literal": "As de Copas", "value": 1, "priority": 2, "realValue": 1},
     "EC2": {"literal": "Dos de Copas", "value": 2, "priority": 2, "realValue": 2},
     "EC3": {"literal": "Tres de Copas", "value": 3, "priority": 2, "realValue": 3},
@@ -34,7 +51,7 @@ cartas_game = {
     "EC11": {"literal": "Sota de Copas", "value": 0.5, "priority": 2, "realValue": 11},
     "EC12": {"literal": "Caballo de Copas", "value": 0.5, "priority": 2, "realValue": 12},
     "EC13": {"literal": "Rey de Copas", "value": 0.5, "priority": 2, "realValue": 13},
-    #ESPADAS
+    # ESPADAS
     "EE1": {"literal": "As de Espadas", "value": 1, "priority": 3, "realValue": 1},
     "EE2": {"literal": "Dos de Espadas", "value": 2, "priority": 3, "realValue": 2},
     "EE3": {"literal": "Tres de Espadas", "value": 3, "priority": 3, "realValue": 3},
@@ -48,7 +65,7 @@ cartas_game = {
     "EE11": {"literal": "Sota de Espadas", "value": 0.5, "priority": 3, "realValue": 11},
     "EE12": {"literal": "Caballo de Espadas", "value": 0.5, "priority": 3, "realValue": 12},
     "EE13": {"literal": "Rey de Espadas", "value": 0.5, "priority": 3, "realValue": 13},
-    #BASTONES
+    # BASTONES
     "EB1": {"literal": "As de Bastos", "value": 1, "priority": 4, "realValue": 1},
     "EB2": {"literal": "Dos de Bastos", "value": 2, "priority": 4, "realValue": 2},
     "EB3": {"literal": "Tres de Bastos", "value": 3, "priority": 4, "realValue": 3},
@@ -63,9 +80,9 @@ cartas_game = {
     "EB12": {"literal": "Caballo de Bastos", "value": 0.5, "priority": 4, "realValue": 12},
     "EB13": {"literal": "Rey de Bastos", "value": 0.5, "priority": 4, "realValue": 13},
 
-    #BARAJA POKER:
+    # BARAJA POKER:
 
-    #DIAMANTES
+    # DIAMANTES
     "PD1": {"literal": "As de Diamantes", "value": 1, "priority": 1, "realValue": 1},
     "PD2": {"literal": "Dos de Diamantes", "value": 2, "priority": 1, "realValue": 2},
     "PD3": {"literal": "Tres de Diamantes", "value": 3, "priority": 1, "realValue": 3},
@@ -79,7 +96,7 @@ cartas_game = {
     "PD11": {"literal": "Jota de Diamantes", "value": 0.5, "priority": 1, "realValue": 11},
     "PD12": {"literal": "Reina de Diamantes", "value": 0.5, "priority": 1, "realValue": 12},
     "PD13": {"literal": "Rey de Diamantes", "value": 0.5, "priority": 1, "realValue": 13},
-    #CORAZONES
+    # CORAZONES
     "PC1": {"literal": "As de Corazones", "value": 1, "priority": 2, "realValue": 1},
     "PC2": {"literal": "Dos de Corazones", "value": 2, "priority": 2, "realValue": 2},
     "PC3": {"literal": "Tres de Corazones", "value": 3, "priority": 2, "realValue": 3},
@@ -93,7 +110,7 @@ cartas_game = {
     "PC11": {"literal": "Jota de Corazones", "value": 0.5, "priority": 2, "realValue": 11},
     "PC12": {"literal": "Reina de Corazones", "value": 0.5, "priority": 2, "realValue": 12},
     "PC13": {"literal": "Rey de Corazones", "value": 0.5, "priority": 2, "realValue": 13},
-    #PICAS
+    # PICAS
     "PP1": {"literal": "As de Picas", "value": 1, "priority": 3, "realValue": 1},
     "PP2": {"literal": "Dos de Picas", "value": 2, "priority": 3, "realValue": 2},
     "PP3": {"literal": "Tres de Picas", "value": 3, "priority": 3, "realValue": 3},
@@ -107,7 +124,7 @@ cartas_game = {
     "PP11": {"literal": "Jota de Picas", "value": 0.5, "priority": 3, "realValue": 11},
     "PP12": {"literal": "Reina de Picas", "value": 0.5, "priority": 3, "realValue": 12},
     "PP13": {"literal": "Rey de Picas", "value": 0.5, "priority": 3, "realValue": 13},
-    #TREBOLES
+    # TREBOLES
     "PT1": {"literal": "As de Tréboles", "value": 1, "priority": 4, "realValue": 1},
     "PT2": {"literal": "Dos de Tréboles", "value": 2, "priority": 4, "realValue": 2},
     "PT3": {"literal": "Tres de Tréboles", "value": 3, "priority": 4, "realValue": 3},
@@ -123,31 +140,17 @@ cartas_game = {
     "PT13": {"literal": "Rey de Tréboles", "value": 0.5, "priority": 4, "realValue": 13}
 }
 
-import sys
-import os
 
-# Agregar la ruta de la carpeta Funciones al sys.path
-ruta_funciones = r'C:\Users\Nazan\Documents\GitHub\Seven-and-middle\SIETE Y MEDIO\Funciones'
-
-# Asegurarse de que la ruta esté incluida en el sistema de búsqueda de módulos
-sys.path.append(ruta_funciones)
-
-# Importaciones de los módulos
-import gestionar_interfaz as interface
-import gestionar_juego as juego
-import gestionar_diccionarios as diccionarios
-import gestionar_base_de_datos as bbdd
-
-#Mensaje del log cuando inicia el juego
+# Mensaje del log cuando inicia el juego
 juego.loginfo("[Juego Iniciado]")
 
-#Sacar diccionarios de la base de datos
+# Sacar diccionarios de la base de datos
 players_dicti = bbdd.get_personajes()
 cartas_dicti = bbdd.get_cartas()
 historial_dicti = bbdd.get_historial()
 partidas_dicti = bbdd.get_partidas()
 
-#Sacar listas de keys de los diccionarios
+# Sacar listas de keys de los diccionarios
 players_list = []
 for key in players_dicti:
     players_list.append(key)
@@ -157,7 +160,7 @@ for key in players_dicti:
     if players_dicti[key]["In_Game"]:
         jugando.append(key)
 
-#Flags
+# Flags
 flg_salir = False
 flg_00 = True
 flg_01 = False
@@ -165,18 +168,18 @@ flg_02 = False
 flg_04 = False
 flg_05 = False
 
-#Menus
-menu00 = ("Siete y medio","Esteve Terradas","Añadir/Eliminar/Ver Jugadores",
-          "Ajustes","Jugar","Ranking","Reportes","Salir")
-menu01 = ("BBDD Jugadores","Nuevo Humano","Nuevo Bot","Ver/Eliminar Jugadores",
+# Menus
+menu00 = ("Siete y medio", "Esteve Terradas", "Añadir/Eliminar/Ver Jugadores",
+          "Ajustes", "Jugar", "Ranking", "Reportes", "Salir")
+menu01 = ("BBDD Jugadores", "Nuevo Humano", "Nuevo Bot", "Ver/Eliminar Jugadores",
           "Volver atras")
-menu02 = ("Ajustes","Elegir jugadores jugando","Elegir Mazo",
-          "Elegir ronda maxima (Por defecto 5 Rondas)","Volver atras")
-menu04 = ("Ranking","Jugadores por ID","Jugadores por puntos",
-          "Jugadores por minutos jugados","Volver atras")
-menu05 = ("Reports","1","2","3","4","5","6","7","Volver atras")
+menu02 = ("Ajustes", "Elegir jugadores jugando", "Elegir Mazo",
+          "Elegir ronda maxima (Por defecto 5 Rondas)", "Volver atras")
+menu04 = ("Ranking", "Jugadores por ID", "Jugadores por puntos",
+          "Jugadores por minutos jugados", "Volver atras")
+menu05 = ("Reports", "1", "2", "3", "4", "5", "6", "7", "Volver atras")
 
-set_cartas = ("Elige una carta","Española","Poker")
+set_cartas = ("Elige una carta", "Española", "Poker")
 
 new_party = {len(partidas_dicti) + 1: {
     "start_date": "",
@@ -184,22 +187,22 @@ new_party = {len(partidas_dicti) + 1: {
     "ID_Ganador": "",
     "Total_Rondas": 5,
     "Mazo": "",
-    "Players":[]}}
+    "Players": []}}
 
-#Estructura {0:{"DNI":{"Puntos_iniciales":20,"Prioridad":1,"Puntos_finales":55,"Carta_inicial":"", Cartas=[]},
+# Estructura {0:{"DNI":{"Puntos_iniciales":20,"Prioridad":1,"Puntos_finales":55,"Carta_inicial":"", Cartas=[]},
 #               "DNI":{"Puntos_iniciales":29,"Proridad":2,"Puntos_finales":4,"Carta_inicial":"", Cartas=[]}}}
-player_party = {len(partidas_dicti) + 1:{}}
+player_party = {len(partidas_dicti) + 1: {}}
 
-#Estrucuta {"DNI":{Cartas_iniciales_esp:[[EO1,2],[EC3,1]],Cartas_iniciales_pk:[[PD1,5],[PC5,10]]}
+# Estrucuta {"DNI":{Cartas_iniciales_esp:[[EO1,2],[EC3,1]],Cartas_iniciales_pk:[[PD1,5],[PC5,10]]}
 card_initial = {}
 
-#Estructura {0:{"DNI":{"Es_banca":True,"Apuesta":14,"Puntos_inciales":30,Valor_total_cartas:7.5,"Puntos_finales":44},
+# Estructura {0:{"DNI":{"Es_banca":True,"Apuesta":14,"Puntos_inciales":30,Valor_total_cartas:7.5,"Puntos_finales":44},
 #               "DNI"{"Es_banca":False,"Apuesta":14,"Puntos_inciales":20,Valor_total_cartas:7,"Puntos_finales":6}}}
 player_round = {}
 
 while not flg_salir:
     while flg_00:
-        opc = interface.management_menu(title=2,menu=menu00)
+        opc = interface.management_menu(title=2, menu=menu00)
         if opc == 1:
             flg_00 = False
             flg_01 = True
@@ -216,12 +219,12 @@ while not flg_salir:
             else:
                 new_party[len(partidas_dicti) + 1]["start_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 new_party[len(partidas_dicti) + 1]["Players"] = jugando
-                mazo = juego.crearmazo(partidas_dicti,new_party,cartas_game)
+                mazo = juego.crearmazo(partidas_dicti, new_party, cartas_game)
                 aux_priority = []
-                juego.crearcontext(jugando,player_party,partidas_dicti,players_dicti)
-                juego.priority(jugando,player_party,partidas_dicti,mazo)
-                juego.selectpriority(player_party,jugando,cartas_game,partidas_dicti)
-                juego.limpiarcartas(player_party,partidas_dicti)
+                juego.crearcontext(jugando, player_party, partidas_dicti, players_dicti)
+                juego.priority(jugando, player_party, partidas_dicti, mazo)
+                juego.selectpriority(player_party, jugando, cartas_game, partidas_dicti)
+                juego.limpiarcartas(player_party, partidas_dicti)
                 print(player_party)
         elif opc == 4:
             flg_00 = False
@@ -235,7 +238,7 @@ while not flg_salir:
             flg_salir = True
 
     while flg_01:
-        opc = interface.management_menu(title=1,menu=menu01)
+        opc = interface.management_menu(title=1, menu=menu01)
         if opc == 1:
             diccionarios.nuevohumano(players_dicti)
         elif opc == 2:
@@ -248,7 +251,7 @@ while not flg_salir:
 
     while flg_02:
         players_dicti = bbdd.get_personajes()
-        opc = interface.management_menu(title=1,menu=menu02)
+        opc = interface.management_menu(title=1, menu=menu02)
         if opc == 1:
             jugando = juego.elegirpersonajejugar(players_dicti)
             for key in players_dicti:
@@ -258,7 +261,7 @@ while not flg_salir:
                     players_dicti[key]["In_Game"] = False
         elif opc == 2:
             players_dicti = bbdd.get_personajes()
-            aux = interface.management_menu(title=1,menu=set_cartas)
+            aux = interface.management_menu(title=1, menu=set_cartas)
             if aux == 1:
                 new_party[len(partidas_dicti)+1]["Mazo"] = "Española"
             else:
@@ -274,7 +277,7 @@ while not flg_salir:
             flg_00 = True
 
     while flg_04:
-        opc = interface.management_menu(title=1,menu=menu04)
+        opc = interface.management_menu(title=1, menu=menu04)
         if opc == 1:
             juego.raking_id(players_dicti)
         elif opc == 2:
@@ -286,7 +289,7 @@ while not flg_salir:
             flg_00 = True
 
     while flg_05:
-        opc = interface.management_menu(title=1,menu=menu05)
+        opc = interface.management_menu(title=1, menu=menu05)
         if opc == 1:
             print(1)
         elif opc == 2:
