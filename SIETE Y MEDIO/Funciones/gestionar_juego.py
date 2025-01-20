@@ -1,5 +1,6 @@
 import datetime
 import random
+import gestionar_interfaz
 
 #Escribir texto en el LOGS.txt como debugger
 def loginfo(texto):
@@ -218,17 +219,26 @@ def raking_puntos(personajes_dict):
         input("Presiona enter para continuar".center(50))
 
 def crearcontext(jugadores,contexto,partidas,players):
-    contador = 0
     for key in jugadores:
-        contador += 1
-        contexto[len(partidas) + 1][key] = {
+        contexto[len(partidas) + 1] = { key: {
             "Puntos_iniciales": players[key]["Puntos"],
-            "Prioridad": contador,
-            "Puntos_ganados":0,
             "Puntos_finales": 0,
-            "Carta_inicial": "",
+            "Carta_inicial": ""
+        }}
+
+def crearrondas(jugadores,contextorondas,partidas,players,contador):
+    contadore = 0
+    for key in jugadores:
+        contadore += 1
+        contextorondas[len(partidas) + 1][contador] = { key: {
+            "Es_banca": False,
+            "Prioridad": contadore,
+            "Apuesta": 0,
+            "Puntos_inciales": players[key]["Puntos"],
+            "Valor_total_cartas": 0,
             "Cartas": []
-        }
+        }}
+
 
 def priority(jugadores, contexto, partidas, carts):
     asignadas = []
@@ -261,3 +271,23 @@ def selectpriority(contexto, jugadores, carts, partidas):
 def limpiarcartas(contexto,partidas):
     for key in contexto[len(partidas) + 1]:
         contexto[len(partidas) + 1][key]["Cartas"] = []
+
+def rondas(contador,jugador,jugadoresenpartida,jugadores):
+    ronda = ("Turno {} Juega {}".format(contador,jugador),"Ver estados",
+             "Ver estados de jugadores","Apostar","Pedir Carta",
+             "Jugar ronda automaticamente","Pararse")
+    opc = gestionar_interfaz.management_menu(title=1,menu=ronda)
+    if opc == 1:
+        print("Nombre".ljust(10) + jugadores[jugador]["Name"].rjust(10))
+        print("Tipo".ljust(10) + jugadores[jugador]["Type"].rjust(10))
+        print()
+    elif opc == 2:
+        print(2)
+    elif opc == 3:
+        print(3)
+    elif opc == 4:
+        print(4)
+    elif opc == 5:
+        print(5)
+    else:
+        print(6)
