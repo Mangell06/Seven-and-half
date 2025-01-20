@@ -22,4 +22,4 @@ def management_menu(title=1,menu=()):
             funcion_juego.loginfo("El jugador a elegido una opcion")
             return int(option)
         print()
-        input("Press enter to continue".rjust(30))
+        input("Presiona enter para continuar".rjust(30))

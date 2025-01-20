@@ -83,7 +83,7 @@ def get_cartas():
             cartas_dict = {
                 row['ID_Jugadores']: {
                     "Carta_Inicial_Mas_Repetida": row['Carta_Inicial_Mas_Repetida'],
-                    "Carta_Inicial_Mas_Repetida_XVeces": row['Carta_Inicial_Mas_Repetida_XVeces'],
+                    "Carta_Inicial_Mas_Repetida_XVeces": row['Carta_inicial_Mas_Repetida_XVeces'],
                     "Carta_Inicial_Mas_Repetida_Palo": row['Carta_inicial_Mas_Repetida_Palo'],
                     "Carta_Inicial_Mas_Repetida_Palo_XVeces": row['Carta_inicial_Mas_Repetida_Palo_XVeces'],
                 } for row in results

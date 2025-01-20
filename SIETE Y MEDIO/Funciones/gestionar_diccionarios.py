@@ -16,7 +16,7 @@ def rondamaxima():
         else:
             return int(ronda)
         print()
-        input("Press enter to continue")
+        input("Presiona enter para continuar")
 
 def showplayer(player_dicto):
     pag = 0
@@ -61,7 +61,7 @@ def showplayer(player_dicto):
         else:
             print("Opcion incorrecta".center(50))
         print()
-        input("Press enter to continue".center(50))
+        input("Presiona enter para continuar".center(50))
 
 def nuevohumano(player_dicto):
     letras_dni = ("T", "R", "W", "A", "G", "M", "Y",
