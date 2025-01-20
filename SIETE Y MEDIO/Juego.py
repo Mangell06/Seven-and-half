@@ -222,14 +222,16 @@ while not flg_salir:
                 mazo = juego.crearmazo(partidas_dicti, new_party, cartas_game)
                 aux_priority = []
                 contador = 0
-                juego.crearcontxet(jugando, player_party, partidas_dicti, players_dicti)
-                #juego.crearrondas(jugando,player_round,partidas_dicti,players_dicti,contador)
-                #juego.priority(jugando, player_round, partidas_dicti, mazo)
-                #juego.selectpriority(player_round, jugando, cartas_game, partidas_dicti)
-                #juego.limpiarcartas(player_round, partidas_dicti)
+                juego.crearcontext(jugando, player_party, partidas_dicti, players_dicti)
+                juego.crearrondas(jugando,player_round,partidas_dicti,players_dicti,contador)
+                print(player_round)
+                print(contador)
+                juego.priority(jugando, player_round, partidas_dicti, mazo,contador)
+                juego.selectpriority(player_round, jugando, cartas_game, partidas_dicti,contador)
+                juego.limpiarcartas(player_round, partidas_dicti,contador)
                 #juego.rondas(contador,jugando[0])
                 print(player_party)
-                #print(player_round)
+                print(player_round)
         elif opc == 4:
             flg_00 = False
             flg_04 = True
