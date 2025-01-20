@@ -1,0 +1,20 @@
+[2025-01-20 17:02:01] Conexión exitosa a la base de datos.
+[2025-01-20 17:02:01] Conexión cerrada.
+[2025-01-20 17:02:01] Conexión exitosa a la base de datos.
+[2025-01-20 17:02:01] Conexión cerrada.
+[2025-01-20 17:18:13] Conexión exitosa a la base de datos.
+[2025-01-20 17:18:13] Conexión cerrada.
+[2025-01-20 17:18:13] Conexión exitosa a la base de datos.
+[2025-01-20 17:18:13] Conexión cerrada.
+[2025-01-20 17:21:13] Conexión exitosa a la base de datos.
+[2025-01-20 17:21:13] Conexión cerrada.
+[2025-01-20 17:21:13] Conexión exitosa a la base de datos.
+[2025-01-20 17:21:13] Conexión cerrada.
+[2025-01-20 17:21:55] Conexión exitosa a la base de datos.
+[2025-01-20 17:21:55] Conexión cerrada.
+[2025-01-20 17:21:55] Conexión exitosa a la base de datos.
+[2025-01-20 17:21:55] Conexión cerrada.
+[2025-01-20 17:35:22] Conexión exitosa a la base de datos.
+[2025-01-20 17:35:22] Conexión cerrada.
+[2025-01-20 17:35:22] Conexión exitosa a la base de datos.
+[2025-01-20 17:35:22] Conexión cerrada.

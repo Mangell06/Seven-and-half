@@ -123,11 +123,20 @@ cartas_game = {
     "PT13": {"literal": "Rey de Tréboles", "value": 0.5, "priority": 4, "realValue": 13}
 }
 
-#Importaciones:
-import Funciones.gestionar_interfaz as interface
-import Funciones.gestionar_juego as juego
-import Funciones.gestionar_diccionarios as diccionarios
-import Funciones.gestionar_base_de_datos as bbdd
+import sys
+import os
+
+# Agregar la ruta de la carpeta Funciones al sys.path
+ruta_funciones = r'C:\Users\Nazan\Documents\GitHub\Seven-and-middle\SIETE Y MEDIO\Funciones'
+
+# Asegurarse de que la ruta esté incluida en el sistema de búsqueda de módulos
+sys.path.append(ruta_funciones)
+
+# Importaciones de los módulos
+import gestionar_interfaz as interface
+import gestionar_juego as juego
+import gestionar_diccionarios as diccionarios
+import gestionar_base_de_datos as bbdd
 
 #Mensaje del log cuando inicia el juego
 juego.loginfo("[Juego Iniciado]")
