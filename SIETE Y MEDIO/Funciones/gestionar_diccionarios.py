@@ -9,8 +9,7 @@ def rondamaxima():
         print()
         if ronda.replace(" ","") == "":
             ronda = "5"
-            mensaje = "El maximo de rondas de la partida ahora son {} rondas".format(ronda)
-            print(mensaje.center(50))
+            print("El maximo de rondas de la partida ahora son 5 rondas".center(50))
             print()
             input("Presiona enter para continuar".center(50))
             return int(ronda)
@@ -19,10 +18,6 @@ def rondamaxima():
         elif int(ronda) not in range(1,31):
             print("Debe ser un numero del 1 al 30".center(50))
         else:
-            mensaje = "El maximo de rondas de la partida ahora son {} rondas".format(ronda)
-            print(mensaje.center(50))
-            print()
-            input("Presiona enter para continuar".center(50))
             return int(ronda)
         print()
         input("Presiona enter para continuar")

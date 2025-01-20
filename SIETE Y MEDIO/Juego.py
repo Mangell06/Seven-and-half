@@ -278,11 +278,16 @@ while not flg_salir:
                 new_party[len(partidas_dicti)+1]["Mazo"] = "Poker"
             aux = "Mazo establecido: {}".format(new_party[len(partidas_dicti)+1]["Mazo"])
             print(aux.center(50))
+            print()
             input("Presiona enter para continuar".center(50))
         elif opc == 3:
             interface.clearscreen()
             aux = juego.rondamaxima()
+            mensaje = "El maximo de rondas de la partida ahora son {} rondas".format(aux)
             new_party[len(partidas_dicti)+1]["ID_Ganador"] = aux
+            print(mensaje.center(50))
+            print()
+            input("Presiona enter para continuar".center(50))
         else:
             flg_02 = False
             flg_00 = True
@@ -309,15 +314,15 @@ while not flg_salir:
         if opc == 1:
             interface.clearscreen()
             consulta.carta_inicial_mas_repetida_con_get_cartas()
-            input("\n\nPresiona enter para continuar")
+            input("\n\nPresiona enter para continuar".center(50))
         elif opc == 2:
             interface.clearscreen()
             consulta.jugador_apuesta_mas_alta_por_partida()
-            input("\n\nPresiona enter para continuar")
+            input("\n\nPresiona enter para continuar".center(50))
         elif opc == 3:
             interface.clearscreen()
             consulta.jugador_apuesta_mas_baja_por_partida()
-            input("\n\nPresiona enter para continuar")
+            input("\n\nPresiona enter para continuar".center(50))
             interface.clearscreen()
         elif opc == 4:
             print(4)
