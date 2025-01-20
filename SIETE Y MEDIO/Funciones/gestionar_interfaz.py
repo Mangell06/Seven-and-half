@@ -1,4 +1,4 @@
-import Funciones.gestionar_juego as funcion_juego
+import gestionar_juego as funcion_juego
 
 #Crear automaticamente menus y pedir opciones.
 def management_menu(title=1,menu=()):

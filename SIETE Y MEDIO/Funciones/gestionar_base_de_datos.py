@@ -1,4 +1,4 @@
-from Funciones.gestionar_juego import loginfo
+import gestionar_juego as juego
 import pymysql
 
 # Configuración de conexión
@@ -21,17 +21,17 @@ def connect_to_database():
             database=db_config['database'],
             port=db_config['port']
         )
-        loginfo("Conexión exitosa a la base de datos.")
+        juego.loginfo("Conexión exitosa a la base de datos.")
         return connection
     except pymysql.MySQLError as e:
-        loginfo(f"Error al conectar a la base de datos: {e}")
+        juego.loginfo(f"Error al conectar a la base de datos: {e}")
         return None
 
 def close_connection(connection):
     """Cierra la conexión con la base de datos."""
     if connection:
         connection.close()
-        loginfo("Conexión cerrada.")
+        juego.loginfo("Conexión cerrada.")
 
 def delBBDDPlayer(nif):
     """
@@ -41,7 +41,7 @@ def delBBDDPlayer(nif):
     connection = connect_to_database()  # Conecta a la base de datos
 
     if not connection:
-        loginfo("Error: No se pudo conectar a la base de datos.")
+        juego.loginfo("Error: No se pudo conectar a la base de datos.")
         return
 
     try:
@@ -51,11 +51,11 @@ def delBBDDPlayer(nif):
 
             # Verificar si se eliminó alguna fila
             if cursor.rowcount > 0:
-                loginfo(f"El jugador con NIF {nif} ha sido eliminado.")
+                juego.loginfo(f"El jugador con NIF {nif} ha sido eliminado.")
             else:
-                loginfo(f"No se encontró ningún jugador con el NIF {nif}.")
+                juego.loginfo(f"No se encontró ningún jugador con el NIF {nif}.")
     except pymysql.MySQLError as e:
-        loginfo(f"Error al eliminar el jugador: {e}")
+        juego.loginfo(f"Error al eliminar el jugador: {e}")
     finally:
         close_connection(connection)  # Cerrar la conexión
 
@@ -67,7 +67,7 @@ def execute_query(connection, query):
             results = cursor.fetchall()
             return results
     except pymysql.MySQLError as e:
-        loginfo(f"Error al ejecutar la consulta: {e}")
+        juego.loginfo(f"Error al ejecutar la consulta: {e}")
         return None
 
 def get_cartas():

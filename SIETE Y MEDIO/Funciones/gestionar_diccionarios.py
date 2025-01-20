@@ -1,5 +1,5 @@
-import Funciones.gestionar_interfaz as interface
-import Funciones.gestionar_base_de_datos as bbdd
+import gestionar_interfaz as interface
+import gestionar_base_de_datos as bbdd
 import random
 
 #Elegir la ronda maxima.
