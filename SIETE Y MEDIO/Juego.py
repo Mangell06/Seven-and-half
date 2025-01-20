@@ -194,8 +194,8 @@ new_party = {len(partidas_dicti) + 1: {
 #               "DNI":{"Puntos_iniciales":29,"Puntos_finales":4,"Carta_inicial":""}}}
 player_party = {len(partidas_dicti) + 1: {}}
 
-# Estructura {0:{"DNI":{"Es_banca":True,"Proridad":1,"Apuesta":14,"Puntos_inciales":30,Valor_total_cartas:7.5,"Puntos_finales":44,Cartas=[]},
-#               "DNI"{"Es_banca":False,"Proridad":2,"Apuesta":14,"Puntos_inciales":20,Valor_total_cartas:7,"Puntos_finales":6,Cartas=[]}}}
+# Estructura {0:{"DNI":{"Es_banca":True,"Proridad":1,"Apuesta":14,"Proridad":2,"Puntos_inciales":30,Valor_total_cartas:7.5,"Puntos_finales":44,Cartas=[]},
+#               "DNI"{"Es_banca":False,"Apuesta":14,"Puntos_inciales":20,Valor_total_cartas:7,"Puntos_finales":6,Cartas=[]}}}
 player_round = {}
 
 while not flg_salir:
@@ -222,16 +222,12 @@ while not flg_salir:
                 mazo = juego.crearmazo(partidas_dicti, new_party, cartas_game)
                 aux_priority = []
                 contador = 0
-                juego.crearcontext(jugando, player_party, partidas_dicti, players_dicti)
+                juego.crearcontext(jugando, player_party, player_round,partidas_dicti, players_dicti)
                 juego.crearrondas(jugando,player_round,partidas_dicti,players_dicti,contador)
-                print(player_round)
-                print(contador)
                 juego.priority(jugando, player_round, partidas_dicti, mazo,contador)
-                juego.selectpriority(player_round, jugando, cartas_game, partidas_dicti,contador)
+                juego.selectprioridad(player_round, jugando, partidas_dicti,contador, cartas_game,player_party)
                 juego.limpiarcartas(player_round, partidas_dicti,contador)
                 #juego.rondas(contador,jugando[0])
-                print(player_party)
-                print(player_round)
         elif opc == 4:
             flg_00 = False
             flg_04 = True
