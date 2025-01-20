@@ -262,19 +262,20 @@ def selectprioridad(rondas, jugadores, partidas, contador, cartas_juego, context
             if jugador_actual in tron and jugador_siguiente in tron:
                 carta_actual = tron[jugador_actual]["Cartas"][0]
                 carta_siguiente = tron[jugador_siguiente]["Cartas"][0]
-                valor_carta_actual = int(carta_actual[2:])
-                valor_carta_siguiente = int(carta_siguiente[2:])
-                if valor_carta_actual > valor_carta_siguiente:
-                    aux = tpar[jugador_actual]["Prioridad"]
-                    tpar[jugador_actual]["Prioridad"] = tpar[jugador_siguiente]["Prioridad"]
-                    tpar[jugador_siguiente]["Prioridad"] = aux
-                elif valor_carta_actual == valor_carta_siguiente:
-                    prioridad_actual = cartas_juego.get(carta_actual, {}).get("priority", 0)
-                    prioridad_siguiente = cartas_juego.get(carta_siguiente, {}).get("priority", 0)
-                    if prioridad_actual < prioridad_siguiente:
+                if carta_actual in cartas_juego and carta_siguiente in cartas_juego:
+                    valor_carta_actual = cartas_juego[carta_actual].get("realValue", 0)
+                    valor_carta_siguiente = cartas_juego[carta_siguiente].get("realValue", 0)
+                    if valor_carta_actual > valor_carta_siguiente:
                         aux = tpar[jugador_actual]["Prioridad"]
                         tpar[jugador_actual]["Prioridad"] = tpar[jugador_siguiente]["Prioridad"]
                         tpar[jugador_siguiente]["Prioridad"] = aux
+                    elif valor_carta_actual == valor_carta_siguiente:
+                        prioridad_actual = tpar[jugador_actual]["Prioridad"]
+                        prioridad_siguiente = tpar[jugador_siguiente]["Prioridad"]
+                        if prioridad_actual < prioridad_siguiente:
+                            aux = tpar[jugador_actual]["Prioridad"]
+                            tpar[jugador_actual]["Prioridad"] = tpar[jugador_siguiente]["Prioridad"]
+                            tpar[jugador_siguiente]["Prioridad"] = aux
 
 def limpiarcartas(contexto,partidas,contador):
     for key in contexto[len(partidas) + 1][contador]:

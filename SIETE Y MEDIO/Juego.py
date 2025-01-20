@@ -226,7 +226,11 @@ while not flg_salir:
                 juego.crearrondas(jugando,player_round,partidas_dicti,players_dicti,contador)
                 juego.priority(jugando, player_round, partidas_dicti, mazo,contador)
                 juego.selectprioridad(player_round, jugando, partidas_dicti,contador, cartas_game,player_party)
+                print(player_party)
+                print(player_round)
                 juego.limpiarcartas(player_round, partidas_dicti,contador)
+                player_party = {len(partidas_dicti) + 1: {}}
+                player_round = {}
                 #juego.rondas(contador,jugando[0])
         elif opc == 4:
             flg_00 = False
