@@ -218,23 +218,24 @@ def raking_puntos(personajes_dict):
             print("Opción inválida. Intente de nuevo.".center(50))
         input("Presiona enter para continuar".center(50))
 
-def crearcontext(jugadores,contexto,partidas,players):
+def crearcontext(jugadores,contexto,contextorondas,partidas,players):
+    contextorondas[len(partidas) + 1] = {}
+    contador = 0
     for key in jugadores:
+        contador += 1
         contexto[len(partidas) + 1][key] = {
             "Puntos_iniciales": players[key]["Puntos"],
+            "Puntos":0,
             "Puntos_finales": 0,
+            "Prioridad":contador,
             "Carta_inicial": ""
         }
 
 def crearrondas(jugadores,contextorondas,partidas,players,contador):
-    contadore = 0
-    contextorondas[len(partidas) + 1] = {}
     contextorondas[len(partidas) + 1][contador] = {}
     for key in jugadores:
-        contadore += 1
         contextorondas[len(partidas) + 1][contador][key] = {
             "Es_banca": False,
-            "Prioridad": contadore,
             "Apuesta": 0,
             "Puntos_inciales": players[key]["Puntos"],
             "Valor_total_cartas": 0,
@@ -250,23 +251,30 @@ def priority(jugadores, contexto, partidas, carts,contador):
             asignadas.append(carts[carta])
             contexto[len(partidas) + 1][contador][key]["Cartas"].append(carts[carta])
 
-def selectpriority(contexto, jugadores, carts, partidas,contador):
-    partida_actual = len(partidas) + 1
-    jugadores_cartas = []
-    for jugador in jugadores:
-        carta = contexto[partida_actual][contador][jugador]["Cartas"][0]
-        real_value = carts[carta]["realValue"]
-        priority = carts[carta]["priority"]
-        jugadores_cartas.append((jugador, carta, real_value, priority))
-    jugadores_cartas.sort(key=lambda x: (x[2], x[3]))
-    for idx, (jugador, carta, _, _) in enumerate(jugadores_cartas):
-        contexto[partida_actual][contador][jugador]["Prioridad"] = idx + 1
-    for pasadas in range(len(jugadores)):
-        for i in range(len(jugadores)-1-pasadas):
-            if contexto[partida_actual][contador][jugadores[i]]["Prioridad"] > contexto[partida_actual][contador][jugadores[i+1]]["Prioridad"]:
-                aux = jugadores[i]
-                jugadores[i] = jugadores[i+1]
-                jugadores[i+1] = aux
+
+def selectprioridad(rondas, jugadores, partidas, contador, cartas_juego, contextpartida):
+    tron = rondas[len(partidas) + 1][contador]
+    tpar = contextpartida[len(partidas) + 1]
+    for pasadas in range(len(jugadores) - 1):
+        for i in range(len(jugadores) - 1 - pasadas):
+            jugador_actual = jugadores[i]
+            jugador_siguiente = jugadores[i + 1]
+            if jugador_actual in tron and jugador_siguiente in tron:
+                carta_actual = tron[jugador_actual]["Cartas"][0]
+                carta_siguiente = tron[jugador_siguiente]["Cartas"][0]
+                valor_carta_actual = int(carta_actual[2:])
+                valor_carta_siguiente = int(carta_siguiente[2:])
+                if valor_carta_actual > valor_carta_siguiente:
+                    aux = tpar[jugador_actual]["Prioridad"]
+                    tpar[jugador_actual]["Prioridad"] = tpar[jugador_siguiente]["Prioridad"]
+                    tpar[jugador_siguiente]["Prioridad"] = aux
+                elif valor_carta_actual == valor_carta_siguiente:
+                    prioridad_actual = cartas_juego.get(carta_actual, {}).get("priority", 0)
+                    prioridad_siguiente = cartas_juego.get(carta_siguiente, {}).get("priority", 0)
+                    if prioridad_actual < prioridad_siguiente:
+                        aux = tpar[jugador_actual]["Prioridad"]
+                        tpar[jugador_actual]["Prioridad"] = tpar[jugador_siguiente]["Prioridad"]
+                        tpar[jugador_siguiente]["Prioridad"] = aux
 
 def limpiarcartas(contexto,partidas,contador):
     for key in contexto[len(partidas) + 1][contador]:
