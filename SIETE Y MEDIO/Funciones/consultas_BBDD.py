@@ -5,6 +5,7 @@ import gestionar_juego as juego
 # CONSULTAS A LA BASE DE DATOS
 # ============================================================
 
+
 def carta_inicial_mas_repetida_con_get_cartas():
     """Obtiene la carta inicial más repetida por cada jugador con al menos 3 partidas."""
     cartas_dict = bbdd.get_cartas()
@@ -198,6 +199,91 @@ def jugador_apuesta_mas_baja_por_partida():
         return {}
 
 
+def porcentaje_rondas_ganadas_y_apuesta_media():
+    """Obtiene el porcentaje de rondas ganadas y la apuesta media por jugador en cada partida."""
+
+    # Consulta SQL para obtener los datos de rondas, apuestas, rondas ganadas y puntos iniciales.
+    query_rondas = """
+    SELECT 
+        r.ID_Partida,
+        r.ID_Jugador,
+        COUNT(*) AS Total_Rondas,
+        AVG(r.Apuesta) AS Apuesta_Media,
+        SUM(CASE 
+            WHEN (r.Puntos_Ganados - h.Puntos_Iniciales) = (
+                SELECT MAX(r1.Puntos_Ganados - h1.Puntos_Iniciales)
+                FROM siete_y_medio.rondas r1
+                JOIN siete_y_medio.historial h1 ON r1.ID_Jugador = h1.ID_Jugador
+                WHERE r1.ID_Partida = r.ID_Partida
+            ) THEN 1 ELSE 0 END) AS Rondas_Ganadas
+    FROM 
+        siete_y_medio.rondas r
+    JOIN 
+        siete_y_medio.historial h ON r.ID_Jugador = h.ID_Jugador AND r.ID_Partida = h.ID_Partida
+    GROUP BY 
+        r.ID_Partida, r.ID_Jugador;
+    """
+
+    # Establecer conexión a la base de datos
+    connection = bbdd.connect_to_database()
+
+    if connection:
+        try:
+            # Ejecutar la consulta para obtener los datos de rondas, apuestas y rondas ganadas
+            rondas_resultados = bbdd.execute_query(connection, query_rondas)
+            bbdd.close_connection(connection)
+
+            if not rondas_resultados:
+                juego.loginfo("No se encontraron resultados de rondas en la base de datos.")
+                return {}
+
+            # Cabecera de la tabla
+            cabecera_rondas = "".center(88,
+                                        "-") + "\n" + "| {:<12} | {:<12} | {:<18} | {:<12} | {:<15} | {:<18} |".format(
+                "ID Partida",
+                "ID Jugador",
+                "Rondas Partida",
+                "Apuesta Media",
+                "Rondas Ganadas",
+                "% Rondas Ganadas") + "\n" + "".center(88, "-")
+
+            # Mostrar la cabecera
+            print(cabecera_rondas)
+
+            # Iterar sobre los resultados y mostrar la información
+            for ronda in rondas_resultados:
+                partida_id = ronda['ID_Partida']
+                jugador_id = ronda['ID_Jugador']
+                total_rondas = ronda['Total_Rondas']
+                apuesta_media = ronda['Apuesta_Media']
+                rondas_ganadas = ronda['Rondas_Ganadas']
+
+                if total_rondas > 0:
+                    porcentaje_ganadas = (rondas_ganadas / total_rondas) * 100
+                else:
+                    porcentaje_ganadas = 0
+
+                # Imprimir cada fila de la tabla
+                print("| {:<12} | {:<12} | {:<18} | {:<12} | {:<15} | {:<18} |".format(
+                    partida_id,
+                    jugador_id,
+                    total_rondas,
+                    round(apuesta_media, 2),
+                    rondas_ganadas,
+                    round(porcentaje_ganadas, 2)
+                ))
+
+            print("".center(88, "-"))
+
+        except Exception as e:
+            juego.loginfo(f"Error al ejecutar la consulta: {e}")
+            return {}
+    else:
+        juego.loginfo("Error: No se pudo conectar a la base de datos.")
+        return {}
+
+
+porcentaje_rondas_ganadas_y_apuesta_media()
 # ============================================================
 # FIN DEL ARCHIVO
 # ============================================================
