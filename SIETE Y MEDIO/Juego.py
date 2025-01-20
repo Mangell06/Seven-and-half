@@ -1,7 +1,11 @@
-# Diccionario Cartas
+# Importaciones de los módulos
 from datetime import datetime
 import random
 import sys
+import gestionar_interfaz as interface
+import gestionar_juego as juego
+import gestionar_diccionarios as diccionarios
+import gestionar_base_de_datos as bbdd
 
 
 # Agregar la ruta de la carpeta Funciones al sys.path
@@ -10,12 +14,7 @@ ruta_funciones = r'C:\Users\Nazan\Documents\GitHub\Seven-and-middle\SIETE Y MEDI
 # Asegurarse de que la ruta esté incluida en el sistema de búsqueda de módulos
 sys.path.append(ruta_funciones)
 
-# Importaciones de los módulos
-
-import gestionar_interfaz as interface
-import gestionar_juego as juego
-import gestionar_diccionarios as diccionarios
-import gestionar_base_de_datos as bbdd
+# Diccionario de Cartas
 
 cartas_game = {
 
@@ -139,16 +138,16 @@ cartas_game = {
 }
 
 
-#Mensaje del log cuando inicia el juego
+# Mensaje del log cuando inicia el juego
 juego.loginfo("[Juego Iniciado]")
 
-#Sacar diccionarios de la base de datos
+# Sacar diccionarios de la base de datos
 players_dicti = bbdd.get_personajes()
 cartas_dicti = bbdd.get_cartas()
 historial_dicti = bbdd.get_historial()
 partidas_dicti = bbdd.get_partidas()
 
-#Sacar listas de keys de los diccionarios
+# Sacar listas de keys de los diccionarios
 players_list = []
 for key in players_dicti:
     players_list.append(key)
@@ -158,7 +157,7 @@ for key in players_dicti:
     if players_dicti[key]["In_Game"]:
         jugando.append(key)
 
-#Flags
+# Flags
 flg_salir = False
 flg_00 = True
 flg_01 = False
@@ -166,7 +165,7 @@ flg_02 = False
 flg_04 = False
 flg_05 = False
 
-#Menus
+# Menus
 menu00 = ("Siete y medio", "Esteve Terradas", "Añadir/Eliminar/Ver Jugadores",
           "Ajustes", "Jugar", "Ranking", "Reportes", "Salir")
 menu01 = ("BBDD Jugadores", "Nuevo Humano", "Nuevo Bot", "Ver/Eliminar Jugadores",
@@ -177,7 +176,7 @@ menu04 = ("Ranking", "Jugadores por ID", "Jugadores por puntos",
           "Jugadores por minutos jugados", "Volver atras")
 menu05 = ("Reports", "1", "2", "3", "4", "5", "6", "7", "Volver atras")
 
-set_cartas = ("Elige una carta","Española","Poker")
+set_cartas = ("Elige una carta", "Española", "Poker")
 
 new_party = {len(partidas_dicti) + 1: {
     "start_date": "",
@@ -185,7 +184,7 @@ new_party = {len(partidas_dicti) + 1: {
     "ID_Ganador": "",
     "Total_Rondas": 5,
     "Mazo": "",
-    "Players":[]}}
+    "Players": []}}
 
 # Estructura {0:{"DNI":{"Puntos_iniciales":20,"Prioridad":1,"Puntos_finales":55,"Carta_inicial":"", Cartas=[]},
 #               "DNI":{"Puntos_iniciales":29,"Proridad":2,"Puntos_finales":4,"Carta_inicial":"", Cartas=[]}}}
