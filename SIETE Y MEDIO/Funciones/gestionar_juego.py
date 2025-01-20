@@ -1,5 +1,6 @@
 import datetime
 import random
+import gestionar_interfaz
 
 #Escribir texto en el LOGS.txt como debugger
 def loginfo(texto):
@@ -218,46 +219,76 @@ def raking_puntos(personajes_dict):
         input("Presiona enter para continuar".center(50))
 
 def crearcontext(jugadores,contexto,partidas,players):
-    contador = 0
     for key in jugadores:
-        contador += 1
         contexto[len(partidas) + 1][key] = {
             "Puntos_iniciales": players[key]["Puntos"],
-            "Prioridad": contador,
-            "Puntos_ganados":0,
             "Puntos_finales": 0,
-            "Carta_inicial": "",
+            "Carta_inicial": ""
+        }
+
+def crearrondas(jugadores,contextorondas,partidas,players,contador):
+    contadore = 0
+    contextorondas[len(partidas) + 1] = {}
+    contextorondas[len(partidas) + 1][contador] = {}
+    for key in jugadores:
+        contadore += 1
+        contextorondas[len(partidas) + 1][contador][key] = {
+            "Es_banca": False,
+            "Prioridad": contadore,
+            "Apuesta": 0,
+            "Puntos_inciales": players[key]["Puntos"],
+            "Valor_total_cartas": 0,
             "Cartas": []
         }
 
-def priority(jugadores, contexto, partidas, carts):
+
+def priority(jugadores, contexto, partidas, carts,contador):
     asignadas = []
-    contador = 0
-    while contador < len(jugadores):
+    for key in jugadores:
         carta = random.randint(0, len(carts) - 1)
         if carts[carta] not in asignadas:
             asignadas.append(carts[carta])
-            contexto[len(partidas) + 1][jugadores[contador]]["Cartas"].append(carts[carta])
-            contador += 1
+            contexto[len(partidas) + 1][contador][key]["Cartas"].append(carts[carta])
 
-def selectpriority(contexto, jugadores, carts, partidas):
+def selectpriority(contexto, jugadores, carts, partidas,contador):
     partida_actual = len(partidas) + 1
     jugadores_cartas = []
     for jugador in jugadores:
-        carta = contexto[partida_actual][jugador]["Cartas"][0]
+        carta = contexto[partida_actual][contador][jugador]["Cartas"][0]
         real_value = carts[carta]["realValue"]
         priority = carts[carta]["priority"]
         jugadores_cartas.append((jugador, carta, real_value, priority))
     jugadores_cartas.sort(key=lambda x: (x[2], x[3]))
     for idx, (jugador, carta, _, _) in enumerate(jugadores_cartas):
-        contexto[partida_actual][jugador]["Prioridad"] = idx + 1
+        contexto[partida_actual][contador][jugador]["Prioridad"] = idx + 1
     for pasadas in range(len(jugadores)):
         for i in range(len(jugadores)-1-pasadas):
-            if contexto[partida_actual][jugadores[i]]["Prioridad"] > contexto[partida_actual][jugadores[i+1]]["Prioridad"]:
+            if contexto[partida_actual][contador][jugadores[i]]["Prioridad"] > contexto[partida_actual][contador][jugadores[i+1]]["Prioridad"]:
                 aux = jugadores[i]
                 jugadores[i] = jugadores[i+1]
                 jugadores[i+1] = aux
 
-def limpiarcartas(contexto,partidas):
-    for key in contexto[len(partidas) + 1]:
-        contexto[len(partidas) + 1][key]["Cartas"] = []
+def limpiarcartas(contexto,partidas,contador):
+    for key in contexto[len(partidas) + 1][contador]:
+        print(key)
+        contexto[len(partidas) + 1][contador][key]["Cartas"] = []
+
+def rondas(contador,jugador,jugadoresenpartida,jugadores):
+    ronda = ("Turno {} Juega {}".format(contador,jugador),"Ver estados",
+             "Ver estados de jugadores","Apostar","Pedir Carta",
+             "Jugar ronda automaticamente","Pararse")
+    opc = gestionar_interfaz.management_menu(title=1,menu=ronda)
+    if opc == 1:
+        print("Nombre".ljust(10) + jugadores[jugador]["Name"].rjust(10))
+        print("Tipo".ljust(10) + jugadores[jugador]["Type"].rjust(10))
+        print()
+    elif opc == 2:
+        print(2)
+    elif opc == 3:
+        print(3)
+    elif opc == 4:
+        print(4)
+    elif opc == 5:
+        print(5)
+    else:
+        print(6)
