@@ -178,7 +178,9 @@ menu02 = ("Ajustes", "Elegir jugadores jugando", "Elegir Mazo",
           "Elegir ronda maxima (Por defecto 5 Rondas)", "Volver atras")
 menu04 = ("Ranking", "Jugadores por ID", "Jugadores por puntos",
           "Jugadores por minutos jugados", "Volver atras")
-menu05 = ("Reports", "1", "2", "3", "4", "5", "6", "7", "Volver atras")
+menu05 = ("Reports", "Carta inicial mas repetida por jugador", "Apuesta mas alta", "Apuesta mas baja",
+          "Apuesta media y rondas ganadas", "Puntos Ganados",
+          "Rondas Ganadas Banca", "Cantidad usuarios banca por partida", "Volver atras")
 
 set_cartas = ("Elige una carta", "Española", "Poker")
 
@@ -223,8 +225,9 @@ while not flg_salir:
                 juego.crearrondas(jugando,player_round, players_dicti, contador)
                 juego.priority(jugando, player_party, mazo)
                 juego.cambioprioridad(player_party,cartas_game,jugando,player_round,contador)
-                juego.opciones(jugando,turno,contador,players_dicti,player_round,player_party)
+                juego.opciones(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
                 print(player_round)
+                mazo = []
         elif opc == 4:
             flg_00 = False
             flg_04 = True
@@ -310,32 +313,39 @@ while not flg_salir:
         if opc == 1:
             interface.clearscreen()
             consulta.carta_inicial_mas_repetida_con_get_cartas()
-            input("\n\nPresiona enter para continuar".center(50))
+            print()
+            input("Presiona enter para continuar".center(50))
         elif opc == 2:
             interface.clearscreen()
             consulta.jugador_apuesta_mas_alta_por_partida()
-            input("\n\nPresiona enter para continuar".center(50))
+            print()
+            input("Presiona enter para continuar".center(50))
         elif opc == 3:
             interface.clearscreen()
             consulta.jugador_apuesta_mas_baja_por_partida()
-            input("\n\nPresiona enter para continuar".center(50))
+            print()
+            input("Presiona enter para continuar".center(50))
             interface.clearscreen()
         elif opc == 4:
             interface.clearscreen()
             consulta.porcentaje_rondas_ganadas_y_apuesta_media()
-            input("\n\nPresiona enter para continuar".center(50))
+            print()
+            input("Presiona enter para continuar".center(50))
         elif opc == 5:
             interface.clearscreen()
             consulta.partidas_ganadas_por_bots()
-            input("\n\nPresiona enter para continuar".center(50))
+            print()
+            input("Presiona enter para continuar".center(50))
         elif opc == 6:
             interface.clearscreen()
             consulta.rondas_ganadas_por_banca()
-            input("\n\nPresiona enter para continuar".center(50))
+            print()
+            input("Presiona enter para continuar".center(50))
         elif opc == 7:
             interface.clearscreen()
             consulta.cantidad_usuarios_banca_por_partida()
-            input("\n\nPresiona enter para continuar".center(50))
+            print()
+            input("Presiona enter para continuar".center(50))
         else:
             flg_05 = False
             flg_00 = True
