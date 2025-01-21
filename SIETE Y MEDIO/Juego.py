@@ -321,13 +321,21 @@ while not flg_salir:
             input("\n\nPresiona enter para continuar".center(50))
             interface.clearscreen()
         elif opc == 4:
-            print(4)
+            interface.clearscreen()
+            consulta.porcentaje_rondas_ganadas_y_apuesta_media()
+            input("\n\nPresiona enter para continuar".center(50))
         elif opc == 5:
-            print(5)
+            interface.clearscreen()
+            consulta.partidas_ganadas_por_bots()
+            input("\n\nPresiona enter para continuar".center(50))
         elif opc == 6:
-            print(6)
+            interface.clearscreen()
+            consulta.rondas_ganadas_por_banca()
+            input("\n\nPresiona enter para continuar".center(50))
         elif opc == 7:
-            print(7)
+            interface.clearscreen()
+            consulta.cantidad_usuarios_banca_por_partida()
+            input("\n\nPresiona enter para continuar".center(50))
         else:
             flg_05 = False
             flg_00 = True
