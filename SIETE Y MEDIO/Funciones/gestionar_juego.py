@@ -1,5 +1,7 @@
 import datetime
 import random
+from traceback import print_tb
+
 import gestionar_interfaz
 
 #Escribir texto en el LOGS.txt como debugger
@@ -224,7 +226,6 @@ def crearcontext(jugadores,contexto,players):
         contador += 1
         contexto[key] = {
             "Puntos_iniciales": players[key]["Puntos"],
-            "Puntos":0,
             "Puntos_finales": 0,
             "Prioridad":contador,
             "Carta_inicial": ""
@@ -236,7 +237,7 @@ def crearrondas(jugadores,contextorondas,players,contador):
         contextorondas[contador][key] = {
             "Es_banca": False,
             "Apuesta": 0,
-            "Puntos_inciales": players[key]["Puntos"],
+            "Puntos": players[key]["Puntos"],
             "Valor_total_cartas": 0,
             "Cartas": []
         }
@@ -249,7 +250,7 @@ def priority(jugadores, contextpartida, carts):
             asignadas.append(carts[carta])
             contextpartida[key]["Carta_inicial"] = carts[carta]
 
-def cambioprioridad(contexto, cartas, jugadores):
+def cambioprioridad(contexto, cartas, jugadores,ronda,contadore):
     for pasada in range(len(jugadores)):
         for i in range(len(jugadores) - 1 - pasada):
             if int(contexto[jugadores[i]]["Carta_inicial"][2:]) > int(contexto[jugadores[i+1]]["Carta_inicial"][2:]):
@@ -257,7 +258,7 @@ def cambioprioridad(contexto, cartas, jugadores):
                 jugadores[i] = jugadores[i+1]
                 jugadores[i+1] = aux
             elif int(contexto[jugadores[i]]["Carta_inicial"][2:]) == int(contexto[jugadores[i+1]]["Carta_inicial"][2:]):
-                if cartas[contexto[jugadores[i]]["Carta_inicial"]]["Prioridad"] > cartas[contexto[jugadores[i+1]]["Carta_inicial"]]["Prioridad"]:
+                if cartas[contexto[jugadores[i]]["Carta_inicial"]]["priority"] > cartas[contexto[jugadores[i+1]]["Carta_inicial"]]["priority"]:
                     aux = jugadores[i]
                     jugadores[i] = jugadores[i+1]
                     jugadores[i+1] = aux
@@ -265,7 +266,103 @@ def cambioprioridad(contexto, cartas, jugadores):
     for key in jugadores:
         contador += 1
         contexto[key]["Prioridad"] = contador
+        if contador == 1:
+            ronda[contadore][key]["Es_banca"] = True
 
 def limpiarcartas(contexto,contador):
     for key in contexto[contador]:
         contexto[contador][key]["Cartas"] = []
+
+def rondas_players(jugadores,contador,turno,players):
+    opciones = ("Ver estado", "Ver estados de los jugadores","Elegir apuesta","Pedir carta","Modo automatico","Plantarse")
+    while True:
+        print("".center(50,"="))
+        print("Siete y medio".center(50))
+        aux = "Round: {} {}".format(contador,players[jugadores[turno]]["Name"])
+        print(aux.center(50,"="))
+        for i in range(len(opciones)):
+            aux = str(i+1) + ") " + opciones[i]
+            print(aux.center(50))
+        opc = input("Opcion: ".rjust(30))
+        print()
+        if not opc.isdigit():
+            print("Opcion invalida".center(50, "="))
+        elif int(opc) not in range(1, len(opciones) + 1):
+            print("Opcion invalida".center(50, "="))
+        else:
+            loginfo("El jugador a elegido una opcion")
+            return int(opc)
+        print()
+        input("Presiona enter para continuar".center(50))
+
+def opciones(jugadores,turno,contador,players,ronda,partida):
+    while True:
+        print()
+        opc = rondas_players(jugadores,contador,turno,players)
+        if opc == 1:
+            mostrar = "Estado de {}".format(players[jugadores[turno]]["Name"])
+            print(mostrar.center(50,"="))
+            mostrar = "Nombre". ljust(10) + players[jugadores[turno]]["Name"].rjust(10)
+            print(mostrar.center(50))
+            mostrar = "Tipo".ljust(10) + str(players[jugadores[turno]]["Risk"]).rjust(10)
+            print(mostrar.center(50))
+            mostrar = "Humano".ljust(10) + "True".rjust(10)
+            print(mostrar.center(50))
+            mostrar = "Banca".ljust(10) + str(ronda[contador][jugadores[turno]]["Es_banca"]).rjust(10)
+            print(mostrar.center(50))
+            mostrar = "Carta inicial".ljust(10) + partida[jugadores[turno]]["Carta_inicial"].rjust(10)
+            print(mostrar.center(50))
+            mostrar = "Prioridad".ljust(10) + str(partida[jugadores[turno]]["Prioridad"]).rjust(10)
+            print(mostrar.center(50))
+            mostrar = "Apuesta".ljust(10) + str(ronda[contador][jugadores[turno]]["Apuesta"]).rjust(10)
+            print(mostrar.center(50))
+            mostrar = "Puntos".ljust(10) + str(ronda[contador][jugadores[turno]]["Puntos"]).rjust(10)
+            print(mostrar.center(50))
+            mostrar = "Cartas".ljust(10) + str(ronda[contador][jugadores[turno]]["Cartas"]).rjust(10)
+            print(mostrar.center(50))
+            mostrar = "Puntos ronda".ljust(10) + str(ronda[contador][jugadores[turno]]["Valor_total_cartas"]).rjust(8)
+            print(mostrar.center(50))
+        elif opc == 2:
+            print("Estado de jugadores".center(50, "="))
+            print()
+            print("Nombre".ljust(15) + "Humano".ljust(10) + "Prioridad".ljust(10) + "Tipo".ljust(10) +
+                  "Banca".ljust(10) + "Apuesta".ljust(10) + "Puntos".ljust(10) +
+                  "Cartas".ljust(15) + "Puntos ronda".ljust(15))
+            print("=" * 120)
+            for key in jugadores:
+                if key not in jugadores[turno]:
+                    print(players[key]["Name"].ljust(15) +
+                          str(players[key]["Type"]).ljust(13) +
+                          str(partida[key]["Prioridad"]).ljust(8) +
+                          str(players[key]["Risk"]).ljust(10) +
+                          str(ronda[contador][key]["Es_banca"]).ljust(10) +
+                          str(ronda[contador][key]["Apuesta"]).ljust(10) +
+                          str(ronda[contador][key]["Puntos"]).ljust(10) +
+                          str(ronda[contador][key]["Cartas"]).ljust(20) +
+                          str(ronda[contador][key]["Valor_total_cartas"]).ljust(15))
+        elif opc == 3:
+            if ronda[contador][jugadores[turno]]["Apuesta"] == 0:
+                apuesta = input("Elige la apuesta: ".rjust(30))
+                if not apuesta.isdigit():
+                    mostrar = "La a puesta debe ser un digito del 1 al {}".format(ronda[contador][jugadores[turno]]["Puntos"])
+                    print(mostrar.center(50,"="))
+                if int(apuesta) <= ronda[contador][jugadores[turno]]["Puntos"] and int(apuesta) > 0:
+                    ronda[contador][jugadores[turno]]["Apuesta"] = int(apuesta)
+                else:
+                    mostrar = "La a puesta debe ser un digito del 1 al {}".format(ronda[contador][jugadores[turno]]["Puntos"])
+                    print(mostrar.center(50,"="))
+            else:
+                print("Ya has elegido la apuesta".center(50,"="))
+        elif opc == 4:
+            if ronda[contador][jugadores[turno]]["Apuesta"] == 0:
+                print("Apuesta primero".center(50,"="))
+        elif opc == 5:
+            if ronda[contador][jugadores[turno]]["Apuesta"] == 0:
+                print("Apuesta primero".center(50,"="))
+        else:
+            if ronda[contador][jugadores[turno]]["Apuesta"] == 0:
+                print("Apuesta primero".center(50,"="))
+            else:
+                return
+        print()
+        input("Presiona enter para continuar".center(50))

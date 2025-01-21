@@ -218,11 +218,13 @@ while not flg_salir:
                 mazo = juego.crearmazo(new_party, cartas_game)
                 aux_priority = []
                 contador = 0
+                turno = 0
                 juego.crearcontext(jugando, player_party, players_dicti)
                 juego.crearrondas(jugando,player_round, players_dicti, contador)
                 juego.priority(jugando, player_party, mazo)
-                juego.cambioprioridad(player_party,cartas_game,jugando)
-                
+                juego.cambioprioridad(player_party,cartas_game,jugando,player_round,contador)
+                juego.opciones(jugando,turno,contador,players_dicti,player_round,player_party)
+                print(player_round)
         elif opc == 4:
             flg_00 = False
             flg_04 = True
