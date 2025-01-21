@@ -12,12 +12,12 @@ def management_menu(title=1,menu=()):
         for i in range(title,len(menu)):
             aux = str(i-title//2) + ") " + menu[i]
             print(aux.center(50))
-        option = input("Option: ".rjust(30))
+        option = input("Opcion: ".rjust(30))
         print()
         if not option.isdigit():
-            print("Invalid Option".center(50,"="))
+            print("Opcion invalida".center(50,"="))
         elif int(option) not in range(1,len(menu)-title//2):
-            print("Invalid Option".center(50,"="))
+            print("Opcion invalida".center(50,"="))
         else:
             funcion_juego.loginfo("El jugador a elegido una opcion")
             return int(option)
