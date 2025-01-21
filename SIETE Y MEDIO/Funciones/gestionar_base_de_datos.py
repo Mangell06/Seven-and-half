@@ -178,7 +178,7 @@ def actualizar_in_game(dni_list, in_game_value):
 
     try:
         # Construir la consulta SQL
-        query = "UPDATE jugadores SET In_Game = %s WHERE ID = %s"
+        query = "UPDATE personajes SET In_Game = %s WHERE ID = %s"
 
         # Crear un cursor
         with connection.cursor() as cursor:
@@ -214,3 +214,4 @@ def desactivar_jugadores(dni_list):
     :param dni_list: Lista de DNIs de los jugadores a desactivar.
     """
     actualizar_in_game(dni_list, False)
+
