@@ -1,6 +1,0 @@
-[2025-01-21 20:41:04] Conexión exitosa a la base de datos.
-[2025-01-21 20:41:04] In_Game actualizado a 1 para los DNIs: ['51805177T']
-[2025-01-21 20:41:04] Conexión cerrada.
-[2025-01-21 20:41:25] Conexión exitosa a la base de datos.
-[2025-01-21 20:41:25] In_Game actualizado a 0 para los DNIs: ['51805177T']
-[2025-01-21 20:41:25] Conexión cerrada.

@@ -382,6 +382,8 @@ def opciones(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
         elif opc == 5:
             if ronda[contador][jugadores[turno-1]]["Apuesta"] == 0:
                 print("Apuesta primero".center(50,"="))
+            else:
+                print("Bot")
         else:
             if ronda[contador][jugadores[turno-1]]["Apuesta"] == 0:
                 print("Apuesta primero".center(50,"="))

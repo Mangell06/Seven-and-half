@@ -2,8 +2,9 @@
 
 ## **Descripción General**
 
-Este proyecto desarrolla una versión digital del juego de cartas "Siete y Medio" utilizando una baraja española de 40 o 48 cartas, o una baraja de póker.
-El objetivo es alcanzar o acercarse lo más posible a la puntuación de siete y medio sin pasarse, compitiendo contra la banca.
+Este proyecto desarrolla una versión digital del juego de cartas "Siete y Medio" utilizando una baraja española de 40 o 48 cartas o una baraja de póker.
+El objetivo es alcanzar o acercarse lo más posible a la puntuación de siete y medio sin pasarse, compitiendo contra la banca 
+o si eres la banca contra el resto de jugadores.
 
 ### **Reglas del Juego**
 
@@ -11,15 +12,15 @@ El objetivo es alcanzar o acercarse lo más posible a la puntuación de siete y 
 
 - **Puntuación**: Las  cartas por encima del 7 valen medio punto y las demás cartas, su valor nominal.
 
-- **Rondas**: Son 30 rondas por partida.
+- **Rondas**: Son hasta 30 rondas por partida (minimo 1 | Por defecto 5).
 
 ## **Requisitos del Sistema**
 
 - Windows 7/8/10, macOS 10.8 o superior, Linux Ubuntu 18 o superior.
   
-- ???GB RAM mínimo, ???GB RAM recomendado.
+- 40MB RAM mínimo, 128MB RAM recomendado.
   
-- ???GB espacio libre en el disco.
+- 6MB espacio libre en el disco.
 
 - 800×600 resolución mínima, recomendada 1280×720p o superior.
 

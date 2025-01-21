@@ -230,7 +230,12 @@ while not flg_salir:
                         juego.crearrondas(jugando, player_round, players_dicti, contador)
                         turno = len(jugando)
                     while turno != 0:
-                        juego.opciones(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
+                        if players_dicti[jugando[turno-1]]["Type"] == "Humano":
+                            juego.opciones(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
+                        elif players_dicti[jugando[turno-1]]["Type"] == "Bot" and player_round[jugando[turno-1]]["Es_banca"] == True:
+                            juego.jugar_banca(players, cartas_game, cartas_robadas)
+                        else:
+                            print("bot")
                         turno -= 1
                 new_party["end_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 mazo = []
