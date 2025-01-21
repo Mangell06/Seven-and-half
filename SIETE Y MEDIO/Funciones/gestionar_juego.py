@@ -1,8 +1,6 @@
 import datetime
 import random
-from traceback import print_tb
-
-import gestionar_interfaz
+import gestionar_interfaz as interface
 
 #Escribir texto en el LOGS.txt como debugger
 def loginfo(texto):
@@ -276,6 +274,7 @@ def limpiarcartas(contexto,contador):
 def rondas_players(jugadores,contador,turno,players):
     opciones = ("Ver estado", "Ver estados de los jugadores","Elegir apuesta","Pedir carta","Modo automatico","Plantarse")
     while True:
+        interface.clearscreen()
         print("".center(50,"="))
         print("Siete y medio".center(50))
         aux = "Round: {} {}".format(contador,players[jugadores[turno]]["Name"])
