@@ -1,6 +1,7 @@
 import datetime
 import random
 import gestionar_interfaz as interface
+import gestionar_base_de_datos as bbdd
 
 #Escribir texto en el LOGS.txt como debugger
 def loginfo(texto):
@@ -47,12 +48,15 @@ def elegirpersonajejugar(players_dict):
             if int(elegir[1:]) - 1 in range(len(jugando)):
                 disponibles.append(jugando[int(elegir[1:]) - 1])
                 jugando.remove(jugando[int(elegir[1:]) - 1])
+
                 print("Nuevo jugador disponible".center(50))
             else:
                 print("No existe el jugador".center(50))
         elif not elegir.isdigit():
             print("Debe ser un numero o -num".center(50))
         elif int(elegir) == 0:
+            bbdd.desactivar_jugadores(disponibles)
+            bbdd.activar_jugadores(jugando)
             return jugando
         elif len(jugando) == 6:
             print("Ya tienes el maximo de jugadores (6)".center(50))
@@ -232,13 +236,23 @@ def crearcontext(jugadores,contexto,players):
 def crearrondas(jugadores,contextorondas,players,contador):
     contextorondas[contador] = {}
     for key in jugadores:
-        contextorondas[contador][key] = {
-            "Es_banca": False,
-            "Apuesta": 0,
-            "Puntos": players[key]["Puntos"],
-            "Valor_total_cartas": 0,
-            "Cartas": []
-        }
+        if contador == 0:
+            contextorondas[contador][key] = {
+                "Es_banca": False,
+                "Apuesta": 0,
+                "Puntos": players[key]["Puntos"],
+                "Valor_total_cartas": 0,
+                "Cartas": []
+            }
+        else:
+            contextorondas[contador][key] = {
+                "Es_banca": contextorondas[contador-1][key]["Es_banca"],
+                "Apuesta": 0,
+                "ID_Ganador": "",
+                "Puntos": contextorondas[contador-1][key]["Puntos"],
+                "Valor_total_cartas": 0,
+                "Cartas": []
+            }
 
 def priority(jugadores, contextpartida, carts):
     asignadas = []
@@ -267,17 +281,13 @@ def cambioprioridad(contexto, cartas, jugadores,ronda,contadore):
         if contador == 1:
             ronda[contadore][key]["Es_banca"] = True
 
-def limpiarcartas(contexto,contador):
-    for key in contexto[contador]:
-        contexto[contador][key]["Cartas"] = []
-
 def rondas_players(jugadores,contador,turno,players):
     opciones = ("Ver estado", "Ver estados de los jugadores","Elegir apuesta","Pedir carta","Modo automatico","Plantarse")
     while True:
         interface.clearscreen()
         print("".center(50,"="))
         print("Siete y medio".center(50))
-        aux = "Round: {} {}".format(contador,players[jugadores[turno]]["Name"])
+        aux = "Round: {} {}".format(contador,players[jugadores[turno-1]]["Name"])
         print(aux.center(50,"="))
         for i in range(len(opciones)):
             aux = str(i+1) + ") " + opciones[i]
@@ -297,29 +307,29 @@ def rondas_players(jugadores,contador,turno,players):
 def opciones(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
     while True:
         print()
-        opc = rondas_players(jugadores,contador,turno,players)
+        opc = rondas_players(jugadores,contador,turno-1,players)
         if opc == 1:
-            mostrar = "Estado de {}".format(players[jugadores[turno]]["Name"])
+            mostrar = "Estado de {}".format(players[jugadores[turno-1]]["Name"])
             print(mostrar.center(50,"="))
-            mostrar = "Nombre". ljust(10) + players[jugadores[turno]]["Name"].rjust(10)
+            mostrar = "Nombre". ljust(10) + players[jugadores[turno-1]]["Name"].rjust(10)
             print(mostrar.center(50))
-            mostrar = "Tipo".ljust(10) + str(players[jugadores[turno]]["Risk"]).rjust(10)
+            mostrar = "Tipo".ljust(10) + str(players[jugadores[turno-1]]["Risk"]).rjust(10)
             print(mostrar.center(50))
             mostrar = "Humano".ljust(10) + "True".rjust(10)
             print(mostrar.center(50))
-            mostrar = "Banca".ljust(10) + str(ronda[contador][jugadores[turno]]["Es_banca"]).rjust(10)
+            mostrar = "Banca".ljust(10) + str(ronda[contador][jugadores[turno-1]]["Es_banca"]).rjust(10)
             print(mostrar.center(50))
-            mostrar = "Carta inicial".ljust(10) + partida[jugadores[turno]]["Carta_inicial"].rjust(10)
+            mostrar = "Carta inicial".ljust(10) + partida[jugadores[turno-1]]["Carta_inicial"].rjust(10)
             print(mostrar.center(50))
-            mostrar = "Prioridad".ljust(10) + str(partida[jugadores[turno]]["Prioridad"]).rjust(10)
+            mostrar = "Prioridad".ljust(10) + str(partida[jugadores[turno-1]]["Prioridad"]).rjust(10)
             print(mostrar.center(50))
-            mostrar = "Apuesta".ljust(10) + str(ronda[contador][jugadores[turno]]["Apuesta"]).rjust(10)
+            mostrar = "Apuesta".ljust(10) + str(ronda[contador][jugadores[turno-1]]["Apuesta"]).rjust(10)
             print(mostrar.center(50))
-            mostrar = "Puntos".ljust(10) + str(ronda[contador][jugadores[turno]]["Puntos"]).rjust(10)
+            mostrar = "Puntos".ljust(10) + str(ronda[contador][jugadores[turno-1]]["Puntos"]).rjust(10)
             print(mostrar.center(50))
-            mostrar = "Cartas".ljust(10) + str(ronda[contador][jugadores[turno]]["Cartas"]).rjust(10)
+            mostrar = "Cartas".ljust(10) + str(ronda[contador][jugadores[turno-1]]["Cartas"]).rjust(10)
             print(mostrar.center(50))
-            mostrar = "Puntos ronda".ljust(10) + str(ronda[contador][jugadores[turno]]["Valor_total_cartas"]).rjust(8)
+            mostrar = "Puntos ronda".ljust(10) + str(ronda[contador][jugadores[turno-1]]["Valor_total_cartas"]).rjust(8)
             print(mostrar.center(50))
         elif opc == 2:
             print("Estado de jugadores".center(50, "="))
@@ -329,7 +339,7 @@ def opciones(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
                   "Cartas".ljust(15) + "Puntos ronda".ljust(15))
             print("=" * 120)
             for key in jugadores:
-                if key not in jugadores[turno]:
+                if key not in jugadores[turno-1]:
                     print(players[key]["Name"].ljust(15) +
                           str(players[key]["Type"]).ljust(13) +
                           str(partida[key]["Prioridad"]).ljust(8) +
@@ -340,21 +350,23 @@ def opciones(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
                           str(ronda[contador][key]["Cartas"]).ljust(20) +
                           str(ronda[contador][key]["Valor_total_cartas"]).ljust(15))
         elif opc == 3:
-            if ronda[contador][jugadores[turno]]["Apuesta"] == 0:
+            if ronda[contador][jugadores[turno-1]]["Apuesta"] == 0:
                 apuesta = input("Elige la apuesta: ".rjust(30))
                 if not apuesta.isdigit():
-                    mostrar = "La a puesta debe ser un digito del 1 al {}".format(ronda[contador][jugadores[turno]]["Puntos"])
+                    mostrar = "La a puesta debe ser un digito del 1 al {}".format(ronda[contador][jugadores[turno-1]]["Puntos"])
                     print(mostrar.center(50,"="))
-                if int(apuesta) <= ronda[contador][jugadores[turno]]["Puntos"] and int(apuesta) > 0:
-                    ronda[contador][jugadores[turno]]["Apuesta"] = int(apuesta)
+                if int(apuesta) <= ronda[contador][jugadores[turno-1]]["Puntos"] and int(apuesta) > 0:
+                    ronda[contador][jugadores[turno-1]]["Apuesta"] = int(apuesta)
                 else:
-                    mostrar = "La a puesta debe ser un digito del 1 al {}".format(ronda[contador][jugadores[turno]]["Puntos"])
+                    mostrar = "La a puesta debe ser un digito del 1 al {}".format(ronda[contador][jugadores[turno-1]]["Puntos"])
                     print(mostrar.center(50,"="))
             else:
                 print("Ya has elegido la apuesta".center(50,"="))
         elif opc == 4:
-            if ronda[contador][jugadores[turno]]["Apuesta"] == 0:
+            if ronda[contador][jugadores[turno-1]]["Apuesta"] == 0:
                 print("Apuesta primero".center(50,"="))
+            elif ronda[contador][jugadores[turno-1]]["Valor_total_cartas"] >= 7.5:
+                print("Ya has llegado al limite".center(50,"="))
             else:
                 asignadas = []
                 terminar = False
@@ -362,17 +374,19 @@ def opciones(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
                     for i in range(len(ronda[contador][key]["Cartas"])):
                         asignadas.append(ronda[contador][key]["Cartas"][i])
                 while not terminar:
-                    carta = mazo[random.randint(0,len(mazo))]
+                    carta = mazo[random.randint(0,len(mazo)-1)]
                     if carta not in asignadas:
-                        ronda[contador][jugadores[turno]]["Cartas"].append(carta)
-                        ronda[contador][jugadores[turno]]["Valor_total_cartas"] += cartas[carta]["value"]
+                        ronda[contador][jugadores[turno-1]]["Cartas"].append(carta)
+                        ronda[contador][jugadores[turno-1]]["Valor_total_cartas"] += cartas[carta]["value"]
                         terminar = True
         elif opc == 5:
-            if ronda[contador][jugadores[turno]]["Apuesta"] == 0:
+            if ronda[contador][jugadores[turno-1]]["Apuesta"] == 0:
                 print("Apuesta primero".center(50,"="))
         else:
-            if ronda[contador][jugadores[turno]]["Apuesta"] == 0:
+            if ronda[contador][jugadores[turno-1]]["Apuesta"] == 0:
                 print("Apuesta primero".center(50,"="))
+            elif ronda[contador][jugadores[turno-1]]["Valor_total_cartas"] == 0:
+                print("Elige minimo una carta".center(50,"="))
             else:
                 return
         print()

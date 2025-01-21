@@ -187,7 +187,6 @@ set_cartas = ("Elige una carta", "Española", "Poker")
 new_party = {
     "start_date": "",
     "end_date": "",
-    "ID_Ganador": "",
     "Total_Rondas": 5,
     "Mazo": "",
     "Players": []}
@@ -220,13 +219,20 @@ while not flg_salir:
                 mazo = juego.crearmazo(new_party, cartas_game)
                 aux_priority = []
                 contador = 0
-                turno = 0
+                turno = len(jugando)
                 juego.crearcontext(jugando, player_party, players_dicti)
                 juego.crearrondas(jugando,player_round, players_dicti, contador)
                 juego.priority(jugando, player_party, mazo)
                 juego.cambioprioridad(player_party,cartas_game,jugando,player_round,contador)
-                juego.opciones(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
-                print(player_round)
+                while contador != new_party["Total_Rondas"]-1:
+                    if turno == 0:
+                        contador += 1
+                        juego.crearrondas(jugando, player_round, players_dicti, contador)
+                        turno = len(jugando)
+                    while turno != 0:
+                        juego.opciones(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
+                        turno -= 1
+                new_party["end_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 mazo = []
         elif opc == 4:
             flg_00 = False
@@ -262,11 +268,6 @@ while not flg_salir:
         if opc == 1:
             interface.clearscreen()
             jugando = juego.elegirpersonajejugar(players_dicti)
-            for key in players_dicti:
-                if key in jugando:
-                    players_dicti[key]["In_Game"] = True
-                else:
-                    players_dicti[key]["In_Game"] = False
         elif opc == 2:
             interface.clearscreen()
             players_dicti = bbdd.get_personajes()
