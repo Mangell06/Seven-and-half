@@ -24,7 +24,6 @@ def management_menu(title=1,menu=()):
         print()
         input("Presiona enter para continuar".center(50))
 
-
 def clearscreen():
     # Verificamos si el sistema operativo es Windows o no
     if os.name == "nt":
