@@ -135,6 +135,7 @@ def get_partidas():
             return partidas_dict
     return {}
 
+
 def get_personajes():
     """Consulta la tabla de Personajes y devuelve los resultados como un diccionario."""
     query = "SELECT * FROM personajes;"  # Consulta a la tabla Personajes
@@ -158,3 +159,59 @@ def get_personajes():
             }
             return personajes_dict  # Devuelve el diccionario
     return {}  # Devuelve un diccionario vacío si no hay resultados o hay un error
+
+
+def actualizar_in_game(dni_list, in_game_value):
+    """
+    Actualiza el valor de In_Game para los jugadores con los DNIs proporcionados.
+
+    :param dni_list: Lista de DNIs de los jugadores a actualizar.
+    :param in_game_value: Valor a establecer en el campo In_Game (True o False).
+    """
+    # Convertir el valor booleano a un entero (MySQL espera 0 o 1)
+    in_game_value = 1 if in_game_value else 0
+
+    # Establecer la conexión
+    connection = connect_to_database()
+    if not connection:
+        return
+
+    try:
+        # Construir la consulta SQL
+        query = "UPDATE personajes SET In_Game = %s WHERE ID = %s"
+
+        # Crear un cursor
+        with connection.cursor() as cursor:
+            # Actualizar cada jugador de la lista
+            for dni in dni_list:
+                cursor.execute(query, (in_game_value, dni))
+
+        # Confirmar los cambios
+        connection.commit()
+        juego.loginfo(f"In_Game actualizado a {in_game_value} para los DNIs: {dni_list}")
+
+    except pymysql.MySQLError as e:
+        juego.loginfo(f"Error al actualizar jugadores: {e}")
+
+    finally:
+        # Cerrar la conexión
+        close_connection(connection)
+
+
+def activar_jugadores(dni_list):
+    """
+    Activa a los jugadores estableciendo In_Game a True para los DNIs proporcionados.
+
+    :param dni_list: Lista de DNIs de los jugadores a activar.
+    """
+    actualizar_in_game(dni_list, True)
+
+
+def desactivar_jugadores(dni_list):
+    """
+    Desactiva a los jugadores estableciendo In_Game a False para los DNIs proporcionados.
+
+    :param dni_list: Lista de DNIs de los jugadores a desactivar.
+    """
+    actualizar_in_game(dni_list, False)
+
