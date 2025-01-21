@@ -249,3 +249,4 @@ def insertar_personaje_base_datos(player_data):
         juego.loginfo(f"Error al insertar el personaje en la base de datos: {e}")
     finally:
         close_connection(connection)
+
