@@ -214,3 +214,39 @@ def desactivar_jugadores(dni_list):
     :param dni_list: Lista de DNIs de los jugadores a desactivar.
     """
     actualizar_in_game(dni_list, False)
+
+
+def insertar_personaje_base_datos(player_data):
+    """
+    Inserta un nuevo personaje en la base de datos.
+
+    :param player_data: Diccionario con los datos del personaje.
+    """
+    connection = connect_to_database()
+    if not connection:
+        return
+
+    try:
+        # Construir la consulta de inserción
+        query = """
+            INSERT INTO personajes (ID, Name, Risk, Type, Puntos, Minutos_Jugados, In_Game)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+        """
+        # Ejecutar la consulta
+        with connection.cursor() as cursor:
+            cursor.execute(query, (
+                player_data["ID"],
+                player_data["Name"],
+                player_data["Risk"],
+                player_data["Type"],
+                player_data["Puntos"],
+                player_data["Minutos_Jugados"],
+                int(player_data["In_Game"])  # Convertir booleano a entero (1 o 0)
+            ))
+        connection.commit()
+        juego.loginfo(f"Personaje {player_data['Name']} añadido a la base de datos correctamente.")
+    except pymysql.MySQLError as e:
+        juego.loginfo(f"Error al insertar el personaje en la base de datos: {e}")
+    finally:
+        close_connection(connection)
+

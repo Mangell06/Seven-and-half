@@ -393,3 +393,70 @@ def opciones(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
                 return
         print()
         input("Presiona enter para continuar".center(50))
+
+def jugar_banca(players, cartas_game, cartas_robadas):
+    def obtener_valor_total_cartas(cartas):
+        valor_total = 0
+        for carta in cartas:
+            valor_carta = cartas_game[carta]["value"]
+            valor_total += valor_carta
+        return valor_total
+
+    def robar_carta():
+        cartas_disponibles = []
+        for carta in cartas_game:
+            if carta not in cartas_robadas:
+                cartas_disponibles.append(carta)
+        if cartas_disponibles:
+            carta_robada = random.choice(cartas_disponibles)
+            cartas_robadas.append(carta_robada)
+            return carta_robada
+        return None
+
+    banca = None
+    for player in players.values():
+        if player["Es_banca"]:
+            banca = player
+            break
+
+    jugadores = []
+    for player in players.values():
+        if not player["Es_banca"]:
+            jugadores.append(player)
+
+    valor_banca = obtener_valor_total_cartas(banca["Cartas"])
+
+    apuestas_a_devolver = 0
+    for jugador in jugadores:
+        valor_cartas_jugador = obtener_valor_total_cartas(jugador["Cartas"])
+        if valor_cartas_jugador > valor_banca:
+            apuestas_a_devolver += jugador["Apuesta"]
+
+    decision = "No pedir carta"
+
+    if valor_banca >= 7.5:
+        decision = "No pedir carta"
+    elif valor_banca > 7.5:
+        decision = "No pedir carta"
+    elif banca["Puntos"] - apuestas_a_devolver <= 0:
+        decision = "Pedir carta y robar una carta"
+    else:
+        pedir_carta = False
+        for jugador in jugadores:
+            valor_cartas_jugador = obtener_valor_total_cartas(jugador["Cartas"])
+            if valor_cartas_jugador > valor_banca:
+                pedir_carta = True
+                break
+        if pedir_carta:
+            decision = "Pedir carta y robar una carta"
+        elif banca["Puntos"] - apuestas_a_devolver > 0:
+            decision = "Pedir carta y robar una carta"
+        else:
+            decision = "Consultar perfil de riesgo y decidir"
+
+    if decision == "Pedir carta y robar una carta":
+        carta_robada = robar_carta()
+        if carta_robada:
+            banca["Cartas"].append(carta_robada)
+
+    return decision, banca["Cartas"]
