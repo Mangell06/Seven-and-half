@@ -820,3 +820,45 @@
 [2025-01-21 22:07:08] El jugador a elegido una opcion
 [2025-01-21 22:07:13] El jugador a elegido una opcion
 [2025-01-21 22:07:15] El jugador a elegido una opcion
+[2025-01-21 23:00:30] [Juego Iniciado]
+[2025-01-21 23:00:30] Conexión exitosa a la base de datos.
+[2025-01-21 23:00:30] Conexión cerrada.
+[2025-01-21 23:00:30] Conexión exitosa a la base de datos.
+[2025-01-21 23:00:30] Conexión cerrada.
+[2025-01-21 23:00:30] Conexión exitosa a la base de datos.
+[2025-01-21 23:00:30] Conexión cerrada.
+[2025-01-21 23:00:30] Conexión exitosa a la base de datos.
+[2025-01-21 23:00:30] Conexión cerrada.
+[2025-01-21 23:00:33] El jugador a elegido una opcion
+[2025-01-21 23:00:34] El jugador a elegido una opcion
+[2025-01-21 23:01:37] El jugador a elegido una opcion
+[2025-01-21 23:01:40] Conexión exitosa a la base de datos.
+[2025-01-21 23:01:40] Personaje Sep añadido a la base de datos correctamente.
+[2025-01-21 23:01:40] Conexión cerrada.
+[2025-01-21 23:02:47] El jugador a elegido una opcion
+[2025-01-21 23:02:54] El jugador a elegido una opcion
+[2025-01-21 23:02:56] Conexión exitosa a la base de datos.
+[2025-01-21 23:02:56] Personaje Bot34 añadido a la base de datos correctamente.
+[2025-01-21 23:02:56] Conexión cerrada.
+[2025-01-21 23:22:00] [Juego Iniciado]
+[2025-01-21 23:22:00] Conexión exitosa a la base de datos.
+[2025-01-21 23:22:00] Conexión cerrada.
+[2025-01-21 23:22:00] Conexión exitosa a la base de datos.
+[2025-01-21 23:22:01] Conexión cerrada.
+[2025-01-21 23:22:01] Conexión exitosa a la base de datos.
+[2025-01-21 23:22:01] Conexión cerrada.
+[2025-01-21 23:22:01] Conexión exitosa a la base de datos.
+[2025-01-21 23:22:01] Conexión cerrada.
+[2025-01-21 23:22:10] El jugador a elegido una opcion
+[2025-01-21 23:22:10] Conexión exitosa a la base de datos.
+[2025-01-21 23:22:10] Conexión cerrada.
+[2025-01-21 23:22:13] El jugador a elegido una opcion
+[2025-01-21 23:22:24] [Juego Iniciado]
+[2025-01-21 23:22:25] Conexión exitosa a la base de datos.
+[2025-01-21 23:22:25] Conexión cerrada.
+[2025-01-21 23:22:25] Conexión exitosa a la base de datos.
+[2025-01-21 23:22:25] Conexión cerrada.
+[2025-01-21 23:22:25] Conexión exitosa a la base de datos.
+[2025-01-21 23:22:25] Conexión cerrada.
+[2025-01-21 23:22:25] Conexión exitosa a la base de datos.
+[2025-01-21 23:22:25] Conexión cerrada.
