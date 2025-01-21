@@ -214,4 +214,3 @@ def desactivar_jugadores(dni_list):
     :param dni_list: Lista de DNIs de los jugadores a desactivar.
     """
     actualizar_in_game(dni_list, False)
-
