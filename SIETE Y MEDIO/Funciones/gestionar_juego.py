@@ -294,7 +294,7 @@ def rondas_players(jugadores,contador,turno,players):
         print()
         input("Presiona enter para continuar".center(50))
 
-def opciones(jugadores,turno,contador,players,ronda,partida):
+def opciones(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
     while True:
         print()
         opc = rondas_players(jugadores,contador,turno,players)
@@ -355,6 +355,18 @@ def opciones(jugadores,turno,contador,players,ronda,partida):
         elif opc == 4:
             if ronda[contador][jugadores[turno]]["Apuesta"] == 0:
                 print("Apuesta primero".center(50,"="))
+            else:
+                asignadas = []
+                terminar = False
+                for key in jugadores:
+                    for i in range(len(ronda[contador][key]["Cartas"])):
+                        asignadas.append(ronda[contador][key]["Cartas"][i])
+                while not terminar:
+                    carta = mazo[random.randint(0,len(mazo))]
+                    if carta not in asignadas:
+                        ronda[contador][jugadores[turno]]["Cartas"].append(carta)
+                        ronda[contador][jugadores[turno]]["Valor_total_cartas"] += cartas[carta]["value"]
+                        terminar = True
         elif opc == 5:
             if ronda[contador][jugadores[turno]]["Apuesta"] == 0:
                 print("Apuesta primero".center(50,"="))
