@@ -98,6 +98,7 @@ def nuevohumano(player_dicto):
                     profile = interface.management_menu(title=1,menu=profiles)
                     aux = input("Estas seguro? S/N: ".rjust(30))
                     if aux.upper() == "S":
+
                         player_dicto[nif]= {
                                 "Name": name,
                                 "Risk": profile,
@@ -106,6 +107,18 @@ def nuevohumano(player_dicto):
                                 "Minutos_Jugados": 0,
                                 "In_Game": False
                             }
+
+                        player_data = {
+                            "ID": nif,
+                            "Name": name,
+                            "Risk": profile,
+                            "Type": "Humano",
+                            "Puntos": 20,
+                            "Minutos_Jugados": 0,
+                            "In_Game": False
+                        }
+
+                        bbdd.insertar_personaje_base_datos(player_data)
                     return
 
 def nuevobot(player_dicto):
@@ -132,6 +145,7 @@ def nuevobot(player_dicto):
                     profile = interface.management_menu(title=1,menu=profiles)
                     aux = input("Estas seguro? S/N: ".rjust(30))
                     if aux.upper() == "S":
+
                         player_dicto[nif]= {
                                 "Name": name,
                                 "Risk": profile,
@@ -140,4 +154,16 @@ def nuevobot(player_dicto):
                                 "Minutos_Jugados": 0,
                                 "In_Game": False
                             }
+
+                        bot_data = {
+                            "ID": nif,
+                            "Name": name,
+                            "Risk": profile,
+                            "Type": "Bot",
+                            "Puntos": 20,
+                            "Minutos_Jugados": 0,
+                            "In_Game": False
+                        }
+
+                        bbdd.insertar_personaje_base_datos(bot_data)
                     return
