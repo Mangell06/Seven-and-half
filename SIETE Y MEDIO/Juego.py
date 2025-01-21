@@ -182,20 +182,16 @@ menu05 = ("Reports", "1", "2", "3", "4", "5", "6", "7", "Volver atras")
 
 set_cartas = ("Elige una carta", "Española", "Poker")
 
-new_party = {len(partidas_dicti) + 1: {
+new_party = {
     "start_date": "",
     "end_date": "",
     "ID_Ganador": "",
     "Total_Rondas": 5,
     "Mazo": "",
-    "Players": []}}
+    "Players": []}
 
-# Estructura {0:{"DNI":{"Puntos_iniciales":20,"Puntos_finales":55,"Carta_inicial":""},
-#               "DNI":{"Puntos_iniciales":29,"Puntos_finales":4,"Carta_inicial":""}}}
-player_party = {len(partidas_dicti) + 1: {}}
+player_party = {}
 
-# Estructura {0:{"DNI":{"Es_banca":True,"Proridad":1,"Apuesta":14,"Proridad":2,"Puntos_inciales":30,Valor_total_cartas:7.5,"Puntos_finales":44,Cartas=[]},
-#               "DNI"{"Es_banca":False,"Apuesta":14,"Puntos_inciales":20,Valor_total_cartas:7,"Puntos_finales":6,Cartas=[]}}}
 player_round = {}
 
 while not flg_salir:
@@ -210,28 +206,23 @@ while not flg_salir:
             flg_02 = True
         elif opc == 3:
             interface.clearscreen()
-            if new_party[len(partidas_dicti) + 1]["Mazo"] == "":
+            if new_party["Mazo"] == "":
                 print("Elige un mazo con el que jugar en ajustes".center(50))
                 input("Presiona enter para continuar".center(50))
             elif len(jugando) <= 1:
                 print("Elige minimo dos jugadores para jugar en ajustes")
                 input("Presiona enter para continuar".center(50))
             else:
-                new_party[len(partidas_dicti) + 1]["start_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                new_party[len(partidas_dicti) + 1]["Players"] = jugando
-                mazo = juego.crearmazo(partidas_dicti, new_party, cartas_game)
+                new_party["start_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                new_party["Players"] = jugando
+                mazo = juego.crearmazo(new_party, cartas_game)
                 aux_priority = []
                 contador = 0
-                juego.crearcontext(jugando, player_party, player_round,partidas_dicti, players_dicti)
-                juego.crearrondas(jugando,player_round,partidas_dicti,players_dicti,contador)
-                juego.priority(jugando, player_round, partidas_dicti, mazo,contador)
-                juego.selectprioridad(player_round, jugando, partidas_dicti,contador, cartas_game,player_party)
-                print(player_party)
-                print(player_round)
-                juego.limpiarcartas(player_round, partidas_dicti,contador)
-                player_party = {len(partidas_dicti) + 1: {}}
-                player_round = {}
-                #juego.rondas(contador,jugando[0])
+                juego.crearcontext(jugando, player_party, players_dicti)
+                juego.crearrondas(jugando,player_round, players_dicti, contador)
+                juego.priority(jugando, player_party, mazo)
+                juego.cambioprioridad(player_party,cartas_game,jugando)
+                
         elif opc == 4:
             flg_00 = False
             flg_04 = True
@@ -276,10 +267,10 @@ while not flg_salir:
             players_dicti = bbdd.get_personajes()
             aux = interface.management_menu(title=1, menu=set_cartas)
             if aux == 1:
-                new_party[len(partidas_dicti)+1]["Mazo"] = "Española"
+                new_party["Mazo"] = "Española"
             else:
-                new_party[len(partidas_dicti)+1]["Mazo"] = "Poker"
-            aux = "Mazo establecido: {}".format(new_party[len(partidas_dicti)+1]["Mazo"])
+                new_party["Mazo"] = "Poker"
+            aux = "Mazo establecido: {}".format(new_party["Mazo"])
             print(aux.center(50))
             print()
             input("Presiona enter para continuar".center(50))
@@ -287,7 +278,7 @@ while not flg_salir:
             interface.clearscreen()
             aux = juego.rondamaxima()
             mensaje = "El maximo de rondas de la partida ahora son {} rondas".format(aux)
-            new_party[len(partidas_dicti)+1]["ID_Ganador"] = aux
+            new_party["ID_Ganador"] = aux
             print(mensaje.center(50))
             print()
             input("Presiona enter para continuar".center(50))
