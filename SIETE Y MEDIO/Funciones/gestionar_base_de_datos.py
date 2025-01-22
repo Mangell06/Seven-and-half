@@ -374,3 +374,34 @@ def insertar_partidas(partidas_dicti, new_party,id_ganador):
     finally:
         close_connection(connection)
 
+def actualizar_puntos_personajes(player_party):
+    """
+    Actualiza los puntos de los personajes en la base de datos con los puntos finales de player_party.
+
+    Args:
+        player_party (dict): Diccionario con los datos finales de cada jugador, incluyendo sus puntos finales.
+                             Estructura: {ID_Jugador: {"Puntos_finales": int, ...}, ...}
+    """
+    connection = connect_to_database()
+    try:
+        with connection.cursor() as cursor:
+            for id_jugador, datos_jugador in player_party.items():
+                # Obtener los puntos finales del jugador
+                puntos_finales = datos_jugador.get("Puntos_finales", None)
+                if puntos_finales is not None:
+                    # Query para actualizar los puntos
+                    query = """
+                        UPDATE personajes
+                        SET Puntos = %s
+                        WHERE ID = %s
+                    """
+                    cursor.execute(query, (puntos_finales, id_jugador))
+
+            # Confirmar cambios
+            connection.commit()
+            juego.loginfo("Puntos de los personajes actualizados correctamente.")
+    except pymysql.MySQLError as e:
+        juego.loginfo(f"Error al actualizar los puntos de los personajes: {e}")
+        connection.rollback()
+    finally:
+        close_connection(connection)

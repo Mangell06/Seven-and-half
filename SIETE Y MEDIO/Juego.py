@@ -268,6 +268,7 @@ while not flg_salir:
                 bbdd.insertar_historial(player_party, partidas_dicti, tiempo_jugado)
                 bbdd.insertar_rondas(player_round, new_party, partidas_dicti,player_party)
                 bbdd.insertar_partidas(partidas_dicti, new_party,id_ganador)
+                bbdd.actualizar_puntos_personajes(player_party)
                 new_party = {
                     "start_date": "",
                     "end_date": "",
