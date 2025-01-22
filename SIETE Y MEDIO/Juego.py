@@ -1,5 +1,5 @@
 # Importaciones de los módulos
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 import sys
 
@@ -147,7 +147,6 @@ juego.loginfo("[Juego Iniciado]")
 # Sacar diccionarios de la base de datos
 players_dicti = bbdd.get_personajes()
 cartas_dicti = bbdd.get_cartas()
-historial_dicti = bbdd.get_historial()
 partidas_dicti = bbdd.get_partidas()
 
 # Sacar listas de keys de los diccionarios
@@ -205,6 +204,7 @@ while not flg_salir:
             flg_00 = False
             flg_02 = True
         elif opc == 3:
+            tiempos_inicio = {jugador: datetime.now() for jugador in jugando}
             interface.clearscreen()
             if new_party["Mazo"] == "":
                 print("Elige un mazo con el que jugar en ajustes".center(50))
@@ -217,44 +217,59 @@ while not flg_salir:
                 new_party["Players"] = jugando
                 mazo = juego.crearmazo(new_party, cartas_game)
                 aux_priority = []
+                copiar = False
                 contador = 0
+                copia_contador = 0
                 turno = len(jugando)
                 juego.crearcontext(jugando, player_party, players_dicti)
-                juego.crearrondas(jugando,player_round, players_dicti, contador)
+                juego.crearrondas(jugando, player_round, players_dicti, contador)
                 juego.priority(jugando, player_party, mazo)
-                juego.cambioprioridad(player_party,cartas_game,jugando,player_round,contador)
+                juego.cambioprioridad(player_party, cartas_game, jugando, player_round, contador)
                 print(turno)
-                while contador != new_party["Total_Rondas"]-1:
+                while contador != new_party["Total_Rondas"] - 1:
                     if turno == 0:
-                        algo = juego.ganar(player_round,jugando,players_dicti,contador,player_party)
-                        print(player_round)
+                        algo = juego.ganar(player_round, jugando, players_dicti, contador, player_party)
                         print()
                         salir = input("¿Quieres seguir jugando? S/N".rjust(30))
-                        print()
                         if salir.upper() == "S":
                             contador += 1
                             juego.crearrondas(jugando, player_round, players_dicti, contador, algo)
                             turno = len(jugando)
-                            print(turno)
-                            print(player_round)
                         else:
-                            contador = new_party["Total_Rondas"]-1
+                            copia_contador = contador
+                            copiar = True
+                            contador = new_party["Total_Rondas"] - 1
                     while turno != 0:
-                        if players_dicti[jugando[turno-1]]["Type"] == "Humano":
-                            juego.opciones(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
-                        elif players_dicti[jugando[turno-1]]["Type"] == "Bot" and player_round[contador][jugando[turno-1]]["Es_banca"]:
-                            juego.decidir_jugada_banca(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
+                        if players_dicti[jugando[turno - 1]]["Type"] == "Humano":
+                            juego.opciones(jugando, turno, contador, players_dicti, player_round, player_party, mazo,
+                                           cartas_game)
+                        elif players_dicti[jugando[turno - 1]]["Type"] == "Bot" and \
+                                player_round[contador][jugando[turno - 1]]["Es_banca"]:
+                            juego.decidir_jugada_banca(jugando, turno, contador, players_dicti, player_round,
+                                                       player_party, mazo, cartas_game)
                         else:
-                            juego.decidir_jugada_bot(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
+                            juego.decidir_jugada_bot(jugando, turno, contador, players_dicti, player_round,player_party, mazo, cartas_game)
                         turno -= 1
+                if not copiar:
+                    copia_contador = contador
+                for jugador in jugando:
+                    player_party[jugador]["Puntos_finales"] = player_round[copia_contador][jugador]["Puntos"]
                 new_party["end_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                #Subir datos antes de resetear.
+                for jugador in jugando:
+                    tiempo_jugado = (datetime.now() - tiempos_inicio[
+                        jugador]).total_seconds() / 60
+                    players_dicti[jugador]["Minutos_Jugados"] += tiempo_jugado
+                id_ganador = juego.elegirganador(player_party,jugando,players_dicti)
+                print()
+                input("Presiona enter para continuar".center(50,"="))
+                bbdd.insertar_rondas(player_round, new_party, partidas_dicti,player_party)
                 new_party = {
                     "start_date": "",
                     "end_date": "",
                     "Total_Rondas": 5,
                     "Mazo": "",
-                    "Players": []}
+                    "Players": []
+                }
                 player_party = {}
                 player_round = {}
                 mazo = []

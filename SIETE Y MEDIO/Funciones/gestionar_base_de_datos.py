@@ -92,28 +92,6 @@ def get_cartas():
     return {}
 
 
-def get_historial():
-    """Consulta la tabla de Historial y devuelve los resultados como un diccionario."""
-    query = "SELECT * FROM siete_y_medio.historial;"  # Consulta a la tabla Historial
-    connection = connect_to_database()
-
-    if connection:
-        results = execute_query(connection, query)
-        close_connection(connection)
-        if results:
-            # Diccionario con ID_Jugador como clave
-            historial_dict = {
-                row['ID_Jugador']: {
-                    "ID_Partida": row['ID_Partida'],
-                    "Puntos_Iniciales": row['Puntos_Iniciales'],
-                    "Puntos_Finales": row['Puntos_Finales'],
-                    "Tiempo_Jugado": row['Tiempo_Jugado'],
-                } for row in results
-            }
-            return historial_dict
-    return {}
-
-
 def get_partidas():
     """Consulta la tabla de Partidas y devuelve los resultados como un diccionario."""
     query = "SELECT * FROM siete_y_medio.partidas;"  # Consulta a la tabla Partidas
@@ -250,3 +228,60 @@ def insertar_personaje_base_datos(player_data):
     finally:
         close_connection(connection)
 
+
+def insertar_rondas(player_round, new_party, partidas_dicti, player_party):
+    """
+    Inserta los datos de las rondas en la base de datos.
+
+    Args:
+        player_round (dict): Diccionario con la información de cada ronda.
+        new_party (dict): Diccionario con la información de la partida actual.
+        historial_dicti (dict): Diccionario con el historial de partidas.
+        player_party (dict): Diccionario con los datos iniciales y finales de cada jugador.
+    """
+    connection = connect_to_database()
+    try:
+        with connection.cursor() as cursor:
+            # Obtener ID_Partida
+            id_partida = len(partidas_dicti) + 1
+
+            # Obtener Rondas_Max
+            rondas_max = new_party["Total_Rondas"]
+
+            # Insertar datos de cada ronda
+            for id_ronda, ronda_data in player_round.items():
+                id_ganador = ronda_data["ID_Ganador"]  # ID del ganador de la ronda (opcional)
+
+                # Iterar por cada jugador en la ronda
+                for id_jugador, jugador_data in ronda_data.items():
+                    if id_jugador == "ID_Ganador":
+                        continue  # Saltar el campo de ganador
+
+                    # Verificar que el jugador está en player_party para evitar errores
+                    if id_jugador in player_party:
+                        # Calcular los puntos ganados
+                        puntos_iniciales = player_party[id_jugador]["Puntos_iniciales"]
+                        puntos_finales = player_party[id_jugador]["Puntos_finales"]
+                        puntos_ganados = puntos_finales - puntos_iniciales
+
+                        # Obtener datos de la ronda
+                        apuesta = jugador_data["Apuesta"]
+                        banca = int(jugador_data["Es_banca"])  # Convertir a 1 o 0
+
+                        # Query de inserción
+                        query = """
+                            INSERT INTO rondas (ID_Ronda, ID_Partida, Rondas_Max, ID_Jugador, 
+                                                Puntos_Ganados, Apuesta, Banca)
+                            VALUES (%s, %s, %s, %s, %s, %s, %s)
+                        """
+                        cursor.execute(query, (id_ronda, id_partida, rondas_max, id_jugador,
+                                               puntos_ganados, apuesta, banca))
+
+            # Confirmar cambios
+            connection.commit()
+            juego.loginfo(f"Datos de rondas insertados correctamente para ID_Partida {id_partida}.")
+    except pymysql.MySQLError as e:
+        juego.loginfo(f"Error al insertar los datos de rondas: {e}")
+        connection.rollback()
+    finally:
+        close_connection(connection)

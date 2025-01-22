@@ -433,7 +433,7 @@ def ganar(contextoronda,jugadores,players,contador,contextopartida):
                 copia[i] = copia[i+1]
                 copia[i+1] = aux
             elif contextoronda[contador][copia[i]]["Valor_total_cartas"] == contextoronda[contador][copia[i+1]]["Valor_total_cartas"]  and contextoronda[contador][copia[i]]["Valor_total_cartas"] <= 7.5:
-                if contextopartida[copia[i]]["Prioridad"] < contextopartida[copia[i+1]]["Prioridad"]:
+                if contextopartida[copia[i]]["Prioridad"] > contextopartida[copia[i+1]]["Prioridad"]:
                     aux = copia[i]
                     copia[i] = copia[i+1]
                     copia[i+1] = aux
@@ -461,7 +461,7 @@ def ganar(contextoronda,jugadores,players,contador,contextopartida):
     if len(proxima_banca) > 0:
         for pasadas in range(len(proxima_banca)-1):
             for i in range(len(proxima_banca)-1-pasadas):
-                if contextopartida[proxima_banca[i]]["Prioridad"] > contextopartida[proxima_banca[i+1]]["Prioridad"]:
+                if contextopartida[proxima_banca[i]]["Prioridad"] < contextopartida[proxima_banca[i+1]]["Prioridad"]:
                     aux = proxima_banca[i]
                     proxima_banca[i] = proxima_banca[i+1]
                     proxima_banca[i+1] = aux
@@ -626,3 +626,18 @@ def decidir_jugada_banca(jugadores,turno,contador,players,ronda,partida,mazo,car
             # El bot decide no pedir mÃ¡s cartas
             return
 
+def elegirganador(nueva_partida,jugadores,players):
+    print()
+    comparar = []
+    for key in jugadores:
+        comparar.append(nueva_partida[key]["Puntos_finales"]-nueva_partida[key]["Puntos_iniciales"])
+    for pasadas in range(len(comparar)-1):
+        for i in range(len(comparar)-1-pasadas):
+            if comparar[i] < comparar[i+1]:
+                aux = comparar[i]
+                comparar[i] = comparar[i+1]
+                comparar[i+1] = aux
+    for jugador in jugadores:
+        if nueva_partida[jugador]["Puntos_finales"]-nueva_partida[jugador]["Puntos_iniciales"] == comparar[0]:
+            print("¡Felicidades has ganado {}!".format(players[jugador]["Name"]))
+            return jugador
