@@ -195,6 +195,7 @@ player_round = {}
 
 while not flg_salir:
     while flg_00:
+        bbdd.get_personajes()
         interface.clearscreen()
         opc = interface.management_menu(title=2, menu=menu00)
         if opc == 1:
