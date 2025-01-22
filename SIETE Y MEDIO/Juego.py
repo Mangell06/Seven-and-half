@@ -4,6 +4,8 @@ import random
 import os
 import sys
 
+from cffi.cffi_opcode import PRIM_INT
+
 # Obtener la ruta absoluta de la carpeta donde se encuentra el archivo Juego.py
 base_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -224,18 +226,27 @@ while not flg_salir:
                 juego.crearrondas(jugando,player_round, players_dicti, contador)
                 juego.priority(jugando, player_party, mazo)
                 juego.cambioprioridad(player_party,cartas_game,jugando,player_round,contador)
+                print(turno)
                 while contador != new_party["Total_Rondas"]-1:
                     if turno == 0:
-                        contador += 1
-                        juego.crearrondas(jugando, player_round, players_dicti, contador)
-                        turno = len(jugando)
+                        algo = juego.ganar(player_round,jugando,players_dicti,contador,player_party)
+                        print(player_round)
+                        print()
+                        salir = input("¿Quieres seguir jugando? S/N".rjust(30))
+                        print()
+                        if salir.upper() == "S":
+                            contador += 1
+                            juego.crearrondas(jugando, player_round, players_dicti, contador, algo)
+                            turno = len(jugando)
+                            print(turno)
+                            print(player_round)
+                        else:
+                            contador = new_party["Total_Rondas"]-1
                     while turno != 0:
                         if players_dicti[jugando[turno-1]]["Type"] == "Humano":
                             juego.opciones(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
-                        elif players_dicti[jugando[turno-1]]["Type"] == "Bot" and player_round[jugando[turno-1]]["Es_banca"] == True:
-                           juego.jugar_banca(player_party, cartas_game)
                         else:
-                            print("bot")
+                            juego.decidir_jugada_bot(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
                         turno -= 1
                 new_party["end_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 mazo = []
