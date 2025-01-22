@@ -406,7 +406,7 @@ def opciones(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
             if ronda[contador][jugadores[turno-1]]["Apuesta"] == 0:
                 print("Apuesta primero".center(50,"="))
             else:
-                print("Bot")
+                decidir_jugada_bot(jugadores,turno,contador,players,ronda, partida, mazo, cartas)
         else:
             if ronda[contador][jugadores[turno-1]]["Apuesta"] == 0:
                 print("Apuesta primero".center(50,"="))
@@ -417,59 +417,70 @@ def opciones(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
         print()
         input("Presiona enter para continuar".center(50))
 
-def ganar(contextoronda,jugadores,players,contador,contextopartida):
+def ganar(contextoronda, jugadores, contador, contextopartida):
     proxima_banca = []
     copia = jugadores.copy()
-    for pasadas in range(len(copia)-1):
-        for i in range(len(copia)-1-pasadas):
-            if contextoronda[contador][copia[i]]["Valor_total_cartas"] == 7.5:
-                proxima_banca.append(copia[i])
-            if contextoronda[contador][copia[i]]["Valor_total_cartas"] > 7.5:
-                    aux = copia[i]
-                    copia[i] = copia[i+1]
-                    copia[i+1] = aux
-            elif contextoronda[contador][copia[i]]["Valor_total_cartas"] < contextoronda[contador][copia[i+1]]["Valor_total_cartas"] and contextoronda[contador][copia[i]]["Valor_total_cartas"] <= 7.5 and contextoronda[contador][copia[i+1]]["Valor_total_cartas"] <= 7.5:
-                aux = copia[i]
-                copia[i] = copia[i+1]
-                copia[i+1] = aux
-            elif contextoronda[contador][copia[i]]["Valor_total_cartas"] == contextoronda[contador][copia[i+1]]["Valor_total_cartas"]  and contextoronda[contador][copia[i]]["Valor_total_cartas"] <= 7.5:
-                if contextopartida[copia[i]]["Prioridad"] > contextopartida[copia[i+1]]["Prioridad"]:
-                    aux = copia[i]
-                    copia[i] = copia[i+1]
-                    copia[i+1] = aux
-    for cosa in contextoronda[contador]:
-        if cosa == "ID_Ganador":
-            contextoronda[contador][cosa] = copia[0]
-    if contextoronda[contador][copia[0]]["Es_banca"]:
-        for key in copia:
-            if key not in copia[0]:
-                if contextoronda[contador][copia[0]]["Apuesta"] > contextoronda[contador][key]["Apuesta"]:
-                    contextoronda[contador][copia[0]]["Puntos"] += contextoronda[contador][key]["Apuesta"]
-                    contextoronda[contador][key]["Puntos"] -=  contextoronda[contador][key]["Apuesta"]
-                else:
-                    contextoronda[contador][copia[0]]["Puntos"] += contextoronda[contador][copia[0]]["Apuesta"]
-                    contextoronda[contador][key]["Puntos"] -= contextoronda[contador][copia[0]]["Apuesta"]
-    else:
-        for key in copia:
-            if contextoronda[contador][key]["Es_banca"]:
-                if contextoronda[contador][copia[0]]["Apuesta"] > contextoronda[contador][key]["Apuesta"]:
-                    contextoronda[contador][copia[0]]["Puntos"] += contextoronda[contador][key]["Apuesta"]
-                    contextoronda[contador][key]["Puntos"] -= contextoronda[contador][key]["Apuesta"]
-                else:
-                    contextoronda[contador][copia[0]]["Puntos"] += contextoronda[contador][copia[0]]["Apuesta"]
-                    contextoronda[contador][key]["Puntos"] -= contextoronda[contador][copia[0]]["Apuesta"]
-    if len(proxima_banca) > 0:
-        for pasadas in range(len(proxima_banca)-1):
-            for i in range(len(proxima_banca)-1-pasadas):
-                if contextopartida[proxima_banca[i]]["Prioridad"] < contextopartida[proxima_banca[i+1]]["Prioridad"]:
-                    aux = proxima_banca[i]
-                    proxima_banca[i] = proxima_banca[i+1]
-                    proxima_banca[i+1] = aux
+    for pasadas in range(len(copia) - 1):
+        for i in range(len(copia) - 1 - pasadas):
+            valor_i = contextoronda[contador][copia[i]]["Valor_total_cartas"]
+            valor_j = contextoronda[contador][copia[i + 1]]["Valor_total_cartas"]
+            if valor_i > 7.5:
+                valor_i = float('-inf')
+            if valor_j > 7.5:
+                valor_j = float('-inf')
+            prioridad_i = contextopartida[copia[i]]["Prioridad"]
+            prioridad_j = contextopartida[copia[i + 1]]["Prioridad"]
+            if (valor_i < valor_j) or (valor_i == valor_j and prioridad_i < prioridad_j):
+                copia[i], copia[i + 1] = copia[i + 1], copia[i]
+    contextoronda[contador]["ID_Ganador"] = copia[0]
+    ganador = copia[0]
+    es_banca = contextoronda[contador][ganador]["Es_banca"]
+    for jugador in copia:
+        if jugador == ganador:
+            continue
+        if es_banca:
+            if contextoronda[contador][jugador]["Valor_total_cartas"] > 7.5 or contextoronda[contador][jugador]["Valor_total_cartas"] <= contextoronda[contador][ganador]["Valor_total_cartas"]:
+                apuesta = contextoronda[contador][jugador]["Apuesta"]
+                contextoronda[contador][ganador]["Puntos"] += apuesta
+                contextoronda[contador][jugador]["Puntos"] -= apuesta
+            elif contextoronda[contador][jugador]["Valor_total_cartas"] == 7.5 and contextoronda[contador][ganador]["Valor_total_cartas"] < 7.5:
+                apuesta = contextoronda[contador][jugador]["Apuesta"]
+                contextoronda[contador][jugador]["Puntos"] += 2 * apuesta
+                contextoronda[contador][ganador]["Puntos"] -= 2 * apuesta
+                proxima_banca.append(jugador)
+            elif contextoronda[contador][jugador]["Valor_total_cartas"] > contextoronda[contador][ganador]["Valor_total_cartas"]:
+                apuesta = contextoronda[contador][jugador]["Apuesta"]
+                contextoronda[contador][jugador]["Puntos"] += apuesta
+                contextoronda[contador][ganador]["Puntos"] -= apuesta
+        else:
+            if contextoronda[contador][jugador]["Es_banca"]:
+                banca = jugador
+                for jugador_restante in copia:
+                    if jugador_restante != banca:
+                        if contextoronda[contador][jugador_restante]["Valor_total_cartas"] > 7.5 or contextoronda[contador][jugador_restante]["Valor_total_cartas"] <= contextoronda[contador][banca]["Valor_total_cartas"]:
+                            apuesta = contextoronda[contador][jugador_restante]["Apuesta"]
+                            contextoronda[contador][banca]["Puntos"] += apuesta
+                            contextoronda[contador][jugador_restante]["Puntos"] -= apuesta
+                        elif contextoronda[contador][jugador_restante]["Valor_total_cartas"] == 7.5 and contextoronda[contador][banca]["Valor_total_cartas"] < 7.5:
+                            apuesta = contextoronda[contador][jugador_restante]["Apuesta"]
+                            contextoronda[contador][jugador_restante]["Puntos"] += 2 * apuesta
+                            contextoronda[contador][banca]["Puntos"] -= 2 * apuesta
+                            proxima_banca.append(jugador_restante)
+                        elif contextoronda[contador][jugador_restante]["Valor_total_cartas"] > contextoronda[contador][banca]["Valor_total_cartas"]:
+                            apuesta = contextoronda[contador][jugador_restante]["Apuesta"]
+                            contextoronda[contador][jugador_restante]["Puntos"] += apuesta
+                            contextoronda[contador][banca]["Puntos"] -= apuesta
+    for pasadas in range(len(proxima_banca) - 1):
+        for i in range(len(proxima_banca) - 1 - pasadas):
+            if contextopartida[proxima_banca[i]]["Prioridad"] < contextopartida[proxima_banca[i + 1]]["Prioridad"]:
+                proxima_banca[i], proxima_banca[i + 1] = proxima_banca[i + 1], proxima_banca[i]
+
     return proxima_banca
 
 def decidir_jugada_bot(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
 
     while True:
+        print()
         aux = "Round: {} {}".format(contador, players[jugadores[turno - 1]]["Name"])
 
         print(aux.center(50, "="))
@@ -491,10 +502,11 @@ def decidir_jugada_bot(jugadores,turno,contador,players,ronda,partida,mazo,carta
                 str(ronda[contador][key]["Cartas"]).ljust(20) +
                 str(ronda[contador][key]["Valor_total_cartas"]).ljust(15))
 
-        input("\n\nPresiona enter para continuar".center(50,"-"))
+        input("\n\n"+ "Presiona enter para continuar".center(50,"-"))
 
-        ronda[contador][jugadores[turno-1]]["Apuesta"] = random.randint(1, ronda[contador][jugadores[turno-1]]["Puntos"]//3)
 
+        if ronda[contador][jugadores[turno-1]]["Apuesta"] == 0 :
+            ronda[contador][jugadores[turno-1]]["Apuesta"] = random.randint(1, ronda[contador][jugadores[turno-1]]["Puntos"]//3)
 
         asignadas = []
         jugador_actual = jugadores[turno - 1]
@@ -542,6 +554,7 @@ def decidir_jugada_bot(jugadores,turno,contador,players,ronda,partida,mazo,carta
 def decidir_jugada_banca(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
 
     while True:
+        print()
         aux = "Round: {} {}".format(contador, players[jugadores[turno - 1]]["Name"])
 
         print(aux.center(50, "="))
@@ -563,9 +576,10 @@ def decidir_jugada_banca(jugadores,turno,contador,players,ronda,partida,mazo,car
                 str(ronda[contador][key]["Cartas"]).ljust(20) +
                 str(ronda[contador][key]["Valor_total_cartas"]).ljust(15))
 
-        input("\n\nPresiona enter para continuar".center(50,"-"))
+        input("\n\n"+ "Presiona enter para continuar".center(50,"-"))
 
-        ronda[contador][jugadores[turno-1]]["Apuesta"] = random.randint(1, ronda[contador][jugadores[turno-1]]["Puntos"]//3)
+        if ronda[contador][jugadores[turno - 1]]["Apuesta"] == 0:
+            ronda[contador][jugadores[turno - 1]]["Apuesta"] = random.randint(1, ronda[contador][jugadores[turno - 1]]["Puntos"] // 3)
 
 
         asignadas = []
