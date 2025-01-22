@@ -1,0 +1,69 @@
+[2025-01-22 12:57:41] [Juego Iniciado]
+[2025-01-22 12:57:41] Conexión exitosa a la base de datos.
+[2025-01-22 12:57:41] Conexión cerrada.
+[2025-01-22 12:57:42] Conexión exitosa a la base de datos.
+[2025-01-22 12:57:42] Conexión cerrada.
+[2025-01-22 12:57:42] Conexión exitosa a la base de datos.
+[2025-01-22 12:57:42] Conexión cerrada.
+[2025-01-22 12:57:45] El jugador a elegido una opcion
+[2025-01-22 12:57:48] El jugador a elegido una opcion
+[2025-01-22 12:57:56] El jugador a elegido una opcion
+[2025-01-22 12:57:58] El jugador a elegido una opcion
+[2025-01-22 12:57:58] Conexión exitosa a la base de datos.
+[2025-01-22 12:57:58] Conexión cerrada.
+[2025-01-22 12:57:59] El jugador a elegido una opcion
+[2025-01-22 12:57:59] Conexión exitosa a la base de datos.
+[2025-01-22 12:57:59] Conexión cerrada.
+[2025-01-22 12:58:00] El jugador a elegido una opcion
+[2025-01-22 12:58:01] Conexión exitosa a la base de datos.
+[2025-01-22 12:58:01] Conexión cerrada.
+[2025-01-22 12:58:04] El jugador a elegido una opcion
+[2025-01-22 12:58:08] Conexión exitosa a la base de datos.
+[2025-01-22 12:58:08] In_Game actualizado a 0 para los DNIs: ['18336890W', '18464685D', '18770291Z', '18788075L', '45362134Q', '45676937H', '51286738G', '51805177T', '84910776C']
+[2025-01-22 12:58:08] Conexión cerrada.
+[2025-01-22 12:58:08] Conexión exitosa a la base de datos.
+[2025-01-22 12:58:08] In_Game actualizado a 1 para los DNIs: ['00266936K', '07190601L', '12345678Z']
+[2025-01-22 12:58:08] Conexión cerrada.
+[2025-01-22 12:58:08] Conexión exitosa a la base de datos.
+[2025-01-22 12:58:09] Conexión cerrada.
+[2025-01-22 12:58:36] El jugador a elegido una opcion
+[2025-01-22 12:58:39] Conexión exitosa a la base de datos.
+[2025-01-22 12:58:39] Conexión cerrada.
+[2025-01-22 12:58:43] El jugador a elegido una opcion
+[2025-01-22 12:58:45] El jugador a elegido una opcion
+[2025-01-22 12:58:49] El jugador a elegido una opcion
+[2025-01-22 12:59:07] El jugador a elegido una opcion
+[2025-01-22 12:59:12] El jugador a elegido una opcion
+[2025-01-22 12:59:14] Laia decide pedir una carta.
+[2025-01-22 12:59:15] Laia decide pedir una carta.
+[2025-01-22 12:59:16] Laia decide pedir una carta.
+[2025-01-22 12:59:16] Laia decide pedir una carta.
+[2025-01-22 12:59:17] Laia decide plantarse.
+[2025-01-22 12:59:26] El jugador a elegido una opcion
+[2025-01-22 12:59:37] El jugador a elegido una opcion
+[2025-01-22 12:59:40] Laia decide plantarse.
+[2025-01-22 12:59:49] El jugador a elegido una opcion
+[2025-01-22 12:59:55] El jugador a elegido una opcion
+[2025-01-22 12:59:58] Miguel decide pedir una carta.
+[2025-01-22 12:59:59] Miguel decide pedir una carta.
+[2025-01-22 12:59:59] Miguel decide plantarse.
+[2025-01-22 13:00:17] El jugador a elegido una opcion
+[2025-01-22 13:00:23] El jugador a elegido una opcion
+[2025-01-22 13:00:24] POLLAMAN decide pedir una carta.
+[2025-01-22 13:00:25] POLLAMAN decide pedir una carta.
+[2025-01-22 13:00:25] POLLAMAN decide pedir una carta.
+[2025-01-22 13:00:26] POLLAMAN decide pedir una carta.
+[2025-01-22 13:00:26] POLLAMAN decide pedir una carta.
+[2025-01-22 13:00:28] POLLAMAN decide plantarse.
+[2025-01-22 13:00:47] El jugador a elegido una opcion
+[2025-01-22 13:01:18] Conexión exitosa a la base de datos.
+[2025-01-22 13:01:18] Datos de historial insertados correctamente para ID_Partida 3.
+[2025-01-22 13:01:18] Conexión cerrada.
+[2025-01-22 13:01:18] Conexión exitosa a la base de datos.
+[2025-01-22 13:01:19] Datos de rondas insertados correctamente para ID_Partida 3.
+[2025-01-22 13:01:19] Conexión cerrada.
+[2025-01-22 13:01:19] Conexión exitosa a la base de datos.
+[2025-01-22 13:01:19] Datos de partida insertados correctamente para ID_Partida 3.
+[2025-01-22 13:01:19] Conexión cerrada.
+[2025-01-22 13:01:19] Conexión exitosa a la base de datos.
+[2025-01-22 13:01:19] Conexión cerrada.
