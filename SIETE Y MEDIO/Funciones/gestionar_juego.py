@@ -394,19 +394,18 @@ def opciones(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
         print()
         input("Presiona enter para continuar".center(50))
 
-def jugar_banca(players, cartas_game, cartas_robadas):
-    def obtener_valor_total_cartas(cartas):
+def jugar_banca(players, cartas_game):
+    cartas_robadas = []
+
+    def obtener_valor_total_cartas(cartas, cartas_game):
         valor_total = 0
         for carta in cartas:
             valor_carta = cartas_game[carta]["value"]
             valor_total += valor_carta
         return valor_total
 
-    def robar_carta():
-        cartas_disponibles = []
-        for carta in cartas_game:
-            if carta not in cartas_robadas:
-                cartas_disponibles.append(carta)
+    def robar_carta(cartas_game, cartas_robadas):
+        cartas_disponibles = [carta for carta in cartas_game if carta not in cartas_robadas]
         if cartas_disponibles:
             carta_robada = random.choice(cartas_disponibles)
             cartas_robadas.append(carta_robada)
@@ -424,11 +423,11 @@ def jugar_banca(players, cartas_game, cartas_robadas):
         if not player["Es_banca"]:
             jugadores.append(player)
 
-    valor_banca = obtener_valor_total_cartas(banca["Cartas"])
+    valor_banca = obtener_valor_total_cartas(banca["Cartas"], cartas_game)
 
     apuestas_a_devolver = 0
     for jugador in jugadores:
-        valor_cartas_jugador = obtener_valor_total_cartas(jugador["Cartas"])
+        valor_cartas_jugador = obtener_valor_total_cartas(jugador["Cartas"], cartas_game)
         if valor_cartas_jugador > valor_banca:
             apuestas_a_devolver += jugador["Apuesta"]
 
@@ -436,27 +435,27 @@ def jugar_banca(players, cartas_game, cartas_robadas):
 
     if valor_banca >= 7.5:
         decision = "No pedir carta"
-    elif valor_banca > 7.5:
-        decision = "No pedir carta"
     elif banca["Puntos"] - apuestas_a_devolver <= 0:
         decision = "Pedir carta y robar una carta"
     else:
         pedir_carta = False
         for jugador in jugadores:
-            valor_cartas_jugador = obtener_valor_total_cartas(jugador["Cartas"])
+            valor_cartas_jugador = obtener_valor_total_cartas(jugador["Cartas"], cartas_game)
             if valor_cartas_jugador > valor_banca:
                 pedir_carta = True
                 break
         if pedir_carta:
             decision = "Pedir carta y robar una carta"
-        elif banca["Puntos"] - apuestas_a_devolver > 0:
-            decision = "Pedir carta y robar una carta"
         else:
             decision = "Consultar perfil de riesgo y decidir"
 
     if decision == "Pedir carta y robar una carta":
-        carta_robada = robar_carta()
+        carta_robada = robar_carta(cartas_game, cartas_robadas)
         if carta_robada:
             banca["Cartas"].append(carta_robada)
 
-    return decision, banca["Cartas"]
+    print("Decisión de la banca:", decision)
+    print("Cartas de la banca después de robar (si aplica):", banca["Cartas"])
+    print("Cartas robadas:", cartas_robadas)
+
+    return decision, banca["Cartas"], cartas_robadas
