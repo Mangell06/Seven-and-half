@@ -236,7 +236,7 @@ def insertar_rondas(player_round, new_party, partidas_dicti, player_party):
     Args:
         player_round (dict): Diccionario con la información de cada ronda.
         new_party (dict): Diccionario con la información de la partida actual.
-        historial_dicti (dict): Diccionario con el historial de partidas.
+        partidas_dicti (dict): Diccionario con el historial de partidas.
         player_party (dict): Diccionario con los datos iniciales y finales de cada jugador.
     """
     connection = connect_to_database()
@@ -248,9 +248,12 @@ def insertar_rondas(player_round, new_party, partidas_dicti, player_party):
             # Obtener Rondas_Max
             rondas_max = new_party["Total_Rondas"]
 
+            # Crear un diccionario para almacenar los puntos finales por jugador por ronda
+            puntos_finales_por_jugador = {}
+
             # Insertar datos de cada ronda
             for id_ronda, ronda_data in player_round.items():
-                id_ganador = ronda_data["ID_Ganador"]  # ID del ganador de la ronda (opcional)
+                id_ganador = ronda_data["ID_Ganador"] if "ID_Ganador" in ronda_data else None
 
                 # Iterar por cada jugador en la ronda
                 for id_jugador, jugador_data in ronda_data.items():
@@ -259,10 +262,20 @@ def insertar_rondas(player_round, new_party, partidas_dicti, player_party):
 
                     # Verificar que el jugador está en player_party para evitar errores
                     if id_jugador in player_party:
+                        # Obtener puntos iniciales o usar puntos finales de la ronda anterior
+                        if id_ronda == 0:
+                            puntos_iniciales = player_party[id_jugador]["Puntos_iniciales"]
+                        else:
+                            puntos_iniciales = puntos_finales_por_jugador.get(id_jugador, 0)
+
+                        # Obtener puntos finales de la ronda actual
+                        puntos_finales = jugador_data["Puntos"]
+
                         # Calcular los puntos ganados
-                        puntos_iniciales = player_party[id_jugador]["Puntos_iniciales"]
-                        puntos_finales = player_party[id_jugador]["Puntos_finales"]
                         puntos_ganados = puntos_finales - puntos_iniciales
+
+                        # Almacenar los puntos finales para la próxima ronda
+                        puntos_finales_por_jugador[id_jugador] = puntos_finales
 
                         # Obtener datos de la ronda
                         apuesta = jugador_data["Apuesta"]
@@ -285,3 +298,79 @@ def insertar_rondas(player_round, new_party, partidas_dicti, player_party):
         connection.rollback()
     finally:
         close_connection(connection)
+
+def insertar_historial(player_party, partidas_dicti, tiempo_jugado):
+    """
+    Inserta los datos en la tabla 'historial' de la base de datos.
+
+    Args:
+        player_party (dict): Diccionario con información de los jugadores en la partida.
+        partidas_dicti (dict): Diccionario con las partidas y su información.
+    """
+    connection = connect_to_database()
+    try:
+        with connection.cursor() as cursor:
+            # Obtener ID_Partida (basado en el tamaño del diccionario de partidas)
+            id_partida = len(partidas_dicti) + 1
+
+            # Insertar los datos de cada jugador en la partida
+            for id_jugador, datos_jugador in player_party.items():
+                # Obtener los valores necesarios
+                puntos_iniciales = datos_jugador["Puntos_iniciales"]
+                puntos_finales = datos_jugador["Puntos_finales"]
+                Tiempo_Jugado = tiempo_jugado
+
+                # Query de inserción en la tabla historial
+                query = """
+                    INSERT INTO historial (ID_Jugador, ID_Partida, Puntos_Iniciales, Puntos_Finales, Tiempo_Jugado)
+                    VALUES (%s, %s, %s, %s, %s)
+                """
+                # Ejecutar el query
+                cursor.execute(query, (id_jugador, id_partida, puntos_iniciales, puntos_finales, Tiempo_Jugado))
+
+            # Confirmar los cambios
+            connection.commit()
+            juego.loginfo(f"Datos de historial insertados correctamente para ID_Partida {id_partida}.")
+    except pymysql.MySQLError as e:
+        juego.loginfo(f"Error al insertar los datos en historial: {e}")
+        connection.rollback()
+    finally:
+        close_connection(connection)
+
+def insertar_partidas(partidas_dicti, new_party,id_ganador):
+    """
+    Inserta los datos de la partida en la tabla 'partidas' de la base de datos.
+
+    Args:
+        partidas_dicti (dict): Diccionario con la información de las partidas.
+        new_party (dict): Diccionario con los datos de la nueva partida.
+    """
+    connection = connect_to_database()
+    try:
+        with connection.cursor() as cursor:
+            # Obtener ID_Partida (basado en el tamaño del diccionario de partidas)
+            id_partida = len(partidas_dicti) + 1
+
+            # Obtener información de la nueva partida
+            fecha = new_party["start_date"]
+            ID_ganador = id_ganador
+            total_rondas = new_party["Total_Rondas"]
+            mazo = new_party["Mazo"]
+
+            # Query de inserción en la tabla partidas
+            query = """
+                INSERT INTO partidas (ID_Partida, Fecha, ID_Ganador, Total_Rondas, Mazo)
+                VALUES (%s, %s, %s, %s, %s)
+            """
+            # Ejecutar el query
+            cursor.execute(query, (id_partida, fecha, ID_ganador, total_rondas, mazo))
+
+            # Confirmar los cambios
+            connection.commit()
+            juego.loginfo(f"Datos de partida insertados correctamente para ID_Partida {id_partida}.")
+    except pymysql.MySQLError as e:
+        juego.loginfo(f"Error al insertar los datos de la partida: {e}")
+        connection.rollback()
+    finally:
+        close_connection(connection)
+

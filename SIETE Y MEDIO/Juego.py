@@ -224,36 +224,39 @@ while not flg_salir:
                 juego.crearcontext(jugando, player_party, players_dicti)
                 juego.crearrondas(jugando, player_round, players_dicti, contador)
                 juego.priority(jugando, player_party, mazo)
+                contador_flg = True
                 juego.cambioprioridad(player_party, cartas_game, jugando, player_round, contador)
                 print(turno)
-                while contador != new_party["Total_Rondas"] - 1:
+                print()
+                while contador_flg:
                     if turno == 0:
-                        algo = juego.ganar(player_round, jugando, players_dicti, contador, player_party)
-                        print()
-                        salir = input("¿Quieres seguir jugando? S/N".rjust(30))
-                        if salir.upper() == "S":
+                        algo = juego.ganar(player_round, jugando, contador, player_party)
+                        if contador != new_party["Total_Rondas"]:
                             contador += 1
-                            juego.crearrondas(jugando, player_round, players_dicti, contador, algo)
-                            turno = len(jugando)
-                        else:
-                            copia_contador = contador
-                            copiar = True
-                            contador = new_party["Total_Rondas"] - 1
+                            print()
+                            salir = input("¿Quieres seguir jugando? S/N".rjust(30))
+                            if salir.upper() == "S":
+                                juego.crearrondas(jugando, player_round, players_dicti, contador, algo)
+                                turno = len(jugando)
+                            else:
+                                contador_flg = False
                     while turno != 0:
-                        if players_dicti[jugando[turno - 1]]["Type"] == "Humano":
-                            juego.opciones(jugando, turno, contador, players_dicti, player_round, player_party, mazo,
-                                           cartas_game)
-                        elif players_dicti[jugando[turno - 1]]["Type"] == "Bot" and \
-                                player_round[contador][jugando[turno - 1]]["Es_banca"]:
-                            juego.decidir_jugada_banca(jugando, turno, contador, players_dicti, player_round,
-                                                       player_party, mazo, cartas_game)
+                        if players_dicti[jugando[turno - 1]]["Puntos"] > 0:
+                            if players_dicti[jugando[turno - 1]]["Type"] == "Humano":
+                                juego.opciones(jugando, turno, contador, players_dicti, player_round, player_party, mazo,
+                                               cartas_game)
+                            elif players_dicti[jugando[turno - 1]]["Type"] == "Bot" and \
+                                    player_round[contador][jugando[turno - 1]]["Es_banca"]:
+                                juego.decidir_jugada_banca(jugando, turno, contador, players_dicti, player_round,
+                                                           player_party, mazo, cartas_game)
+                            else:
+                                juego.decidir_jugada_bot(jugando, turno, contador, players_dicti, player_round,player_party, mazo, cartas_game)
                         else:
-                            juego.decidir_jugada_bot(jugando, turno, contador, players_dicti, player_round,player_party, mazo, cartas_game)
+                            bbdd.delBBDDPlayer(jugando[turno - 1])
+                            jugando.remove(jugando[turno - 1])
                         turno -= 1
-                if not copiar:
-                    copia_contador = contador
                 for jugador in jugando:
-                    player_party[jugador]["Puntos_finales"] = player_round[copia_contador][jugador]["Puntos"]
+                    player_party[jugador]["Puntos_finales"] = player_round[contador-1][jugador]["Puntos"]
                 new_party["end_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 for jugador in jugando:
                     tiempo_jugado = (datetime.now() - tiempos_inicio[
@@ -262,7 +265,9 @@ while not flg_salir:
                 id_ganador = juego.elegirganador(player_party,jugando,players_dicti)
                 print()
                 input("Presiona enter para continuar".center(50,"="))
+                bbdd.insertar_historial(player_party, partidas_dicti, tiempo_jugado)
                 bbdd.insertar_rondas(player_round, new_party, partidas_dicti,player_party)
+                bbdd.insertar_partidas(partidas_dicti, new_party,id_ganador)
                 new_party = {
                     "start_date": "",
                     "end_date": "",
@@ -273,6 +278,7 @@ while not flg_salir:
                 player_party = {}
                 player_round = {}
                 mazo = []
+                partidas_dicti = bbdd.get_partidas()
         elif opc == 4:
             flg_00 = False
             flg_04 = True
@@ -323,7 +329,7 @@ while not flg_salir:
             interface.clearscreen()
             aux = juego.rondamaxima()
             mensaje = "El maximo de rondas de la partida ahora son {} rondas".format(aux)
-            new_party["ID_Ganador"] = aux
+            new_party["Total_Rondas"] = aux
             print(mensaje.center(50))
             print()
             input("Presiona enter para continuar".center(50))
