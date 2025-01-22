@@ -1,10 +1,7 @@
 # Importaciones de los módulos
 from datetime import datetime
-import random
 import os
 import sys
-
-from cffi.cffi_opcode import PRIM_INT
 
 # Obtener la ruta absoluta de la carpeta donde se encuentra el archivo Juego.py
 base_path = os.path.dirname(os.path.abspath(__file__))
@@ -245,10 +242,21 @@ while not flg_salir:
                     while turno != 0:
                         if players_dicti[jugando[turno-1]]["Type"] == "Humano":
                             juego.opciones(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
+                        elif players_dicti[jugando[turno-1]]["Type"] == "Bot" and player_round[contador][jugando[turno-1]]["Es_banca"]:
+                            juego.decidir_jugada_banca(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
                         else:
                             juego.decidir_jugada_bot(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
                         turno -= 1
                 new_party["end_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                #Subir datos antes de resetear.
+                new_party = {
+                    "start_date": "",
+                    "end_date": "",
+                    "Total_Rondas": 5,
+                    "Mazo": "",
+                    "Players": []}
+                player_party = {}
+                player_round = {}
                 mazo = []
         elif opc == 4:
             flg_00 = False

@@ -417,67 +417,6 @@ def opciones(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
         print()
         input("Presiona enter para continuar".center(50))
 
-def jugar_banca(players, cartas_game):
-    cartas_robadas = []
-
-    def obtener_valor_total_cartas(cartas, cartas_game):
-        valor_total = 0
-        for carta in cartas:
-            valor_carta = cartas_game[carta]["value"]
-            valor_total += valor_carta
-        return valor_total
-
-    def robar_carta(cartas_game, cartas_robadas):
-        cartas_disponibles = [carta for carta in cartas_game if carta not in cartas_robadas]
-        if cartas_disponibles:
-            carta_robada = random.choice(cartas_disponibles)
-            cartas_robadas.append(carta_robada)
-            return carta_robada
-        return None
-
-    banca = None
-    for player in players.values():
-        if player["Es_banca"]:
-            banca = player
-            break
-
-    jugadores = []
-    for player in players.values():
-        if not player["Es_banca"]:
-            jugadores.append(player)
-
-    valor_banca = obtener_valor_total_cartas(banca["Cartas"], cartas_game)
-
-    apuestas_a_devolver = 0
-    for jugador in jugadores:
-        valor_cartas_jugador = obtener_valor_total_cartas(jugador["Cartas"], cartas_game)
-        if valor_cartas_jugador > valor_banca:
-            apuestas_a_devolver += jugador["Apuesta"]
-
-    decision = "No pedir carta"
-
-    if valor_banca >= 7.5:
-        decision = "No pedir carta"
-    elif banca["Puntos"] - apuestas_a_devolver <= 0:
-        decision = "Pedir carta y robar una carta"
-    else:
-        pedir_carta = False
-        for jugador in jugadores:
-            valor_cartas_jugador = obtener_valor_total_cartas(jugador["Cartas"], cartas_game)
-            if valor_cartas_jugador > valor_banca:
-                pedir_carta = True
-                break
-        if pedir_carta:
-            decision = "Pedir carta y robar una carta"
-        else:
-            decision = "Consultar perfil de riesgo y decidir"
-
-    if decision == "Pedir carta y robar una carta":
-        carta_robada = robar_carta(cartas_game, cartas_robadas)
-        if carta_robada:
-            banca["Cartas"].append(carta_robada)
-    return decision, banca["Cartas"]
-
 def ganar(contextoronda,jugadores,players,contador,contextopartida):
     proxima_banca = []
     copia = jugadores.copy()
@@ -554,7 +493,7 @@ def decidir_jugada_bot(jugadores,turno,contador,players,ronda,partida,mazo,carta
 
         input("\n\nPresiona enter para continuar".center(50,"-"))
 
-        ronda[contador][jugadores[turno-1]]["Apuesta"] = random.randint(1, ronda[contador][jugadores[turno-1]]["Puntos"])
+        ronda[contador][jugadores[turno-1]]["Apuesta"] = random.randint(1, ronda[contador][jugadores[turno-1]]["Puntos"]//3)
 
 
         asignadas = []
@@ -583,6 +522,93 @@ def decidir_jugada_bot(jugadores,turno,contador,players,ronda,partida,mazo,carta
             umbral_probabilidad = 0.6
         elif riesgo == 3:
             umbral_probabilidad = 0.5
+
+        if probabilidad_buena >= umbral_probabilidad:
+
+            loginfo(f"{players[jugador_actual]['Name']} decide pedir una carta.")
+
+            while not terminar:
+                carta = mazo[random.randint(0, len(mazo) - 1)]
+                if carta not in asignadas:
+                    ronda[contador][jugador_actual]["Cartas"].append(carta)
+                    ronda[contador][jugador_actual]["Valor_total_cartas"] += cartas[carta]["value"]
+                    terminar = True
+
+        else:
+            loginfo(f"{players[jugador_actual]['Name']} decide plantarse.")
+            # El bot decide no pedir mÃ¡s cartas
+            return
+
+def decidir_jugada_banca(jugadores,turno,contador,players,ronda,partida,mazo,cartas):
+
+    while True:
+        aux = "Round: {} {}".format(contador, players[jugadores[turno - 1]]["Name"])
+
+        print(aux.center(50, "="))
+        print("Estado de jugadores".center(50, "="))
+        print()
+        print("Nombre".ljust(15) + "Humano".ljust(10) + "Prioridad".ljust(10) + "Tipo".ljust(10) +
+              "Banca".ljust(10) + "Apuesta".ljust(10) + "Puntos".ljust(10) +
+              "Cartas".ljust(15) + "Puntos ronda".ljust(15))
+        print("=" * 120)
+
+        for key in jugadores:
+            print(players[key]["Name"].ljust(15) +
+                str(players[key]["Type"]).ljust(13) +
+                str(partida[key]["Prioridad"]).ljust(8) +
+                str(players[key]["Risk"]).ljust(10) +
+                str(ronda[contador][key]["Es_banca"]).ljust(10) +
+                str(ronda[contador][key]["Apuesta"]).ljust(10) +
+                str(ronda[contador][key]["Puntos"]).ljust(10) +
+                str(ronda[contador][key]["Cartas"]).ljust(20) +
+                str(ronda[contador][key]["Valor_total_cartas"]).ljust(15))
+
+        input("\n\nPresiona enter para continuar".center(50,"-"))
+
+        ronda[contador][jugadores[turno-1]]["Apuesta"] = random.randint(1, ronda[contador][jugadores[turno-1]]["Puntos"]//3)
+
+
+        asignadas = []
+        jugador_actual = jugadores[turno - 1]
+        riesgo = players[jugador_actual]["Risk"]
+        valor_actual = ronda[contador][jugador_actual]["Valor_total_cartas"]
+        umbral_bueno = 7.5 - valor_actual
+        terminar = False
+        cartas_buenas = 0
+        umbral_probabilidad = 0
+
+        for key in jugadores:
+            for i in range(len(ronda[contador][key]["Cartas"])):
+                asignadas.append(ronda[contador][key]["Cartas"][i])
+
+        for carta in mazo:
+            if carta not in asignadas and cartas[carta]["value"] <= umbral_bueno:
+                cartas_buenas += 1
+
+        total_cartas_disponibles = 52 - len(asignadas)
+        probabilidad_buena = cartas_buenas / total_cartas_disponibles
+
+        if riesgo == 1:
+            umbral_probabilidad = 0.7
+        elif riesgo == 2:
+            umbral_probabilidad = 0.6
+        elif riesgo == 3:
+            umbral_probabilidad = 0.5
+
+        for jugador in jugadores:
+            if ronda[contador][jugador]["Valor_total_cartas"] > umbral_bueno and ronda[contador][jugador]["Valor_total_cartas"] <= 7.5:
+
+                if probabilidad_buena >= 0.65:
+
+                    loginfo(f"{players[jugador_actual]['Name']} decide pedir una carta.")
+
+                    while not terminar:
+                        carta = mazo[random.randint(0, len(mazo) - 1)]
+                        if carta not in asignadas:
+                            ronda[contador][jugador_actual]["Cartas"].append(carta)
+                            ronda[contador][jugador_actual]["Valor_total_cartas"] += cartas[carta]["value"]
+                            terminar = True
+                            continue
 
         if probabilidad_buena >= umbral_probabilidad:
 
