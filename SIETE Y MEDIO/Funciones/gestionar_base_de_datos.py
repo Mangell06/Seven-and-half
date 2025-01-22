@@ -374,6 +374,7 @@ def insertar_partidas(partidas_dicti, new_party,id_ganador):
     finally:
         close_connection(connection)
 
+
 def actualizar_puntos_personajes(player_party):
     """
     Actualiza los puntos de los personajes en la base de datos con los puntos finales de player_party.
