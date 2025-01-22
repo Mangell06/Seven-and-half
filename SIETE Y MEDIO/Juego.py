@@ -233,7 +233,7 @@ while not flg_salir:
                         if players_dicti[jugando[turno-1]]["Type"] == "Humano":
                             juego.opciones(jugando,turno,contador,players_dicti,player_round,player_party,mazo,cartas_game)
                         elif players_dicti[jugando[turno-1]]["Type"] == "Bot" and player_round[jugando[turno-1]]["Es_banca"] == True:
-                            juego.jugar_banca(players, cartas_game, cartas_robadas)
+                           juego.jugar_banca(player_party, cartas_game)
                         else:
                             print("bot")
                         turno -= 1
