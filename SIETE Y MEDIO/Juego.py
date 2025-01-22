@@ -228,32 +228,38 @@ while not flg_salir:
                 juego.cambioprioridad(player_party, cartas_game, jugando, player_round, contador)
                 print(turno)
                 print()
-                while contador_flg:
+                while contador_flg and contador < new_party["Total_Rondas"]:
                     if turno == 0:
                         algo = juego.ganar(player_round, jugando, contador, player_party)
-                        if contador != new_party["Total_Rondas"]:
-                            contador += 1
-                            print()
-                            salir = input("¿Quieres seguir jugando? S/N".rjust(30))
-                            if salir.upper() == "S":
-                                juego.crearrondas(jugando, player_round, players_dicti, contador, algo)
-                                turno = len(jugando)
-                            else:
+                        print()
+                        if contador < new_party["Total_Rondas"] - 1:
+                            salir = input("¿Quieres seguir jugando? S/N ".rjust(30)).strip().upper()
+                            if salir == "N":
                                 contador_flg = False
-                    while turno != 0:
-                        if players_dicti[jugando[turno - 1]]["Puntos"] > 0:
-                            if players_dicti[jugando[turno - 1]]["Type"] == "Humano":
-                                juego.opciones(jugando, turno, contador, players_dicti, player_round, player_party, mazo,
-                                               cartas_game)
-                            elif players_dicti[jugando[turno - 1]]["Type"] == "Bot" and \
-                                    player_round[contador][jugando[turno - 1]]["Es_banca"]:
+                                break
+                        contador += 1
+                        if contador >= new_party["Total_Rondas"]:
+                            contador_flg = False
+                            break
+
+                        juego.crearrondas(jugando, player_round, players_dicti, contador, algo)
+                        turno = len(jugando)
+                    while turno > 0:
+                        jugador_actual = jugando[turno - 1]
+                        jugador = players_dicti[jugador_actual]
+                        if jugador["Puntos"] > 0:
+                            if jugador["Type"] == "Humano":
+                                juego.opciones(jugando, turno, contador, players_dicti, player_round, player_party,
+                                               mazo, cartas_game)
+                            elif jugador["Type"] == "Bot" and player_round[contador][jugador_actual]["Es_banca"]:
                                 juego.decidir_jugada_banca(jugando, turno, contador, players_dicti, player_round,
                                                            player_party, mazo, cartas_game)
                             else:
-                                juego.decidir_jugada_bot(jugando, turno, contador, players_dicti, player_round,player_party, mazo, cartas_game)
+                                juego.decidir_jugada_bot(jugando, turno, contador, players_dicti, player_round,
+                                                         player_party, mazo, cartas_game)
                         else:
-                            bbdd.delBBDDPlayer(jugando[turno - 1])
-                            jugando.remove(jugando[turno - 1])
+                            bbdd.delBBDDPlayer(jugador_actual)
+                            jugando.remove(jugador_actual)
                         turno -= 1
                 for jugador in jugando:
                     player_party[jugador]["Puntos_finales"] = player_round[contador-1][jugador]["Puntos"]

@@ -3158,3 +3158,311 @@
 [2025-01-22 10:01:59] Conexión cerrada.
 [2025-01-22 10:01:59] Conexión exitosa a la base de datos.
 [2025-01-22 10:01:59] Conexión cerrada.
+[2025-01-22 15:10:59] [Juego Iniciado]
+[2025-01-22 15:10:59] Conexión exitosa a la base de datos.
+[2025-01-22 15:10:59] Conexión cerrada.
+[2025-01-22 15:11:00] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:00] Conexión cerrada.
+[2025-01-22 15:11:00] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:00] Conexión cerrada.
+[2025-01-22 15:11:04] El jugador a elegido una opcion
+[2025-01-22 15:11:04] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:04] Conexión cerrada.
+[2025-01-22 15:11:07] El jugador a elegido una opcion
+[2025-01-22 15:11:08] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:08] Conexión cerrada.
+[2025-01-22 15:11:09] El jugador a elegido una opcion
+[2025-01-22 15:11:09] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:09] Conexión cerrada.
+[2025-01-22 15:11:09] El jugador a elegido una opcion
+[2025-01-22 15:11:10] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:10] Conexión cerrada.
+[2025-01-22 15:11:11] El jugador a elegido una opcion
+[2025-01-22 15:11:11] El jugador a elegido una opcion
+[2025-01-22 15:11:16] [Juego Iniciado]
+[2025-01-22 15:11:17] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:17] Conexión cerrada.
+[2025-01-22 15:11:17] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:17] Conexión cerrada.
+[2025-01-22 15:11:17] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:17] Conexión cerrada.
+[2025-01-22 15:11:19] El jugador a elegido una opcion
+[2025-01-22 15:11:19] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:19] Conexión cerrada.
+[2025-01-22 15:11:23] El jugador a elegido una opcion
+[2025-01-22 15:11:25] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:25] Conexión cerrada.
+[2025-01-22 15:11:27] El jugador a elegido una opcion
+[2025-01-22 15:11:27] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:27] Conexión cerrada.
+[2025-01-22 15:11:27] El jugador a elegido una opcion
+[2025-01-22 15:11:28] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:28] Conexión cerrada.
+[2025-01-22 15:11:28] El jugador a elegido una opcion
+[2025-01-22 15:11:30] El jugador a elegido una opcion
+[2025-01-22 15:11:31] DICK EATER decide pedir una carta.
+[2025-01-22 15:11:31] DICK EATER decide pedir una carta.
+[2025-01-22 15:11:32] DICK EATER decide pedir una carta.
+[2025-01-22 15:11:32] DICK EATER decide pedir una carta.
+[2025-01-22 15:11:33] DICK EATER decide pedir una carta.
+[2025-01-22 15:11:33] DICK EATER decide pedir una carta.
+[2025-01-22 15:11:34] DICK EATER decide plantarse.
+[2025-01-22 15:11:35] Miguel decide pedir una carta.
+[2025-01-22 15:11:35] Miguel decide pedir una carta.
+[2025-01-22 15:11:36] Miguel decide pedir una carta.
+[2025-01-22 15:11:36] Miguel decide plantarse.
+[2025-01-22 15:11:38] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:38] Datos de historial insertados correctamente para ID_Partida 8.
+[2025-01-22 15:11:38] Conexión cerrada.
+[2025-01-22 15:11:38] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:38] Datos de rondas insertados correctamente para ID_Partida 8.
+[2025-01-22 15:11:38] Conexión cerrada.
+[2025-01-22 15:11:38] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:38] Datos de partida insertados correctamente para ID_Partida 8.
+[2025-01-22 15:11:38] Conexión cerrada.
+[2025-01-22 15:11:38] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:38] Conexión cerrada.
+[2025-01-22 15:11:41] El jugador a elegido una opcion
+[2025-01-22 15:11:41] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:41] Conexión cerrada.
+[2025-01-22 15:11:41] El jugador a elegido una opcion
+[2025-01-22 15:11:43] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:43] Conexión cerrada.
+[2025-01-22 15:11:44] El jugador a elegido una opcion
+[2025-01-22 15:11:44] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:44] Conexión cerrada.
+[2025-01-22 15:11:45] El jugador a elegido una opcion
+[2025-01-22 15:11:45] Conexión exitosa a la base de datos.
+[2025-01-22 15:11:45] Conexión cerrada.
+[2025-01-22 15:11:46] El jugador a elegido una opcion
+[2025-01-22 15:11:46] El jugador a elegido una opcion
+[2025-01-22 15:11:47] DICK EATER decide pedir una carta.
+[2025-01-22 15:11:48] DICK EATER decide pedir una carta.
+[2025-01-22 15:11:48] DICK EATER decide pedir una carta.
+[2025-01-22 15:11:49] DICK EATER decide pedir una carta.
+[2025-01-22 15:11:49] DICK EATER decide pedir una carta.
+[2025-01-22 15:11:50] DICK EATER decide pedir una carta.
+[2025-01-22 15:11:50] DICK EATER decide plantarse.
+[2025-01-22 15:11:51] Miguel decide pedir una carta.
+[2025-01-22 15:11:52] Miguel decide pedir una carta.
+[2025-01-22 15:11:52] Miguel decide pedir una carta.
+[2025-01-22 15:11:53] Miguel decide pedir una carta.
+[2025-01-22 15:11:53] Miguel decide pedir una carta.
+[2025-01-22 15:11:54] Miguel decide pedir una carta.
+[2025-01-22 15:11:55] Miguel decide pedir una carta.
+[2025-01-22 15:11:57] Miguel decide plantarse.
+[2025-01-22 15:12:28] [Juego Iniciado]
+[2025-01-22 15:12:28] Conexión exitosa a la base de datos.
+[2025-01-22 15:12:28] Conexión cerrada.
+[2025-01-22 15:12:28] Conexión exitosa a la base de datos.
+[2025-01-22 15:12:28] Conexión cerrada.
+[2025-01-22 15:12:28] Conexión exitosa a la base de datos.
+[2025-01-22 15:12:28] Conexión cerrada.
+[2025-01-22 15:12:34] El jugador a elegido una opcion
+[2025-01-22 15:12:34] Conexión exitosa a la base de datos.
+[2025-01-22 15:12:34] Conexión cerrada.
+[2025-01-22 15:12:46] El jugador a elegido una opcion
+[2025-01-22 15:12:47] Conexión exitosa a la base de datos.
+[2025-01-22 15:12:47] Conexión cerrada.
+[2025-01-22 15:12:48] El jugador a elegido una opcion
+[2025-01-22 15:12:53] El jugador a elegido una opcion
+[2025-01-22 15:14:04] [Juego Iniciado]
+[2025-01-22 15:14:05] Conexión exitosa a la base de datos.
+[2025-01-22 15:14:05] Conexión cerrada.
+[2025-01-22 15:14:05] Conexión exitosa a la base de datos.
+[2025-01-22 15:14:05] Conexión cerrada.
+[2025-01-22 15:14:05] Conexión exitosa a la base de datos.
+[2025-01-22 15:14:05] Conexión cerrada.
+[2025-01-22 15:14:07] El jugador a elegido una opcion
+[2025-01-22 15:14:08] Conexión exitosa a la base de datos.
+[2025-01-22 15:14:08] Conexión cerrada.
+[2025-01-22 15:14:09] El jugador a elegido una opcion
+[2025-01-22 15:14:10] Conexión exitosa a la base de datos.
+[2025-01-22 15:14:10] Conexión cerrada.
+[2025-01-22 15:14:11] El jugador a elegido una opcion
+[2025-01-22 15:14:11] Conexión exitosa a la base de datos.
+[2025-01-22 15:14:11] Conexión cerrada.
+[2025-01-22 15:14:13] El jugador a elegido una opcion
+[2025-01-22 15:14:13] Conexión exitosa a la base de datos.
+[2025-01-22 15:14:13] Conexión cerrada.
+[2025-01-22 15:14:14] El jugador a elegido una opcion
+[2025-01-22 15:14:15] El jugador a elegido una opcion
+[2025-01-22 15:14:15] DICK EATER decide pedir una carta.
+[2025-01-22 15:14:16] DICK EATER decide pedir una carta.
+[2025-01-22 15:14:17] DICK EATER decide pedir una carta.
+[2025-01-22 15:14:18] DICK EATER decide pedir una carta.
+[2025-01-22 15:14:19] DICK EATER decide plantarse.
+[2025-01-22 15:14:21] Miguel decide pedir una carta.
+[2025-01-22 15:14:22] Miguel decide pedir una carta.
+[2025-01-22 15:14:22] Miguel decide pedir una carta.
+[2025-01-22 15:14:23] Miguel decide pedir una carta.
+[2025-01-22 15:14:23] Miguel decide pedir una carta.
+[2025-01-22 15:14:24] Miguel decide pedir una carta.
+[2025-01-22 15:14:26] Miguel decide pedir una carta.
+[2025-01-22 15:14:28] Miguel decide pedir una carta.
+[2025-01-22 15:14:29] Miguel decide plantarse.
+[2025-01-22 15:15:20] [Juego Iniciado]
+[2025-01-22 15:15:20] Conexión exitosa a la base de datos.
+[2025-01-22 15:15:20] Conexión cerrada.
+[2025-01-22 15:15:21] Conexión exitosa a la base de datos.
+[2025-01-22 15:15:21] Conexión cerrada.
+[2025-01-22 15:15:21] Conexión exitosa a la base de datos.
+[2025-01-22 15:15:21] Conexión cerrada.
+[2025-01-22 15:15:23] El jugador a elegido una opcion
+[2025-01-22 15:15:23] Conexión exitosa a la base de datos.
+[2025-01-22 15:15:23] Conexión cerrada.
+[2025-01-22 15:15:24] El jugador a elegido una opcion
+[2025-01-22 15:15:25] Conexión exitosa a la base de datos.
+[2025-01-22 15:15:25] Conexión cerrada.
+[2025-01-22 15:15:26] El jugador a elegido una opcion
+[2025-01-22 15:15:27] Conexión exitosa a la base de datos.
+[2025-01-22 15:15:27] Conexión cerrada.
+[2025-01-22 15:15:28] El jugador a elegido una opcion
+[2025-01-22 15:15:29] Conexión exitosa a la base de datos.
+[2025-01-22 15:15:29] Conexión cerrada.
+[2025-01-22 15:15:30] El jugador a elegido una opcion
+[2025-01-22 15:15:31] El jugador a elegido una opcion
+[2025-01-22 15:17:44] [Juego Iniciado]
+[2025-01-22 15:17:44] Conexión exitosa a la base de datos.
+[2025-01-22 15:17:44] Conexión cerrada.
+[2025-01-22 15:17:44] Conexión exitosa a la base de datos.
+[2025-01-22 15:17:44] Conexión cerrada.
+[2025-01-22 15:17:44] Conexión exitosa a la base de datos.
+[2025-01-22 15:17:44] Conexión cerrada.
+[2025-01-22 15:17:46] El jugador a elegido una opcion
+[2025-01-22 15:17:46] Conexión exitosa a la base de datos.
+[2025-01-22 15:17:46] Conexión cerrada.
+[2025-01-22 15:17:47] El jugador a elegido una opcion
+[2025-01-22 15:17:48] Conexión exitosa a la base de datos.
+[2025-01-22 15:17:48] Conexión cerrada.
+[2025-01-22 15:17:48] El jugador a elegido una opcion
+[2025-01-22 15:17:49] Conexión exitosa a la base de datos.
+[2025-01-22 15:17:49] Conexión cerrada.
+[2025-01-22 15:17:49] El jugador a elegido una opcion
+[2025-01-22 15:17:50] Conexión exitosa a la base de datos.
+[2025-01-22 15:17:50] Conexión cerrada.
+[2025-01-22 15:17:50] El jugador a elegido una opcion
+[2025-01-22 15:17:51] El jugador a elegido una opcion
+[2025-01-22 15:17:52] DICK EATER decide pedir una carta.
+[2025-01-22 15:17:53] DICK EATER decide pedir una carta.
+[2025-01-22 15:17:54] DICK EATER decide pedir una carta.
+[2025-01-22 15:17:55] DICK EATER decide pedir una carta.
+[2025-01-22 15:17:56] DICK EATER decide pedir una carta.
+[2025-01-22 15:17:57] DICK EATER decide pedir una carta.
+[2025-01-22 15:17:57] DICK EATER decide plantarse.
+[2025-01-22 15:17:58] Miguel decide pedir una carta.
+[2025-01-22 15:17:59] Miguel decide pedir una carta.
+[2025-01-22 15:17:59] Miguel decide pedir una carta.
+[2025-01-22 15:17:59] Miguel decide pedir una carta.
+[2025-01-22 15:18:00] Miguel decide pedir una carta.
+[2025-01-22 15:18:01] Miguel decide plantarse.
+[2025-01-22 15:19:50] [Juego Iniciado]
+[2025-01-22 15:19:50] Conexión exitosa a la base de datos.
+[2025-01-22 15:19:50] Conexión cerrada.
+[2025-01-22 15:19:50] Conexión exitosa a la base de datos.
+[2025-01-22 15:19:50] Conexión cerrada.
+[2025-01-22 15:19:50] Conexión exitosa a la base de datos.
+[2025-01-22 15:19:50] Conexión cerrada.
+[2025-01-22 15:19:54] El jugador a elegido una opcion
+[2025-01-22 15:19:54] Conexión exitosa a la base de datos.
+[2025-01-22 15:19:54] Conexión cerrada.
+[2025-01-22 15:19:55] El jugador a elegido una opcion
+[2025-01-22 15:19:57] Conexión exitosa a la base de datos.
+[2025-01-22 15:19:57] Conexión cerrada.
+[2025-01-22 15:19:57] El jugador a elegido una opcion
+[2025-01-22 15:19:59] Conexión exitosa a la base de datos.
+[2025-01-22 15:19:59] Conexión cerrada.
+[2025-01-22 15:19:59] El jugador a elegido una opcion
+[2025-01-22 15:20:00] Conexión exitosa a la base de datos.
+[2025-01-22 15:20:00] Conexión cerrada.
+[2025-01-22 15:20:00] El jugador a elegido una opcion
+[2025-01-22 15:20:01] Conexión exitosa a la base de datos.
+[2025-01-22 15:20:01] Conexión cerrada.
+[2025-01-22 15:20:01] El jugador a elegido una opcion
+[2025-01-22 15:20:04] El jugador a elegido una opcion
+[2025-01-22 15:20:04] DICK EATER decide pedir una carta.
+[2025-01-22 15:20:05] DICK EATER decide pedir una carta.
+[2025-01-22 15:20:05] DICK EATER decide plantarse.
+[2025-01-22 15:20:06] Miguel decide pedir una carta.
+[2025-01-22 15:20:07] Miguel decide pedir una carta.
+[2025-01-22 15:20:07] Miguel decide pedir una carta.
+[2025-01-22 15:20:09] Miguel decide pedir una carta.
+[2025-01-22 15:20:09] Miguel decide pedir una carta.
+[2025-01-22 15:20:10] Miguel decide pedir una carta.
+[2025-01-22 15:20:11] Miguel decide pedir una carta.
+[2025-01-22 15:20:13] Miguel decide plantarse.
+[2025-01-22 15:21:53] [Juego Iniciado]
+[2025-01-22 15:21:53] Conexión exitosa a la base de datos.
+[2025-01-22 15:21:53] Conexión cerrada.
+[2025-01-22 15:21:53] Conexión exitosa a la base de datos.
+[2025-01-22 15:21:53] Conexión cerrada.
+[2025-01-22 15:21:53] Conexión exitosa a la base de datos.
+[2025-01-22 15:21:53] Conexión cerrada.
+[2025-01-22 15:21:55] El jugador a elegido una opcion
+[2025-01-22 15:21:55] Conexión exitosa a la base de datos.
+[2025-01-22 15:21:55] Conexión cerrada.
+[2025-01-22 15:21:56] El jugador a elegido una opcion
+[2025-01-22 15:21:57] Conexión exitosa a la base de datos.
+[2025-01-22 15:21:57] Conexión cerrada.
+[2025-01-22 15:21:58] El jugador a elegido una opcion
+[2025-01-22 15:21:58] Conexión exitosa a la base de datos.
+[2025-01-22 15:21:58] Conexión cerrada.
+[2025-01-22 15:21:59] El jugador a elegido una opcion
+[2025-01-22 15:22:00] Conexión exitosa a la base de datos.
+[2025-01-22 15:22:00] Conexión cerrada.
+[2025-01-22 15:22:00] El jugador a elegido una opcion
+[2025-01-22 15:22:01] El jugador a elegido una opcion
+[2025-01-22 15:22:02] DICK EATER decide pedir una carta.
+[2025-01-22 15:22:03] DICK EATER decide pedir una carta.
+[2025-01-22 15:22:03] DICK EATER decide pedir una carta.
+[2025-01-22 15:22:04] DICK EATER decide pedir una carta.
+[2025-01-22 15:22:05] DICK EATER decide plantarse.
+[2025-01-22 15:22:05] Miguel decide pedir una carta.
+[2025-01-22 15:22:06] Miguel decide pedir una carta.
+[2025-01-22 15:22:06] Miguel decide pedir una carta.
+[2025-01-22 15:22:07] Miguel decide plantarse.
+[2025-01-22 15:22:11] Conexión exitosa a la base de datos.
+[2025-01-22 15:22:11] Datos de historial insertados correctamente para ID_Partida 9.
+[2025-01-22 15:22:11] Conexión cerrada.
+[2025-01-22 15:22:11] Conexión exitosa a la base de datos.
+[2025-01-22 15:22:11] Datos de rondas insertados correctamente para ID_Partida 9.
+[2025-01-22 15:22:11] Conexión cerrada.
+[2025-01-22 15:22:11] Conexión exitosa a la base de datos.
+[2025-01-22 15:22:11] Datos de partida insertados correctamente para ID_Partida 9.
+[2025-01-22 15:22:11] Conexión cerrada.
+[2025-01-22 15:22:11] Conexión exitosa a la base de datos.
+[2025-01-22 15:22:11] Conexión cerrada.
+[2025-01-22 15:23:57] [Juego Iniciado]
+[2025-01-22 15:23:57] Conexión exitosa a la base de datos.
+[2025-01-22 15:23:57] Conexión cerrada.
+[2025-01-22 15:23:57] Conexión exitosa a la base de datos.
+[2025-01-22 15:23:57] Conexión cerrada.
+[2025-01-22 15:23:57] Conexión exitosa a la base de datos.
+[2025-01-22 15:23:57] Conexión cerrada.
+[2025-01-22 15:23:59] El jugador a elegido una opcion
+[2025-01-22 15:23:59] Conexión exitosa a la base de datos.
+[2025-01-22 15:23:59] Conexión cerrada.
+[2025-01-22 15:24:00] El jugador a elegido una opcion
+[2025-01-22 15:24:01] Conexión exitosa a la base de datos.
+[2025-01-22 15:24:01] Conexión cerrada.
+[2025-01-22 15:24:02] El jugador a elegido una opcion
+[2025-01-22 15:24:02] Conexión exitosa a la base de datos.
+[2025-01-22 15:24:02] Conexión cerrada.
+[2025-01-22 15:24:04] El jugador a elegido una opcion
+[2025-01-22 15:24:05] Conexión exitosa a la base de datos.
+[2025-01-22 15:24:05] Conexión cerrada.
+[2025-01-22 15:24:05] El jugador a elegido una opcion
+[2025-01-22 15:24:08] El jugador a elegido una opcion
+[2025-01-22 15:24:09] Miguel decide pedir una carta.
+[2025-01-22 15:24:10] Miguel decide pedir una carta.
+[2025-01-22 15:24:11] Miguel decide pedir una carta.
+[2025-01-22 15:24:12] Miguel decide pedir una carta.
+[2025-01-22 15:24:12] Miguel decide pedir una carta.
+[2025-01-22 15:24:13] Miguel decide pedir una carta.
+[2025-01-22 15:24:14] Miguel decide pedir una carta.
+[2025-01-22 15:24:14] Miguel decide plantarse.
+[2025-01-22 15:24:15] DICK EATER decide pedir una carta.
+[2025-01-22 15:24:17] DICK EATER decide pedir una carta.
+[2025-01-22 15:24:18] DICK EATER decide pedir una carta.
+[2025-01-22 15:24:18] DICK EATER decide pedir una carta.
+[2025-01-22 15:24:18] DICK EATER decide plantarse.
