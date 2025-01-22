@@ -164,6 +164,5 @@ def nuevobot(player_dicto):
                             "Minutos_Jugados": 0,
                             "In_Game": False
                         }
-
                         bbdd.insertar_personaje_base_datos(bot_data)
                     return

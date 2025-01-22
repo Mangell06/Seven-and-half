@@ -1,0 +1,749 @@
+[2025-01-22 05:04:17] [Juego Iniciado]
+[2025-01-22 05:04:17] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:17] Conexión cerrada.
+[2025-01-22 05:04:17] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:17] Conexión cerrada.
+[2025-01-22 05:04:17] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:17] Conexión cerrada.
+[2025-01-22 05:04:17] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:17] Conexión cerrada.
+[2025-01-22 05:04:21] El jugador a elegido una opcion
+[2025-01-22 05:04:21] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:21] Conexión cerrada.
+[2025-01-22 05:04:21] El jugador a elegido una opcion
+[2025-01-22 05:04:21] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:21] Conexión cerrada.
+[2025-01-22 05:04:22] El jugador a elegido una opcion
+[2025-01-22 05:04:22] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:22] Conexión cerrada.
+[2025-01-22 05:04:23] El jugador a elegido una opcion
+[2025-01-22 05:04:24] El jugador a elegido una opcion
+[2025-01-22 05:04:31] [Juego Iniciado]
+[2025-01-22 05:04:31] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:31] Conexión cerrada.
+[2025-01-22 05:04:31] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:31] Conexión cerrada.
+[2025-01-22 05:04:31] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:31] Conexión cerrada.
+[2025-01-22 05:04:32] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:32] Conexión cerrada.
+[2025-01-22 05:04:33] El jugador a elegido una opcion
+[2025-01-22 05:04:33] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:33] Conexión cerrada.
+[2025-01-22 05:04:34] El jugador a elegido una opcion
+[2025-01-22 05:04:34] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:34] Conexión cerrada.
+[2025-01-22 05:04:34] El jugador a elegido una opcion
+[2025-01-22 05:04:35] Conexión exitosa a la base de datos.
+[2025-01-22 05:04:35] Conexión cerrada.
+[2025-01-22 05:04:36] El jugador a elegido una opcion
+[2025-01-22 05:04:36] El jugador a elegido una opcion
+[2025-01-22 05:04:43] El jugador a elegido una opcion
+[2025-01-22 05:04:46] El jugador a elegido una opcion
+[2025-01-22 05:04:47] El jugador a elegido una opcion
+[2025-01-22 05:04:48] El jugador a elegido una opcion
+[2025-01-22 05:04:49] El jugador a elegido una opcion
+[2025-01-22 05:04:54] El jugador a elegido una opcion
+[2025-01-22 05:04:56] El jugador a elegido una opcion
+[2025-01-22 05:04:59] El jugador a elegido una opcion
+[2025-01-22 05:05:00] El jugador a elegido una opcion
+[2025-01-22 05:05:01] El jugador a elegido una opcion
+[2025-01-22 05:05:02] El jugador a elegido una opcion
+[2025-01-22 05:05:04] El jugador a elegido una opcion
+[2025-01-22 05:05:05] El jugador a elegido una opcion
+[2025-01-22 05:05:08] El jugador a elegido una opcion
+[2025-01-22 05:05:09] Miguel decide pedir una carta.
+[2025-01-22 05:05:10] Miguel decide pedir una carta.
+[2025-01-22 05:05:12] Miguel decide pedir una carta.
+[2025-01-22 05:05:13] Miguel decide plantarse.
+[2025-01-22 05:05:17] El jugador a elegido una opcion
+[2025-01-22 05:05:21] El jugador a elegido una opcion
+[2025-01-22 05:05:56] El jugador a elegido una opcion
+[2025-01-22 05:05:58] El jugador a elegido una opcion
+[2025-01-22 05:06:00] El jugador a elegido una opcion
+[2025-01-22 05:06:01] El jugador a elegido una opcion
+[2025-01-22 05:06:02] El jugador a elegido una opcion
+[2025-01-22 05:06:03] El jugador a elegido una opcion
+[2025-01-22 05:06:04] El jugador a elegido una opcion
+[2025-01-22 05:06:06] El jugador a elegido una opcion
+[2025-01-22 05:06:11] El jugador a elegido una opcion
+[2025-01-22 05:07:01] El jugador a elegido una opcion
+[2025-01-22 05:07:03] El jugador a elegido una opcion
+[2025-01-22 05:07:07] El jugador a elegido una opcion
+[2025-01-22 05:07:10] El jugador a elegido una opcion
+[2025-01-22 05:07:11] El jugador a elegido una opcion
+[2025-01-22 05:07:13] El jugador a elegido una opcion
+[2025-01-22 05:07:14] El jugador a elegido una opcion
+[2025-01-22 05:22:25] [Juego Iniciado]
+[2025-01-22 05:22:25] Conexión exitosa a la base de datos.
+[2025-01-22 05:22:25] Conexión cerrada.
+[2025-01-22 05:22:25] Conexión exitosa a la base de datos.
+[2025-01-22 05:22:25] Conexión cerrada.
+[2025-01-22 05:22:25] Conexión exitosa a la base de datos.
+[2025-01-22 05:22:25] Conexión cerrada.
+[2025-01-22 05:22:25] Conexión exitosa a la base de datos.
+[2025-01-22 05:22:25] Conexión cerrada.
+[2025-01-22 05:22:28] El jugador a elegido una opcion
+[2025-01-22 05:22:28] Conexión exitosa a la base de datos.
+[2025-01-22 05:22:28] Conexión cerrada.
+[2025-01-22 05:22:29] El jugador a elegido una opcion
+[2025-01-22 05:22:29] Conexión exitosa a la base de datos.
+[2025-01-22 05:22:29] Conexión cerrada.
+[2025-01-22 05:22:30] El jugador a elegido una opcion
+[2025-01-22 05:22:30] Conexión exitosa a la base de datos.
+[2025-01-22 05:22:30] Conexión cerrada.
+[2025-01-22 05:22:31] El jugador a elegido una opcion
+[2025-01-22 05:22:32] El jugador a elegido una opcion
+[2025-01-22 05:22:37] Miguel decide pedir una carta.
+[2025-01-22 05:22:41] Miguel decide pedir una carta.
+[2025-01-22 05:22:43] Miguel decide pedir una carta.
+[2025-01-22 05:22:44] Miguel decide pedir una carta.
+[2025-01-22 05:22:45] Miguel decide plantarse.
+[2025-01-22 05:22:48] El jugador a elegido una opcion
+[2025-01-22 05:22:52] El jugador a elegido una opcion
+[2025-01-22 05:22:56] El jugador a elegido una opcion
+[2025-01-22 05:23:02] El jugador a elegido una opcion
+[2025-01-22 05:23:03] El jugador a elegido una opcion
+[2025-01-22 05:23:07] El jugador a elegido una opcion
+[2025-01-22 05:23:08] El jugador a elegido una opcion
+[2025-01-22 05:23:11] El jugador a elegido una opcion
+[2025-01-22 05:23:15] El jugador a elegido una opcion
+[2025-01-22 05:23:17] El jugador a elegido una opcion
+[2025-01-22 05:23:18] El jugador a elegido una opcion
+[2025-01-22 05:23:20] El jugador a elegido una opcion
+[2025-01-22 05:23:21] El jugador a elegido una opcion
+[2025-01-22 05:23:24] El jugador a elegido una opcion
+[2025-01-22 05:25:04] [Juego Iniciado]
+[2025-01-22 05:25:05] Conexión exitosa a la base de datos.
+[2025-01-22 05:25:05] Conexión cerrada.
+[2025-01-22 05:25:05] Conexión exitosa a la base de datos.
+[2025-01-22 05:25:05] Conexión cerrada.
+[2025-01-22 05:25:05] Conexión exitosa a la base de datos.
+[2025-01-22 05:25:05] Conexión cerrada.
+[2025-01-22 05:25:05] Conexión exitosa a la base de datos.
+[2025-01-22 05:25:05] Conexión cerrada.
+[2025-01-22 05:25:09] El jugador a elegido una opcion
+[2025-01-22 05:25:09] Conexión exitosa a la base de datos.
+[2025-01-22 05:25:09] Conexión cerrada.
+[2025-01-22 05:25:09] El jugador a elegido una opcion
+[2025-01-22 05:25:09] Conexión exitosa a la base de datos.
+[2025-01-22 05:25:09] Conexión cerrada.
+[2025-01-22 05:25:10] El jugador a elegido una opcion
+[2025-01-22 05:25:10] Conexión exitosa a la base de datos.
+[2025-01-22 05:25:10] Conexión cerrada.
+[2025-01-22 05:25:11] El jugador a elegido una opcion
+[2025-01-22 05:25:12] El jugador a elegido una opcion
+[2025-01-22 05:25:13] Miguel decide pedir una carta.
+[2025-01-22 05:25:17] Miguel decide pedir una carta.
+[2025-01-22 05:25:18] Miguel decide pedir una carta.
+[2025-01-22 05:25:19] Miguel decide pedir una carta.
+[2025-01-22 05:25:20] Miguel decide plantarse.
+[2025-01-22 05:25:28] El jugador a elegido una opcion
+[2025-01-22 05:25:31] El jugador a elegido una opcion
+[2025-01-22 05:25:32] El jugador a elegido una opcion
+[2025-01-22 05:25:33] El jugador a elegido una opcion
+[2025-01-22 05:25:34] El jugador a elegido una opcion
+[2025-01-22 05:25:35] El jugador a elegido una opcion
+[2025-01-22 05:25:36] El jugador a elegido una opcion
+[2025-01-22 05:25:37] El jugador a elegido una opcion
+[2025-01-22 05:25:38] El jugador a elegido una opcion
+[2025-01-22 05:25:41] El jugador a elegido una opcion
+[2025-01-22 05:25:42] El jugador a elegido una opcion
+[2025-01-22 05:25:46] El jugador a elegido una opcion
+[2025-01-22 05:25:53] El jugador a elegido una opcion
+[2025-01-22 05:25:54] El jugador a elegido una opcion
+[2025-01-22 05:25:56] El jugador a elegido una opcion
+[2025-01-22 05:25:57] El jugador a elegido una opcion
+[2025-01-22 05:25:58] El jugador a elegido una opcion
+[2025-01-22 05:25:59] El jugador a elegido una opcion
+[2025-01-22 05:26:00] El jugador a elegido una opcion
+[2025-01-22 05:26:01] El jugador a elegido una opcion
+[2025-01-22 05:26:03] El jugador a elegido una opcion
+[2025-01-22 05:27:07] [Juego Iniciado]
+[2025-01-22 05:27:08] Conexión exitosa a la base de datos.
+[2025-01-22 05:27:08] Conexión cerrada.
+[2025-01-22 05:27:08] Conexión exitosa a la base de datos.
+[2025-01-22 05:27:08] Conexión cerrada.
+[2025-01-22 05:27:08] Conexión exitosa a la base de datos.
+[2025-01-22 05:27:08] Conexión cerrada.
+[2025-01-22 05:27:08] Conexión exitosa a la base de datos.
+[2025-01-22 05:27:08] Conexión cerrada.
+[2025-01-22 05:27:10] El jugador a elegido una opcion
+[2025-01-22 05:27:10] Conexión exitosa a la base de datos.
+[2025-01-22 05:27:10] Conexión cerrada.
+[2025-01-22 05:27:10] El jugador a elegido una opcion
+[2025-01-22 05:27:10] Conexión exitosa a la base de datos.
+[2025-01-22 05:27:10] Conexión cerrada.
+[2025-01-22 05:27:11] El jugador a elegido una opcion
+[2025-01-22 05:27:12] Conexión exitosa a la base de datos.
+[2025-01-22 05:27:12] Conexión cerrada.
+[2025-01-22 05:27:14] El jugador a elegido una opcion
+[2025-01-22 05:27:16] Conexión exitosa a la base de datos.
+[2025-01-22 05:27:16] Conexión cerrada.
+[2025-01-22 05:27:17] El jugador a elegido una opcion
+[2025-01-22 05:27:21] El jugador a elegido una opcion
+[2025-01-22 05:27:22] Miguel decide pedir una carta.
+[2025-01-22 05:27:23] Miguel decide pedir una carta.
+[2025-01-22 05:27:24] Miguel decide plantarse.
+[2025-01-22 05:27:26] El jugador a elegido una opcion
+[2025-01-22 05:27:31] El jugador a elegido una opcion
+[2025-01-22 05:27:34] El jugador a elegido una opcion
+[2025-01-22 05:27:36] El jugador a elegido una opcion
+[2025-01-22 05:27:39] El jugador a elegido una opcion
+[2025-01-22 05:27:42] El jugador a elegido una opcion
+[2025-01-22 05:27:46] El jugador a elegido una opcion
+[2025-01-22 05:27:47] El jugador a elegido una opcion
+[2025-01-22 05:27:48] El jugador a elegido una opcion
+[2025-01-22 05:27:49] El jugador a elegido una opcion
+[2025-01-22 05:27:50] El jugador a elegido una opcion
+[2025-01-22 05:27:51] El jugador a elegido una opcion
+[2025-01-22 05:27:55] El jugador a elegido una opcion
+[2025-01-22 05:28:33] Miguel decide pedir una carta.
+[2025-01-22 05:28:33] Miguel decide plantarse.
+[2025-01-22 05:28:36] El jugador a elegido una opcion
+[2025-01-22 05:28:38] El jugador a elegido una opcion
+[2025-01-22 05:28:40] El jugador a elegido una opcion
+[2025-01-22 05:28:42] El jugador a elegido una opcion
+[2025-01-22 05:28:43] El jugador a elegido una opcion
+[2025-01-22 05:28:44] El jugador a elegido una opcion
+[2025-01-22 05:28:45] El jugador a elegido una opcion
+[2025-01-22 05:28:49] El jugador a elegido una opcion
+[2025-01-22 05:28:50] El jugador a elegido una opcion
+[2025-01-22 05:28:57] El jugador a elegido una opcion
+[2025-01-22 05:28:59] El jugador a elegido una opcion
+[2025-01-22 05:29:05] El jugador a elegido una opcion
+[2025-01-22 05:29:08] El jugador a elegido una opcion
+[2025-01-22 05:29:11] El jugador a elegido una opcion
+[2025-01-22 05:29:13] El jugador a elegido una opcion
+[2025-01-22 05:29:17] El jugador a elegido una opcion
+[2025-01-22 05:29:19] El jugador a elegido una opcion
+[2025-01-22 05:29:21] El jugador a elegido una opcion
+[2025-01-22 05:29:22] El jugador a elegido una opcion
+[2025-01-22 05:29:23] El jugador a elegido una opcion
+[2025-01-22 05:29:24] El jugador a elegido una opcion
+[2025-01-22 05:29:25] El jugador a elegido una opcion
+[2025-01-22 05:29:26] El jugador a elegido una opcion
+[2025-01-22 05:29:27] El jugador a elegido una opcion
+[2025-01-22 05:29:29] El jugador a elegido una opcion
+[2025-01-22 05:29:32] El jugador a elegido una opcion
+[2025-01-22 05:29:56] Miguel decide pedir una carta.
+[2025-01-22 05:29:57] Miguel decide pedir una carta.
+[2025-01-22 05:29:58] Miguel decide pedir una carta.
+[2025-01-22 05:29:59] Miguel decide pedir una carta.
+[2025-01-22 05:30:00] Miguel decide plantarse.
+[2025-01-22 05:30:03] El jugador a elegido una opcion
+[2025-01-22 05:30:06] El jugador a elegido una opcion
+[2025-01-22 05:30:07] El jugador a elegido una opcion
+[2025-01-22 05:30:09] El jugador a elegido una opcion
+[2025-01-22 05:30:10] El jugador a elegido una opcion
+[2025-01-22 05:30:12] El jugador a elegido una opcion
+[2025-01-22 05:30:15] El jugador a elegido una opcion
+[2025-01-22 05:30:17] El jugador a elegido una opcion
+[2025-01-22 05:30:20] El jugador a elegido una opcion
+[2025-01-22 05:30:21] El jugador a elegido una opcion
+[2025-01-22 05:30:22] El jugador a elegido una opcion
+[2025-01-22 05:30:23] El jugador a elegido una opcion
+[2025-01-22 05:30:25] El jugador a elegido una opcion
+[2025-01-22 05:30:26] El jugador a elegido una opcion
+[2025-01-22 05:30:29] El jugador a elegido una opcion
+[2025-01-22 05:30:30] El jugador a elegido una opcion
+[2025-01-22 05:30:32] El jugador a elegido una opcion
+[2025-01-22 05:30:33] El jugador a elegido una opcion
+[2025-01-22 05:30:36] El jugador a elegido una opcion
+[2025-01-22 05:30:37] El jugador a elegido una opcion
+[2025-01-22 05:30:41] El jugador a elegido una opcion
+[2025-01-22 05:31:51] [Juego Iniciado]
+[2025-01-22 05:31:51] Conexión exitosa a la base de datos.
+[2025-01-22 05:31:51] Conexión cerrada.
+[2025-01-22 05:31:51] Conexión exitosa a la base de datos.
+[2025-01-22 05:31:51] Conexión cerrada.
+[2025-01-22 05:31:51] Conexión exitosa a la base de datos.
+[2025-01-22 05:31:51] Conexión cerrada.
+[2025-01-22 05:31:51] Conexión exitosa a la base de datos.
+[2025-01-22 05:31:51] Conexión cerrada.
+[2025-01-22 05:31:52] El jugador a elegido una opcion
+[2025-01-22 05:31:52] Conexión exitosa a la base de datos.
+[2025-01-22 05:31:52] Conexión cerrada.
+[2025-01-22 05:31:54] El jugador a elegido una opcion
+[2025-01-22 05:31:56] Conexión exitosa a la base de datos.
+[2025-01-22 05:31:56] Conexión cerrada.
+[2025-01-22 05:31:58] El jugador a elegido una opcion
+[2025-01-22 05:31:58] Conexión exitosa a la base de datos.
+[2025-01-22 05:31:58] Conexión cerrada.
+[2025-01-22 05:31:58] El jugador a elegido una opcion
+[2025-01-22 05:31:59] Conexión exitosa a la base de datos.
+[2025-01-22 05:31:59] Conexión cerrada.
+[2025-01-22 05:31:59] El jugador a elegido una opcion
+[2025-01-22 05:32:00] El jugador a elegido una opcion
+[2025-01-22 05:32:02] El jugador a elegido una opcion
+[2025-01-22 05:32:26] El jugador a elegido una opcion
+[2025-01-22 05:32:28] El jugador a elegido una opcion
+[2025-01-22 05:32:29] El jugador a elegido una opcion
+[2025-01-22 05:32:31] El jugador a elegido una opcion
+[2025-01-22 05:32:31] El jugador a elegido una opcion
+[2025-01-22 05:32:33] El jugador a elegido una opcion
+[2025-01-22 05:32:34] El jugador a elegido una opcion
+[2025-01-22 05:32:35] El jugador a elegido una opcion
+[2025-01-22 05:32:37] El jugador a elegido una opcion
+[2025-01-22 05:32:38] El jugador a elegido una opcion
+[2025-01-22 05:32:40] Miguel decide pedir una carta.
+[2025-01-22 05:32:41] Miguel decide pedir una carta.
+[2025-01-22 05:32:42] Miguel decide pedir una carta.
+[2025-01-22 05:32:43] Miguel decide pedir una carta.
+[2025-01-22 05:32:44] Miguel decide pedir una carta.
+[2025-01-22 05:32:46] Miguel decide plantarse.
+[2025-01-22 05:32:49] El jugador a elegido una opcion
+[2025-01-22 05:32:51] El jugador a elegido una opcion
+[2025-01-22 05:32:53] El jugador a elegido una opcion
+[2025-01-22 05:32:54] El jugador a elegido una opcion
+[2025-01-22 05:32:55] El jugador a elegido una opcion
+[2025-01-22 05:32:57] El jugador a elegido una opcion
+[2025-01-22 05:32:58] El jugador a elegido una opcion
+[2025-01-22 05:32:59] El jugador a elegido una opcion
+[2025-01-22 05:33:00] El jugador a elegido una opcion
+[2025-01-22 05:33:02] El jugador a elegido una opcion
+[2025-01-22 05:33:03] El jugador a elegido una opcion
+[2025-01-22 05:33:06] El jugador a elegido una opcion
+[2025-01-22 05:33:10] El jugador a elegido una opcion
+[2025-01-22 05:33:20] El jugador a elegido una opcion
+[2025-01-22 05:33:23] El jugador a elegido una opcion
+[2025-01-22 05:33:24] El jugador a elegido una opcion
+[2025-01-22 05:33:26] El jugador a elegido una opcion
+[2025-01-22 05:33:27] El jugador a elegido una opcion
+[2025-01-22 05:33:28] El jugador a elegido una opcion
+[2025-01-22 05:33:29] El jugador a elegido una opcion
+[2025-01-22 05:33:31] El jugador a elegido una opcion
+[2025-01-22 05:33:32] El jugador a elegido una opcion
+[2025-01-22 05:33:35] El jugador a elegido una opcion
+[2025-01-22 05:33:37] El jugador a elegido una opcion
+[2025-01-22 05:33:40] El jugador a elegido una opcion
+[2025-01-22 05:33:41] Miguel decide pedir una carta.
+[2025-01-22 05:33:42] Miguel decide pedir una carta.
+[2025-01-22 05:33:44] Miguel decide plantarse.
+[2025-01-22 05:33:46] El jugador a elegido una opcion
+[2025-01-22 05:33:59] El jugador a elegido una opcion
+[2025-01-22 05:34:01] El jugador a elegido una opcion
+[2025-01-22 05:34:03] El jugador a elegido una opcion
+[2025-01-22 05:34:04] El jugador a elegido una opcion
+[2025-01-22 05:34:05] El jugador a elegido una opcion
+[2025-01-22 05:34:06] El jugador a elegido una opcion
+[2025-01-22 05:34:08] El jugador a elegido una opcion
+[2025-01-22 05:34:09] El jugador a elegido una opcion
+[2025-01-22 05:34:10] El jugador a elegido una opcion
+[2025-01-22 05:34:11] El jugador a elegido una opcion
+[2025-01-22 05:34:13] El jugador a elegido una opcion
+[2025-01-22 05:34:14] El jugador a elegido una opcion
+[2025-01-22 05:34:16] El jugador a elegido una opcion
+[2025-01-22 05:34:17] El jugador a elegido una opcion
+[2025-01-22 05:34:18] El jugador a elegido una opcion
+[2025-01-22 05:34:19] El jugador a elegido una opcion
+[2025-01-22 05:34:22] El jugador a elegido una opcion
+[2025-01-22 05:34:35] El jugador a elegido una opcion
+[2025-01-22 05:35:17] El jugador a elegido una opcion
+[2025-01-22 05:35:24] El jugador a elegido una opcion
+[2025-01-22 05:35:26] El jugador a elegido una opcion
+[2025-01-22 05:35:28] El jugador a elegido una opcion
+[2025-01-22 05:35:30] El jugador a elegido una opcion
+[2025-01-22 05:35:31] El jugador a elegido una opcion
+[2025-01-22 05:35:32] El jugador a elegido una opcion
+[2025-01-22 05:35:33] El jugador a elegido una opcion
+[2025-01-22 05:35:35] El jugador a elegido una opcion
+[2025-01-22 05:35:36] El jugador a elegido una opcion
+[2025-01-22 05:35:39] El jugador a elegido una opcion
+[2025-01-22 05:35:41] Miguel decide pedir una carta.
+[2025-01-22 05:35:42] Miguel decide pedir una carta.
+[2025-01-22 05:35:42] Miguel decide pedir una carta.
+[2025-01-22 05:35:43] Miguel decide pedir una carta.
+[2025-01-22 05:35:43] Miguel decide pedir una carta.
+[2025-01-22 05:35:43] Miguel decide pedir una carta.
+[2025-01-22 05:35:43] Miguel decide pedir una carta.
+[2025-01-22 05:35:44] Miguel decide pedir una carta.
+[2025-01-22 05:35:45] Miguel decide plantarse.
+[2025-01-22 05:35:51] El jugador a elegido una opcion
+[2025-01-22 05:35:59] El jugador a elegido una opcion
+[2025-01-22 05:36:02] El jugador a elegido una opcion
+[2025-01-22 05:36:03] El jugador a elegido una opcion
+[2025-01-22 05:36:04] El jugador a elegido una opcion
+[2025-01-22 05:36:06] El jugador a elegido una opcion
+[2025-01-22 05:36:07] El jugador a elegido una opcion
+[2025-01-22 05:36:09] El jugador a elegido una opcion
+[2025-01-22 05:50:47] [Juego Iniciado]
+[2025-01-22 05:50:47] Conexión exitosa a la base de datos.
+[2025-01-22 05:50:47] Conexión cerrada.
+[2025-01-22 05:50:47] Conexión exitosa a la base de datos.
+[2025-01-22 05:50:47] Conexión cerrada.
+[2025-01-22 05:50:47] Conexión exitosa a la base de datos.
+[2025-01-22 05:50:47] Conexión cerrada.
+[2025-01-22 05:50:47] Conexión exitosa a la base de datos.
+[2025-01-22 05:50:47] Conexión cerrada.
+[2025-01-22 05:50:49] El jugador a elegido una opcion
+[2025-01-22 05:50:49] Conexión exitosa a la base de datos.
+[2025-01-22 05:50:49] Conexión cerrada.
+[2025-01-22 05:50:50] El jugador a elegido una opcion
+[2025-01-22 05:50:50] Conexión exitosa a la base de datos.
+[2025-01-22 05:50:50] Conexión cerrada.
+[2025-01-22 05:50:51] El jugador a elegido una opcion
+[2025-01-22 05:50:51] Conexión exitosa a la base de datos.
+[2025-01-22 05:50:51] Conexión cerrada.
+[2025-01-22 05:50:52] El jugador a elegido una opcion
+[2025-01-22 05:50:53] El jugador a elegido una opcion
+[2025-01-22 05:51:19] [Juego Iniciado]
+[2025-01-22 05:51:19] Conexión exitosa a la base de datos.
+[2025-01-22 05:51:19] Conexión cerrada.
+[2025-01-22 05:51:19] Conexión exitosa a la base de datos.
+[2025-01-22 05:51:19] Conexión cerrada.
+[2025-01-22 05:51:19] Conexión exitosa a la base de datos.
+[2025-01-22 05:51:19] Conexión cerrada.
+[2025-01-22 05:51:19] Conexión exitosa a la base de datos.
+[2025-01-22 05:51:19] Conexión cerrada.
+[2025-01-22 05:51:21] El jugador a elegido una opcion
+[2025-01-22 05:51:21] Conexión exitosa a la base de datos.
+[2025-01-22 05:51:21] Conexión cerrada.
+[2025-01-22 05:51:21] El jugador a elegido una opcion
+[2025-01-22 05:51:21] Conexión exitosa a la base de datos.
+[2025-01-22 05:51:21] Conexión cerrada.
+[2025-01-22 05:51:22] El jugador a elegido una opcion
+[2025-01-22 05:51:23] Conexión exitosa a la base de datos.
+[2025-01-22 05:51:23] Conexión cerrada.
+[2025-01-22 05:51:23] El jugador a elegido una opcion
+[2025-01-22 05:51:24] El jugador a elegido una opcion
+[2025-01-22 05:51:25] Miguel decide pedir una carta.
+[2025-01-22 05:51:26] Miguel decide pedir una carta.
+[2025-01-22 05:51:27] Miguel decide pedir una carta.
+[2025-01-22 05:51:28] Miguel decide plantarse.
+[2025-01-22 05:51:30] El jugador a elegido una opcion
+[2025-01-22 05:51:32] El jugador a elegido una opcion
+[2025-01-22 05:51:33] El jugador a elegido una opcion
+[2025-01-22 05:51:35] El jugador a elegido una opcion
+[2025-01-22 05:51:36] El jugador a elegido una opcion
+[2025-01-22 05:51:39] El jugador a elegido una opcion
+[2025-01-22 05:51:41] El jugador a elegido una opcion
+[2025-01-22 05:51:43] El jugador a elegido una opcion
+[2025-01-22 05:51:44] El jugador a elegido una opcion
+[2025-01-22 05:51:46] El jugador a elegido una opcion
+[2025-01-22 05:51:48] El jugador a elegido una opcion
+[2025-01-22 05:51:49] El jugador a elegido una opcion
+[2025-01-22 05:51:50] El jugador a elegido una opcion
+[2025-01-22 05:51:51] El jugador a elegido una opcion
+[2025-01-22 05:51:53] El jugador a elegido una opcion
+[2025-01-22 05:51:54] El jugador a elegido una opcion
+[2025-01-22 05:51:55] El jugador a elegido una opcion
+[2025-01-22 05:51:56] El jugador a elegido una opcion
+[2025-01-22 05:51:57] El jugador a elegido una opcion
+[2025-01-22 05:51:59] El jugador a elegido una opcion
+[2025-01-22 05:52:00] El jugador a elegido una opcion
+[2025-01-22 05:52:02] El jugador a elegido una opcion
+[2025-01-22 05:52:17] [Juego Iniciado]
+[2025-01-22 05:52:17] Conexión exitosa a la base de datos.
+[2025-01-22 05:52:17] Conexión cerrada.
+[2025-01-22 05:52:17] Conexión exitosa a la base de datos.
+[2025-01-22 05:52:17] Conexión cerrada.
+[2025-01-22 05:52:17] Conexión exitosa a la base de datos.
+[2025-01-22 05:52:17] Conexión cerrada.
+[2025-01-22 05:52:17] Conexión exitosa a la base de datos.
+[2025-01-22 05:52:17] Conexión cerrada.
+[2025-01-22 05:52:19] El jugador a elegido una opcion
+[2025-01-22 05:52:19] Conexión exitosa a la base de datos.
+[2025-01-22 05:52:19] Conexión cerrada.
+[2025-01-22 05:52:19] El jugador a elegido una opcion
+[2025-01-22 05:52:19] Conexión exitosa a la base de datos.
+[2025-01-22 05:52:19] Conexión cerrada.
+[2025-01-22 05:52:20] El jugador a elegido una opcion
+[2025-01-22 05:52:21] Conexión exitosa a la base de datos.
+[2025-01-22 05:52:21] Conexión cerrada.
+[2025-01-22 05:52:24] El jugador a elegido una opcion
+[2025-01-22 05:52:26] El jugador a elegido una opcion
+[2025-01-22 05:52:26] [Saliendo del Juego]
+[2025-01-22 05:54:59] [Juego Iniciado]
+[2025-01-22 05:54:59] Conexión exitosa a la base de datos.
+[2025-01-22 05:54:59] Conexión cerrada.
+[2025-01-22 05:54:59] Conexión exitosa a la base de datos.
+[2025-01-22 05:54:59] Conexión cerrada.
+[2025-01-22 05:54:59] Conexión exitosa a la base de datos.
+[2025-01-22 05:54:59] Conexión cerrada.
+[2025-01-22 05:54:59] Conexión exitosa a la base de datos.
+[2025-01-22 05:54:59] Conexión cerrada.
+[2025-01-22 05:55:01] El jugador a elegido una opcion
+[2025-01-22 05:55:01] Conexión exitosa a la base de datos.
+[2025-01-22 05:55:01] Conexión cerrada.
+[2025-01-22 05:55:01] El jugador a elegido una opcion
+[2025-01-22 05:55:01] Conexión exitosa a la base de datos.
+[2025-01-22 05:55:01] Conexión cerrada.
+[2025-01-22 05:55:02] El jugador a elegido una opcion
+[2025-01-22 05:55:03] Conexión exitosa a la base de datos.
+[2025-01-22 05:55:03] Conexión cerrada.
+[2025-01-22 05:55:04] El jugador a elegido una opcion
+[2025-01-22 05:55:04] Conexión exitosa a la base de datos.
+[2025-01-22 05:55:04] Conexión cerrada.
+[2025-01-22 05:55:06] El jugador a elegido una opcion
+[2025-01-22 05:55:07] Conexión exitosa a la base de datos.
+[2025-01-22 05:55:07] Conexión cerrada.
+[2025-01-22 05:55:32] El jugador a elegido una opcion
+[2025-01-22 05:55:35] El jugador a elegido una opcion
+[2025-01-22 05:55:36] El jugador a elegido una opcion
+[2025-01-22 05:55:39] El jugador a elegido una opcion
+[2025-01-22 05:55:40] El jugador a elegido una opcion
+[2025-01-22 05:55:43] El jugador a elegido una opcion
+[2025-01-22 05:55:44] Miguel decide pedir una carta.
+[2025-01-22 05:55:45] Miguel decide pedir una carta.
+[2025-01-22 05:55:46] Miguel decide pedir una carta.
+[2025-01-22 05:55:50] Miguel decide plantarse.
+[2025-01-22 05:55:54] El jugador a elegido una opcion
+[2025-01-22 05:55:58] El jugador a elegido una opcion
+[2025-01-22 05:55:59] El jugador a elegido una opcion
+[2025-01-22 05:56:01] El jugador a elegido una opcion
+[2025-01-22 05:56:02] El jugador a elegido una opcion
+[2025-01-22 05:56:05] El jugador a elegido una opcion
+[2025-01-22 05:57:56] [Juego Iniciado]
+[2025-01-22 05:57:56] Conexión exitosa a la base de datos.
+[2025-01-22 05:57:56] Conexión cerrada.
+[2025-01-22 05:57:56] Conexión exitosa a la base de datos.
+[2025-01-22 05:57:56] Conexión cerrada.
+[2025-01-22 05:57:56] Conexión exitosa a la base de datos.
+[2025-01-22 05:57:56] Conexión cerrada.
+[2025-01-22 05:57:56] Conexión exitosa a la base de datos.
+[2025-01-22 05:57:56] Conexión cerrada.
+[2025-01-22 05:58:00] El jugador a elegido una opcion
+[2025-01-22 05:58:00] Conexión exitosa a la base de datos.
+[2025-01-22 05:58:00] Conexión cerrada.
+[2025-01-22 05:58:01] El jugador a elegido una opcion
+[2025-01-22 05:58:01] Conexión exitosa a la base de datos.
+[2025-01-22 05:58:01] Conexión cerrada.
+[2025-01-22 05:58:01] El jugador a elegido una opcion
+[2025-01-22 05:58:02] Conexión exitosa a la base de datos.
+[2025-01-22 05:58:02] Conexión cerrada.
+[2025-01-22 05:58:02] El jugador a elegido una opcion
+[2025-01-22 05:58:02] Conexión exitosa a la base de datos.
+[2025-01-22 05:58:03] Conexión cerrada.
+[2025-01-22 05:58:04] El jugador a elegido una opcion
+[2025-01-22 05:58:04] Conexión exitosa a la base de datos.
+[2025-01-22 05:58:04] Conexión cerrada.
+[2025-01-22 05:58:09] El jugador a elegido una opcion
+[2025-01-22 05:58:13] El jugador a elegido una opcion
+[2025-01-22 05:58:14] Miguel decide pedir una carta.
+[2025-01-22 05:58:15] Miguel decide plantarse.
+[2025-01-22 05:58:18] El jugador a elegido una opcion
+[2025-01-22 05:58:21] El jugador a elegido una opcion
+[2025-01-22 05:58:23] El jugador a elegido una opcion
+[2025-01-22 05:58:24] El jugador a elegido una opcion
+[2025-01-22 05:58:25] El jugador a elegido una opcion
+[2025-01-22 05:58:26] El jugador a elegido una opcion
+[2025-01-22 05:58:27] El jugador a elegido una opcion
+[2025-01-22 05:58:29] El jugador a elegido una opcion
+[2025-01-22 05:58:30] El jugador a elegido una opcion
+[2025-01-22 05:58:32] El jugador a elegido una opcion
+[2025-01-22 05:58:33] El jugador a elegido una opcion
+[2025-01-22 05:58:35] El jugador a elegido una opcion
+[2025-01-22 05:58:35] El jugador a elegido una opcion
+[2025-01-22 05:58:40] El jugador a elegido una opcion
+[2025-01-22 05:58:42] El jugador a elegido una opcion
+[2025-01-22 05:58:45] El jugador a elegido una opcion
+[2025-01-22 05:58:49] El jugador a elegido una opcion
+[2025-01-22 05:58:50] El jugador a elegido una opcion
+[2025-01-22 05:58:51] El jugador a elegido una opcion
+[2025-01-22 05:58:52] El jugador a elegido una opcion
+[2025-01-22 05:58:55] El jugador a elegido una opcion
+[2025-01-22 05:58:56] El jugador a elegido una opcion
+[2025-01-22 05:58:58] El jugador a elegido una opcion
+[2025-01-22 06:02:01] [Juego Iniciado]
+[2025-01-22 06:02:01] Conexión exitosa a la base de datos.
+[2025-01-22 06:02:01] Conexión cerrada.
+[2025-01-22 06:02:01] Conexión exitosa a la base de datos.
+[2025-01-22 06:02:01] Conexión cerrada.
+[2025-01-22 06:02:01] Conexión exitosa a la base de datos.
+[2025-01-22 06:02:01] Conexión cerrada.
+[2025-01-22 06:02:01] Conexión exitosa a la base de datos.
+[2025-01-22 06:02:01] Conexión cerrada.
+[2025-01-22 06:02:11] [Juego Iniciado]
+[2025-01-22 06:02:11] Conexión exitosa a la base de datos.
+[2025-01-22 06:02:11] Conexión cerrada.
+[2025-01-22 06:02:11] Conexión exitosa a la base de datos.
+[2025-01-22 06:02:11] Conexión cerrada.
+[2025-01-22 06:02:11] Conexión exitosa a la base de datos.
+[2025-01-22 06:02:11] Conexión cerrada.
+[2025-01-22 06:02:11] Conexión exitosa a la base de datos.
+[2025-01-22 06:02:11] Conexión cerrada.
+[2025-01-22 06:02:14] El jugador a elegido una opcion
+[2025-01-22 06:02:14] Conexión exitosa a la base de datos.
+[2025-01-22 06:02:14] Conexión cerrada.
+[2025-01-22 06:02:15] El jugador a elegido una opcion
+[2025-01-22 06:02:15] Conexión exitosa a la base de datos.
+[2025-01-22 06:02:15] Conexión cerrada.
+[2025-01-22 06:02:15] El jugador a elegido una opcion
+[2025-01-22 06:02:16] Conexión exitosa a la base de datos.
+[2025-01-22 06:02:16] Conexión cerrada.
+[2025-01-22 06:02:17] El jugador a elegido una opcion
+[2025-01-22 06:02:19] El jugador a elegido una opcion
+[2025-01-22 06:02:22] El jugador a elegido una opcion
+[2025-01-22 06:02:24] El jugador a elegido una opcion
+[2025-01-22 06:02:29] El jugador a elegido una opcion
+[2025-01-22 06:02:31] El jugador a elegido una opcion
+[2025-01-22 06:02:40] El jugador a elegido una opcion
+[2025-01-22 06:02:41] El jugador a elegido una opcion
+[2025-01-22 06:02:42] El jugador a elegido una opcion
+[2025-01-22 06:02:43] El jugador a elegido una opcion
+[2025-01-22 06:02:46] El jugador a elegido una opcion
+[2025-01-22 06:02:49] El jugador a elegido una opcion
+[2025-01-22 06:02:52] El jugador a elegido una opcion
+[2025-01-22 06:02:53] El jugador a elegido una opcion
+[2025-01-22 06:02:54] El jugador a elegido una opcion
+[2025-01-22 06:02:55] El jugador a elegido una opcion
+[2025-01-22 06:02:59] El jugador a elegido una opcion
+[2025-01-22 06:03:00] El jugador a elegido una opcion
+[2025-01-22 06:03:02] El jugador a elegido una opcion
+[2025-01-22 06:03:03] Miguel decide pedir una carta.
+[2025-01-22 06:03:05] Miguel decide pedir una carta.
+[2025-01-22 06:03:06] Miguel decide pedir una carta.
+[2025-01-22 06:03:08] Miguel decide pedir una carta.
+[2025-01-22 06:03:09] Miguel decide pedir una carta.
+[2025-01-22 06:03:10] Miguel decide plantarse.
+[2025-01-22 06:03:14] Conexión exitosa a la base de datos.
+[2025-01-22 06:03:14] Datos de rondas insertados correctamente para ID_Partida 1.
+[2025-01-22 06:09:12] [Juego Iniciado]
+[2025-01-22 06:09:12] Conexión exitosa a la base de datos.
+[2025-01-22 06:09:12] Conexión cerrada.
+[2025-01-22 06:09:12] Conexión exitosa a la base de datos.
+[2025-01-22 06:09:12] Conexión cerrada.
+[2025-01-22 06:09:12] Conexión exitosa a la base de datos.
+[2025-01-22 06:09:12] Conexión cerrada.
+[2025-01-22 06:09:12] Conexión exitosa a la base de datos.
+[2025-01-22 06:09:12] Conexión cerrada.
+[2025-01-22 06:09:14] El jugador a elegido una opcion
+[2025-01-22 06:09:18] El jugador a elegido una opcion
+[2025-01-22 06:09:18] [Saliendo del Juego]
+[2025-01-22 06:11:15] [Juego Iniciado]
+[2025-01-22 06:11:15] Conexión exitosa a la base de datos.
+[2025-01-22 06:11:15] Conexión cerrada.
+[2025-01-22 06:11:15] Conexión exitosa a la base de datos.
+[2025-01-22 06:11:15] Conexión cerrada.
+[2025-01-22 06:11:15] Conexión exitosa a la base de datos.
+[2025-01-22 06:11:15] Conexión cerrada.
+[2025-01-22 06:11:15] Conexión exitosa a la base de datos.
+[2025-01-22 06:11:15] Conexión cerrada.
+[2025-01-22 06:17:51] [Juego Iniciado]
+[2025-01-22 06:17:51] Conexión exitosa a la base de datos.
+[2025-01-22 06:17:51] Conexión cerrada.
+[2025-01-22 06:17:51] Conexión exitosa a la base de datos.
+[2025-01-22 06:17:51] Conexión cerrada.
+[2025-01-22 06:17:51] Conexión exitosa a la base de datos.
+[2025-01-22 06:17:51] Conexión cerrada.
+[2025-01-22 06:17:52] Conexión exitosa a la base de datos.
+[2025-01-22 06:17:52] Conexión cerrada.
+[2025-01-22 06:17:53] El jugador a elegido una opcion
+[2025-01-22 06:17:53] Conexión exitosa a la base de datos.
+[2025-01-22 06:17:53] Conexión cerrada.
+[2025-01-22 06:17:55] El jugador a elegido una opcion
+[2025-01-22 06:17:55] Conexión exitosa a la base de datos.
+[2025-01-22 06:17:55] Conexión cerrada.
+[2025-01-22 06:17:57] El jugador a elegido una opcion
+[2025-01-22 06:17:57] Conexión exitosa a la base de datos.
+[2025-01-22 06:17:57] Conexión cerrada.
+[2025-01-22 06:17:59] El jugador a elegido una opcion
+[2025-01-22 06:18:01] Conexión exitosa a la base de datos.
+[2025-01-22 06:18:01] Conexión cerrada.
+[2025-01-22 06:18:02] El jugador a elegido una opcion
+[2025-01-22 06:18:05] El jugador a elegido una opcion
+[2025-01-22 06:18:07] Miguel decide pedir una carta.
+[2025-01-22 06:18:07] Miguel decide plantarse.
+[2025-01-22 06:18:10] El jugador a elegido una opcion
+[2025-01-22 06:18:13] El jugador a elegido una opcion
+[2025-01-22 06:18:15] El jugador a elegido una opcion
+[2025-01-22 06:18:30] El jugador a elegido una opcion
+[2025-01-22 06:18:35] El jugador a elegido una opcion
+[2025-01-22 06:18:38] El jugador a elegido una opcion
+[2025-01-22 06:18:41] El jugador a elegido una opcion
+[2025-01-22 06:18:43] El jugador a elegido una opcion
+[2025-01-22 06:18:47] El jugador a elegido una opcion
+[2025-01-22 06:18:48] El jugador a elegido una opcion
+[2025-01-22 06:18:49] El jugador a elegido una opcion
+[2025-01-22 06:18:50] El jugador a elegido una opcion
+[2025-01-22 06:18:53] El jugador a elegido una opcion
+[2025-01-22 06:18:56] Conexión exitosa a la base de datos.
+[2025-01-22 06:18:56] Datos de rondas insertados correctamente para ID_Partida 3.
+[2025-01-22 06:18:56] Conexión cerrada.
+[2025-01-22 06:26:38] [Juego Iniciado]
+[2025-01-22 06:26:38] Conexión exitosa a la base de datos.
+[2025-01-22 06:26:38] Conexión cerrada.
+[2025-01-22 06:26:38] Conexión exitosa a la base de datos.
+[2025-01-22 06:26:38] Conexión cerrada.
+[2025-01-22 06:26:39] Conexión exitosa a la base de datos.
+[2025-01-22 06:26:39] Conexión cerrada.
+[2025-01-22 06:26:39] Conexión exitosa a la base de datos.
+[2025-01-22 06:26:39] Conexión cerrada.
+[2025-01-22 06:39:16] El jugador a elegido una opcion
+[2025-01-22 06:39:16] Conexión exitosa a la base de datos.
+[2025-01-22 06:39:16] Conexión cerrada.
+[2025-01-22 06:39:17] El jugador a elegido una opcion
+[2025-01-22 06:39:17] Conexión exitosa a la base de datos.
+[2025-01-22 06:39:17] Conexión cerrada.
+[2025-01-22 06:39:18] El jugador a elegido una opcion
+[2025-01-22 06:39:19] Conexión exitosa a la base de datos.
+[2025-01-22 06:39:19] Conexión cerrada.
+[2025-01-22 06:39:21] El jugador a elegido una opcion
+[2025-01-22 06:39:26] El jugador a elegido una opcion
+[2025-01-22 06:39:33] El jugador a elegido una opcion
+[2025-01-22 06:39:37] El jugador a elegido una opcion
+[2025-01-22 06:39:41] El jugador a elegido una opcion
+[2025-01-22 06:39:52] El jugador a elegido una opcion
+[2025-01-22 06:39:53] El jugador a elegido una opcion
+[2025-01-22 06:39:55] El jugador a elegido una opcion
+[2025-01-22 06:39:56] El jugador a elegido una opcion
+[2025-01-22 06:39:59] El jugador a elegido una opcion
+[2025-01-22 06:40:02] El jugador a elegido una opcion
+[2025-01-22 06:40:08] El jugador a elegido una opcion
+[2025-01-22 06:40:09] El jugador a elegido una opcion
+[2025-01-22 06:40:12] El jugador a elegido una opcion
+[2025-01-22 06:40:13] Miguel decide pedir una carta.
+[2025-01-22 06:40:15] Miguel decide pedir una carta.
+[2025-01-22 06:40:15] Miguel decide pedir una carta.
+[2025-01-22 06:40:15] Miguel decide pedir una carta.
+[2025-01-22 06:40:15] Miguel decide pedir una carta.
+[2025-01-22 06:40:16] Miguel decide pedir una carta.
+[2025-01-22 06:40:16] Miguel decide pedir una carta.
+[2025-01-22 06:40:16] Miguel decide pedir una carta.
+[2025-01-22 06:40:16] Miguel decide pedir una carta.
+[2025-01-22 06:40:21] Miguel decide pedir una carta.
+[2025-01-22 06:40:22] Miguel decide plantarse.
+[2025-01-22 06:40:29] Conexión exitosa a la base de datos.
+[2025-01-22 06:40:29] Error al insertar los datos de rondas: (1062, "Duplicate entry '0-3-00266936K' for key 'rondas.ID_Ronda_3'")
+[2025-01-22 06:40:29] Conexión cerrada.
+[2025-01-22 06:43:08] [Juego Iniciado]
+[2025-01-22 06:43:08] Conexión exitosa a la base de datos.
+[2025-01-22 06:43:08] Conexión cerrada.
+[2025-01-22 06:43:08] Conexión exitosa a la base de datos.
+[2025-01-22 06:43:08] Conexión cerrada.
+[2025-01-22 06:43:08] Conexión exitosa a la base de datos.
+[2025-01-22 06:43:08] Conexión cerrada.
+[2025-01-22 06:43:33] El jugador a elegido una opcion
+[2025-01-22 06:43:33] Conexión exitosa a la base de datos.
+[2025-01-22 06:43:33] Conexión cerrada.
+[2025-01-22 06:43:37] El jugador a elegido una opcion
+[2025-01-22 06:43:37] Conexión exitosa a la base de datos.
+[2025-01-22 06:43:37] Conexión cerrada.
+[2025-01-22 06:43:38] El jugador a elegido una opcion
+[2025-01-22 06:43:39] Conexión exitosa a la base de datos.
+[2025-01-22 06:43:39] Conexión cerrada.
+[2025-01-22 06:43:42] El jugador a elegido una opcion
+[2025-01-22 06:43:43] El jugador a elegido una opcion
+[2025-01-22 06:43:45] Miguel decide pedir una carta.
+[2025-01-22 06:43:46] Miguel decide pedir una carta.
+[2025-01-22 06:43:47] Miguel decide pedir una carta.
+[2025-01-22 06:43:48] Miguel decide pedir una carta.
+[2025-01-22 06:43:50] Miguel decide plantarse.
+[2025-01-22 06:43:52] El jugador a elegido una opcion
+[2025-01-22 06:43:55] El jugador a elegido una opcion
+[2025-01-22 06:43:57] El jugador a elegido una opcion
+[2025-01-22 06:43:58] El jugador a elegido una opcion
+[2025-01-22 06:43:59] El jugador a elegido una opcion
+[2025-01-22 06:44:00] El jugador a elegido una opcion
+[2025-01-22 06:44:01] El jugador a elegido una opcion
+[2025-01-22 06:44:03] El jugador a elegido una opcion
+[2025-01-22 06:44:04] El jugador a elegido una opcion
+[2025-01-22 06:44:06] El jugador a elegido una opcion
+[2025-01-22 06:44:10] El jugador a elegido una opcion
+[2025-01-22 06:44:14] El jugador a elegido una opcion
+[2025-01-22 06:44:15] El jugador a elegido una opcion
+[2025-01-22 06:44:17] El jugador a elegido una opcion
+[2025-01-22 06:44:27] Conexión exitosa a la base de datos.
+[2025-01-22 06:44:27] Datos de rondas insertados correctamente para ID_Partida 5.
+[2025-01-22 06:44:27] Conexión cerrada.
